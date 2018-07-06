@@ -1,0 +1,49 @@
+/**index.wxss**/
+/**.cityPosition{position:absolute;
+					top:0;
+left:0;}
+.cityPosition image{width:32rpx;height:44rpx;}**/
+
+
+
+
+.mainImage image{
+	width:750rpx;
+	height:330rpx;
+}
+
+.indexSort{
+	padding:0rpx 12rpx;
+	display:flex;
+	flex-direction:row;
+	justify-content:space-around;
+}
+
+.sortModel{text-align:center;margin-top:35rpx;}
+.sortModel image{
+	width:94rpx;
+	height:94rpx;
+	display:block;}
+.sortModel text{font-size:24rpx;color:#5e5e5e;}
+.container{
+	background:#f2f2f2;
+	width:100%;
+	height:100%;
+	overflow:hidden;}
+  .indexGreat{background: #fff;margin-top:8rpx;padding:0rpx 13rpx;overflow:hidden;}
+  .great_title{padding:40rpx 0rpx 46rpx;justify-content: space-between;flex-direction: row;}
+  .great_title text{font-size:28rpx;}
+  .greatMore{float:right;color:#ec514f;}
+  .great_item{width:340rpx;height:315rpx;float:left;margin:0rpx 11rpx 30rpx;}
+  .great_item image{width:340rpx;height:245rpx;}
+  .decorator{margin-top:20rpx;height:45rpx;line-height:45rpx;}
+  .decorator image{float:left;width:45rpx;height:45rpx;margin-right:22rpx;}
+  .decorator text{font-size:22rpx;color:#252525;}
+  /******************关于我们****************/
+  .indexAbout{padding:0rpx 22rpx;background:#fff;overflow:hidden;}
+  .aboutitle{heihgt:110rpx;line-heihgt:110rpx;font-size:28rpx;}
+  .aboutitle text{line-height:110rpx;}
+  .aboutitle image{float:right;width:88rpx;height:88rpx;}
+   .about_intro{position:relative;}
+ .about_intro image{width:706rpx;height:226rpx;}
+ .about_intro text{color:#fff;font-size:22rpx;position:absolute;top:54rpx;left:30rpx;}

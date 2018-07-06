@@ -1,0 +1,50 @@
+<!--user.wxml-->
+<view class="User_cont">
+	<view class="user_top">
+		<image src="/images/user_top1.jpg"></image>
+		<view class="user_info">
+			 <view class="userinfo-avatar">
+		      <open-data  type="userAvatarUrl" style="width:150rpx;height:150rpx;"></open-data>
+		    </view>
+		    <text class="userName"><open-data type="userNickName"></open-data>老马</text>
+	    </view>
+	</view>
+	<view class="userInfo">
+		<view class="user_list flexRowBetween" bindtap="userComplete">
+			<image src="/images/user_icon1.jpg"></image>
+			<text>完善资料</text>
+			<image src="/images/next_icon1.jpg" class="next_page" ></image>
+		</view>
+		<view class="user_list flexRowBetween" bindtap="companyConfirm">
+			<image src="/images/user_icon1.jpg"></image>
+			<text>公司认证</text>
+			<image src="/images/next_icon1.jpg" class="next_page" ></image>
+		</view>
+		
+		<view class="user_list flexRowBetween next_item" bindtap="clientList">
+			<image src="/images/user_icon1.jpg"></image>
+			<text>我的客户</text>
+			<image src="/images/next_icon1.jpg" class="next_page" ></image>
+		</view>
+		<view class="user_list flexRowBetween" bindtap="backMoney">
+			<image src="/images/user_icon1.jpg"></image>
+			<text>我的佣金</text>
+			<image src="/images/next_icon1.jpg" class="next_page" ></image>
+		</view>
+		<view class="user_list flexRowBetween" bindtap="credits">
+			<image src="/images/user_icon1.jpg"></image>
+			<text>我的积分</text>
+			<image src="/images/next_icon1.jpg" class="next_page" ></image>
+		</view>
+		<view class="user_list flexRowBetween" bindtap="rules">
+			<image src="/images/user_icon1.jpg"></image>
+			<text>累计佣金积分规则</text>
+			<image src="/images/next_icon1.jpg" class="next_page" ></image>
+		</view>
+		<view class="user_list flexRowBetween next_item" bindtap="login">
+			<image src="/images/user_icon1.jpg"></image>
+			<text>第三方合作商登陆</text>
+			<image src="/images/next_icon1.jpg" class="next_page" ></image>
+		</view>
+	</view>
+</view>

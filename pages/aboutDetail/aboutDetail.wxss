@@ -1,0 +1,5 @@
+/**.wxss**/
+.intro_tlt{font-size:28rpx;text-align:center;color:#333;margin-bottom:40rpx;}
+.author{font-size:26rpx;margin-left:24rpx;color:#666;}
+.author .adrress_phone{flex-direction:column;}
+.adrress_left{margin-bottom:30rpx;}

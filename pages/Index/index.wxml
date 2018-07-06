@@ -1,0 +1,91 @@
+<!--index.wxml-->
+<view class="cityPosition" style="display:none;">
+  <image src="/images/map_icon.jpg"></image>
+</view>
+<view class="mainImage">
+  <image src="/images/banner.jpg"></image>
+</view>
+<view class="indexSort">
+    <view class="sortModel">
+      <image src="/images/sort_icon1.jpg"></image>
+      <text>家装</text>
+    </view>
+     <view class="sortModel">
+      <image src="/images/sort_icon1.jpg"></image>
+      <text>家装</text>
+    </view>
+     <view class="sortModel">
+      <image src="/images/sort_icon1.jpg"></image>
+      <text>家装</text>
+    </view>
+    <view class="sortModel">
+      <image src="/images/sort_icon1.jpg"></image>
+      <text>家装</text>
+    </view>
+</view>
+<view class="indexSort">
+    <view class="sortModel">
+      <image src="/images/sort_icon1.jpg"></image>
+      <text>家装</text>
+    </view>
+     <view class="sortModel">
+      <image src="/images/sort_icon1.jpg"></image>
+      <text>家装</text>
+    </view>
+     <view class="sortModel">
+      <image src="/images/sort_icon1.jpg"></image>
+      <text>家装</text>
+    </view>
+    <view class="sortModel">
+      <image src="/images/sort_icon1.jpg"></image>
+      <text>家装</text>
+    </view>
+</view>
+<view class="container">
+    <view class="indexGreat">
+        <view class="great_title">
+            <text>热门推荐</text>
+            <text class="greatMore">更多 ></text>
+        </view>
+        <view class="great_list">
+            <view class="great_item" bindtap="decorateService">
+              <image src="/images/decorate1.jpg"></image>
+              <view class="decorator">
+                <image src="/images/decorator.jpg"></image>
+                <text>东易日盛装修</text>
+              </view>
+            </view>
+            <view class="great_item" bindtap="decorateService">
+              <image src="/images/decorate1.jpg"></image>
+              <view class="decorator">
+                <image src="/images/decorator.jpg"></image>
+                <text>东易日盛装修</text>
+              </view>
+            </view>
+            <view class="great_item" bindtap="decorateService">
+              <image src="/images/decorate1.jpg"></image>
+              <view class="decorator">
+                <image src="/images/decorator.jpg"></image>
+                <text>东易日盛装修</text>
+              </view>
+            </view>
+            <view class="great_item" bindtap="decorateService">
+              <image src="/images/decorate1.jpg"></image>
+              <view class="decorator">
+                <image src="/images/decorator.jpg"></image>
+                <text>东易日盛装修</text>
+              </view>
+            </view>
+        </view>
+    </view>
+    <view class="indexAbout">
+        <view class="aboutitle">
+            <text>关于我们</text>
+            <image src="/images/kefu.jpg"></image>
+        </view>
+        <view class="about_intro" bindtap="aboutDetail">
+            <image src="/images/about.jpg"></image>
+            <text>家装E站家装E站家装E站家装E站家装E站家装E站家装E站家装E站</text>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,35 @@
+
+<view class="decorateDetail">
+	<image src="/images/decorateDetail.jpg" class="detail_top"></image>
+	<view class="decorateDetails">
+			<text class="text1">东易日盛装饰有限公司</text>
+			<view class="adrress_phone">
+				<view class="adrress_left">
+					<image src="/images/map_icon1.jpg" style="width:24rpx;height:24rpx;"></image>
+					<text>陕西省西安市</text>
+				</view>
+				<view class="adrress_left adrress_right">
+					<image src="/images/phone_icon1.jpg" style="width:28rpx;height:24rpx;"></image>
+					<text>41654848</text>
+				</view>
+			</view>
+	</view>
+
+</view>
+<view class="recom_reason">
+			<view class="recom_tltle">推荐理由</view>
+			<text>
+			推荐原因推荐原因推荐原因推荐原因推荐原因推荐原因
+			推荐原因推荐原因推荐原因推荐原因推荐原因推荐原因推荐原因推荐原因推荐原因推荐原因推荐原因推荐原因
+			</text>
+		</view>
+	<view class="recom_reason">
+			<view class="recom_tltle">佣金积分奖励详情</view>
+			<text>
+			推荐原因推荐原因推荐原因推荐原因推荐原因推荐原因
+			推荐原因推荐原因推荐原因推荐原因推荐原因推荐原因推荐原因推荐原因推荐原因推荐原因推荐原因推荐原因
+			</text>
+		</view>
+	<view class="recom_other">
+		推荐客户
+	</view>

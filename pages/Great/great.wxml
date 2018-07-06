@@ -1,0 +1,49 @@
+<!--great.wxml-->
+<view class="contain">
+	<view class="flexRowBetween">
+		<text class="inputLabel">姓名:</text>
+		<view class="greatInput">
+			<input type="text"></input>
+		</view>
+	</view>
+	<view class="flexRowBetween">
+		<text class="inputLabel">性别:</text>
+		<view class="greatInput">
+			<input type="text"></input>
+		</view>
+	</view>
+	<view class="flexRowBetween">
+		<text class="inputLabel">联系方式:</text>
+		<view class="greatInput">
+			<input type="text"></input>
+		</view>
+	</view>
+	<view class="intention flexRowBetween">
+		<view class="intention_s">
+			意向强度:
+		</view>
+		<view class="intention_sort flexRowBetween">
+			<view class="intention_item">弱</view>
+			<view class="intention_item">一般</view>
+			<view class="intention_item active">强</view>
+		</view>
+	</view>
+	<view class="intention_area">
+		<view class="intention_s">
+			意向领域:
+		</view>
+		<view class="intention_c flexRowBetween">
+			<text style="border:none;"  class="active">家具</text>
+			<text>装修</text>
+			<text>家具</text>
+			<text>家具</text>
+		</view>
+		<view class="intention_c flexRowBetween">
+			<text style="border:none;" class="active">家具</text>
+			<text>装修</text>
+			<text>家具</text>
+			<text>家具</text>
+		</view>
+	</view>
+	<button class="submit_input">提交</button>
+</view>

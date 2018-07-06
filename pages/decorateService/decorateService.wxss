@@ -1,0 +1,26 @@
+/**.wxss**/
+.decorateService{
+	background:#f2f2f2;
+	padding:15rpx 13rpx;
+	overflow:hidden;}
+.decorate_item{float:left;
+	overflow:hidden;
+	background:#fff;
+	margin:0rpx 11rpx;
+	border-radius:0px 0px 3px 3px;
+	text-align:center;
+	margin-top:25rpx;}
+.decorate_item image{
+	width:340rpx;
+	height:244rpx;
+	display:block;}
+.decorate_text{padding:0rpx 30rpx;}
+.decorate_item .text1{height:64rpx;
+		line-height:64rpx;
+		text-align:center;
+		color:#2e2e2e;
+		font-size:22rpx;}
+.decorate_address{border-top:1px solid #f2f2f2;height:52rpx;overflow:hidden;}
+.decorate_address image{width:22rpx;height:26rpx;float:left;margin-top:15rpx;}
+.decorate_address text{font-size:20rpx;color:#ccc;text-align:left;}
+

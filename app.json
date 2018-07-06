@@ -1,0 +1,54 @@
+{
+  "pages":[
+    "pages/Index/index",
+    "pages/Join/join",
+    "pages/Great/great",
+    "pages/User/user",
+    "pages/decorateService/decorateService",
+    "pages/decorateDetail/decorateDetail",
+    "pages/furnitureDetail/furnitureDetail",
+    "pages/aboutDetail/aboutDetail",
+    "pages/userComplete/userComplete",
+    "pages/companyConfirm/companyConfirm",
+    "pages/clientList/clientList",
+    "pages/backMoney/backMoney",
+    "pages/credits/credits",
+    "pages/rules/rules",
+    "pages/login/login",
+    "pages/register/register"
+
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/Index/index",
+      "text": "首页",
+      "iconPath":"/images/navbar1.jpg",
+      "selectedIconPath":"/images/navbar1-a.jpg"
+    }, {
+      "pagePath": "pages/Join/join",
+      "text": "招商加盟",
+      "iconPath":"/images/navbar2.jpg",
+      "selectedIconPath":"/images/navbar2-a.jpg"
+    }, {
+      "pagePath":"pages/Great/great",
+      "text": "推荐",
+      "iconPath":"/images/navbar3.jpg",
+      "selectedIconPath":"/images/navbar3-a.jpg"
+    }, {
+      "pagePath":"pages/User/user",
+      "text": "我的",
+      "iconPath":"/images/navbar4.jpg",
+      "selectedIconPath":"/images/navbar4-a.jpg"
+    }],
+    "borderStyle": "#ccc",
+    "color":"#666",
+    "selectedColor":"#ef4f4f"
+  }
+  
+}

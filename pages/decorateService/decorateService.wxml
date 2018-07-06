@@ -1,0 +1,24 @@
+
+<view class="decorateService">
+	<view class="decorate_item" bindtap="decorateDetail">
+		<image src="/images/decorate1.jpg"></image>
+		<view class="decorate_text">
+			<text class="text1">冬日装修</text>
+			<view class="decorate_address">
+				<image src="/images/map_icon1.jpg"></image>
+				<text>陕西省西安市</text>
+			</view>
+		</view>
+	</view>
+	<view class="decorate_item" bindtap="decorateDetail">
+		<image src="/images/decorate1.jpg"></image>
+		<view class="decorate_text">
+			<text class="text1">冬日装修</text>
+			<view class="decorate_address">
+				<image src="/images/map_icon1.jpg"></image>
+				<text>陕西省西安市</text>
+			</view>
+		</view>
+	</view>
+
+</view>

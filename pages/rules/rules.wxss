@@ -1,0 +1,16 @@
+.rulesBanner image{
+	width:750rpx;
+	height:218rpx;}
+.getCredits{
+	color:#ef4f51;
+	font-size:32rpx;
+	margin-bottom:30rpx;
+	}
+.rulesCont{
+	padding:46rpx 26rpx;}
+.text1 text{
+	font-size:25rpx;
+	color:#666;
+	display:block;
+	margin-bottom:15rpx;
+	letter-spacing:5rpx;}

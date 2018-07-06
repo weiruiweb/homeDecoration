@@ -1,0 +1,22 @@
+/**index.wxss**/
+.nav_sort{
+	flex-direction:row;
+	display:flex;
+	justify-content:space-around;
+	height:88rpx;
+	line-height:88rpx;
+	border-bottom:solid 1px #e2e2e2;
+	font-size:32rpx;
+	color:#444;
+}
+.sort_item{}
+.nav_sort .active{border-bottom:solid 1px #ffac1b;padding:0rpx 28rpx;}
+.join_list{
+		flex-direction:row;
+	display:flex;
+	justify-content:space-between;
+padding:40rpx 28rpx 28rpx;border-bottom:solid 1px #f2f2f2;}
+.join_left{width:450rpx;margin-right:30rpx;}
+.join_tlt{font-size:30rpx;color:#2e2e2e;}
+.join_left text{color:#999;font-size:26rpx;}
+.join_list  image{width:214rpx;height:168rpx;}

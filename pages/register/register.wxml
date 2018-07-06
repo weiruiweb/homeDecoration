@@ -1,0 +1,32 @@
+<!--user.wxml-->
+	<view class="userInfo">
+		<view class="userdetail_list flexRowBetween">
+			<text>公司名称:</text>
+			<input type="text"></input>
+		</view>
+		<view class="userdetail_list flexRowBetween" bindtap="company_adrress">
+			<text>公司地址:</text>
+		</view>
+		<view class="userdetail_list flexRowBetween">
+			<text>详细地址:</text>
+			<input type="text"></input>
+		</view>
+		<view class="userdetail_list flexRowBetween">
+			<text>平台业务员:</text>
+			<input type="text"></input>
+		</view>
+		<view class="userdetail_list flexRowBetween">
+			<text>联系方式:</text>
+			<input type="text"></input>
+		</view>
+		<view class="userdetail_list flexRowBetween">
+			<text>获取验证码:</text>
+			<input type="text" style="width:400rpx;"></input>
+			<view class="getCode">
+				点击获取
+			</view>
+		</view>
+		
+	</view>
+	<button class="submit_input">提交</button>
+

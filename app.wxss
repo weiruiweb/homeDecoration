@@ -1,0 +1,80 @@
+/**app.wxss**/
+/**********************详情*************************/
+.detail_top{
+	width:750rpx;height:348rpx;
+}
+.decorateDetails{padding:40rpx 24rpx;}
+
+.decorateDetails .text1{
+	font-size:28rpx;
+	color:#2e2e2e;
+}
+.adrress_phone{
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;}
+.adrress_phone image{margin-right:12rpx;}
+
+.adrress_phone .adrress_left text{color:#cbcbcb;font-size:22rpx;}
+
+.detail_cont{
+	padding:40rpx 24rpx;
+	color:#666;
+	font-size:24rpx;
+	text-indent:60rpx;
+	ine-height:40rpx;
+	border-top:solid 1px #f2f2f2;}
+/*****************flex   row   between*************************/
+.flexRowBetween{
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+}
+/*******************提交按钮************************/
+.submit_input{
+	width:220rpx;
+	height:80rpx;
+	text-align:center;
+	line-height:80rpx;
+	color:#fff;
+	border-radius:40rpx;
+	margin:135rpx auto 80rpx;
+	background:#ef4f4f;
+	font-size:32rpx;
+	letter-spacing:10rpx;
+}
+/***************我的二级******************/
+.userInfo{
+	padding:20rpx 0rpx;
+}
+.userdetail_list{
+	background:#fff;
+	padding:0rpx 26rpx;
+	border-bottom:solid 1px #e2e2e2;
+	height:100rpx;
+	line-height:100rpx;}
+.userdetail_list input{
+	width:570rpx;
+	margin-top:25rpx;
+	font-size:28rpx;
+	color:#666;}
+.userdetail_list text,.getCode{
+	font-size:28rpx;
+	color:#2e2e2e;}
+.next_page{
+	width:15rpx;
+	height:29rpx;}
+/*****************积分 佣金*****************/
+.record_list{
+  padding:34rpx 32rpx 28rpx;
+  background:#fff;
+  margin-bottom:3rpx;
+}
+.recordName{
+    color:#2e2e2e;
+    font-size:28rpx;}
+.recordTime{
+    color:#999;
+    font-size:24rpx;
+    }
+.record_money{color:#f04e4f;}
