@@ -1,0 +1,12 @@
+.User_cont{background:#f2f2f2;width:100%;height:100%;}
+.nowMoney{padding:60rpx 30rpx;}
+.nowMoney text{font-size:28rpx;color:#2e2e2e;}
+.moneyNumber{
+  height:185rpx;
+  line-height:185rpx;
+  text-align:center;
+  font-size:40rpx;
+  color:#f04e4f;}
+.moneyNumber text{
+  font-size:60rpx;
+  color:#f04e4f;}

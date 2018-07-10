@@ -18,9 +18,7 @@
 .userName{
 	font-size:32rpx;
 	color:#fff;}
-.userInfo{
-	padding:20rpx 0rpx;
-}
+
 .user_list{
 	background:#fff;
 	padding:0rpx 40rpx 0rpx 50rpx;
@@ -28,10 +26,10 @@
 	height:105rpx;
 	line-height:105rpx;}
 .user_list image{
-	width:28rpx;
-	height:28rpx;
+	width:32rpx;
+	height:32rpx;
 	margin-right:20rpx;
-	margin-top:40rpx;}
+	margin-top:35rpx;}
 .user_list text{
 	width:590rpx;
 	color:#4d4d4d;

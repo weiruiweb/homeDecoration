@@ -31,3 +31,4 @@
 	text-align:center;
 }
 .submit_input{margin-top:300rpx;}
+.userInfo{padding:0rpx;}

@@ -44,9 +44,7 @@
 	letter-spacing:10rpx;
 }
 /***************我的二级******************/
-.userInfo{
-	padding:20rpx 0rpx;
-}
+
 .userdetail_list{
 	background:#fff;
 	padding:0rpx 26rpx;
@@ -78,3 +76,22 @@
     font-size:24rpx;
     }
 .record_money{color:#f04e4f;}
+/********************点击改变样式***********************/
+.nav_sort{
+	flex-direction:row;
+	display:flex;
+	justify-content:space-around;
+	height:88rpx;
+	line-height:88rpx;
+	border-bottom:solid 1px #e2e2e2;
+	font-size:32rpx;
+	color:#444;  
+}
+#sort_click{
+  line-height: 88rpx;  
+  font-size: 32rpx;
+  padding:0rpx 28rpx;}
+
+.nav_sort .active{
+	color:#ef4f4f;
+	border-bottom:solid 1px #ef4f4f;}

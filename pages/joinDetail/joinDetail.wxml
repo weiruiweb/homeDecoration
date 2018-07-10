@@ -1,0 +1,22 @@
+
+<view class="decorateDetail">
+	<image src="/images/decorateDetail.jpg" class="detail_top"></image>
+	<view class="decorateDetails">
+			<text class="text1">东易日盛装饰有限公司</text>
+			<view class="adrress_phone">
+				<view class="adrress_left">
+					<image src="/images/map_icon1.jpg" style="width:24rpx;height:24rpx;"></image>
+					<text>陕西省西安市</text>
+				</view>
+				<view class="adrress_left adrress_right">
+					<image src="/images/phone_icon1.jpg" style="width:28rpx;height:24rpx;"></image>
+					<text>41654848</text>
+				</view>
+			</view>
+	</view>
+
+</view>
+<view class="detail_cont">
+	运营一家加盟的装饰公司首先看您加盟公司获得的收益，如工艺标准，设计帮助，业务单量及资质挂靠等等。初期尽量节约成本去做一些活动，运营一家加盟的装饰公司首先看您加盟公司获得的收益，如工艺标准，设计帮助，业务单量及资质挂靠等等。初期尽量节约成本去做一些活动，运营一家加盟的装饰公司首先看您加盟公司获得的收益，如工艺标准，设计帮助，业务单量及资质挂靠等等。初期尽量节约成本去做一些活动，
+</view>
+<view class="author">作者:浮生若梦</view>

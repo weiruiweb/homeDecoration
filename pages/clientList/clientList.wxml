@@ -1,7 +1,7 @@
 <!--user.wxml-->
 
 <view class="User_cont">
-	<view class="clientList flexRowBetween">
+	<view class="clientList flexRowBetween" bindtap="clientDetail">
 		<image src="/images/decorator.jpg"></image>
 		<view class="clientList_center">
 			<view class="clientName">
@@ -17,7 +17,7 @@
 			<view class="clientTime">2014-2-2</view>
 		</view>
 	</view>
-	<view class="clientList flexRowBetween">
+	<view class="clientList flexRowBetween" bindtap="clientDetail">
 		<image src="/images/decorator.jpg"></image>
 		<view class="clientList_center">
 			<view class="clientName">
@@ -33,7 +33,7 @@
 			<view class="clientTime">2014-2-2</view>
 		</view>
 	</view>
-	<view class="clientList flexRowBetween">
+	<view class="clientList flexRowBetween" bindtap="clientDetail">
 		<image src="/images/decorator.jpg"></image>
 		<view class="clientList_center">
 			<view class="clientName">

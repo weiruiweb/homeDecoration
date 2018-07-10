@@ -1,0 +1,59 @@
+<view class="add" bindtap="showModal">加入购物车</view>
+ 
+<view animation="{{animationData}}" class="container-column buydes-dialog-container" wx:if="{{showModalStatus}}">
+  <view class="buydes-dialog-container-top" bindtap="hideModal"></view>
+  
+  <view class="container-column buydes-dialog-container-bottom">
+  <view class="close" bindtap="hideModal">x</view>
+  <view class="goodsaddinfo">
+    <view class="addimg">
+      <image src="https://xcx.yoyimm.com/images/201704/goods_img/317_G_1492632942900.jpg"></image>
+    </view>
+    <view class="addname">
+      <view class="addnamet">商品名称比较一下商品名称比较一下商品名称比较一下商品名称比较一下商品名称比较一下</view>
+      <view class="addprice">￥199元</view>
+    </view>
+  </view>
+ 
+  <view class="attr">
+    <ul>
+      <li>
+        <label>尺码</label>
+        <view>
+          <span class="hover">S</span>
+          <span>M</span>
+          <span>L</span>
+          <span>XL</span>
+        </view>
+      </li>
+ 
+      <li>
+        <label>颜色</label>
+        <view>
+          <span class="hover">红色</span>
+          <span>绿</span>
+          <span>紫色</span>
+          <span>紫色</span>
+          <span>紫色</span>
+        </view>
+      </li>
+    </ul>
+  </view>
+  <view class="num">
+    <label>数量</label>
+    <view class="stepper">
+ 
+      <!-- 减号 -->
+      <text class="{{goods_number == 1 ? 'disabled' : 'normal'}}" bindtap="bindMinus">-</text>
+ 
+      <!-- 数值 -->
+      <input type="number" bindchange="bindManual" value="1" />
+ 
+      <!-- 加号 -->
+      <text class="normal" bindtap="bindPlus">+</text>
+    </view>
+  </view>
+  <view class="addcart" bindtap="addToCart">加入购物车</view>
+ 
+  </view>
+</view>

@@ -1,0 +1,52 @@
+<!--user.wxml-->
+<view class="User_cont">
+	<view class="user_top" bindtap="animite">
+		<image src="/images/user_top1.jpg"></image>
+		<view class="user_info">
+			 <view class="userinfo-avatar">
+		      <open-data  type="userAvatarUrl" style="width:150rpx;height:150rpx;"></open-data>
+		    </view>
+		    <text class="userName"><open-data type="userNickName"></open-data>老马</text>
+	    </view>
+	</view>
+	<view class="userInfo">
+		<view class="user_list flexRowBetween" bindtap="threeComplete">
+			<image src="/images/user_icon1.png"></image>
+			<text>基本信息</text>
+			<image src="/images/next_icon1.jpg" class="next_page" ></image>
+		</view>
+		<view class="user_list flexRowBetween" bindtap="threeTeam">
+			<image src="/images/user_icon8.png"></image>
+			<text>我的团队</text>
+			<image src="/images/next_icon1.jpg" class="next_page" ></image>
+		</view>
+		
+		<view class="user_list flexRowBetween next_item" bindtap="threeClient">
+			<image src="/images/user_icon11.png"></image>
+			<text>客户记录</text>
+			<image src="/images/next_icon1.jpg" class="next_page" ></image>
+		</view>
+
+		<view class="user_list flexRowBetween" bindtap="threeCredits">
+			<image src="/images/user_icon5.png"></image>
+			<text>积分记录</text>
+			<image src="/images/next_icon1.jpg" class="next_page" ></image>
+		</view>
+		<view class="user_list flexRowBetween" bindtap="threebackMoney">
+			<image src="/images/user_icon6.png"></image>
+			<text>佣金记录</text>
+			<image src="/images/next_icon1.jpg" class="next_page" ></image>
+		</view>
+		
+		<view class="user_list flexRowBetween next_item" bindtap="threeQrcode">
+			<image src="/images/user_icon9.png"></image>
+			<text>推广二维码</text>
+			<image src="/images/next_icon1.jpg" class="next_page" ></image>
+		</view>
+		<view class="user_list flexRowBetween" bindtap="threeAbout">
+			<image src="/images/user_icon10.png"></image>
+			<text>关于我们</text>
+			<image src="/images/next_icon1.jpg" class="next_page" ></image>
+		</view>
+	</view>
+</view>

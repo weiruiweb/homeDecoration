@@ -7,7 +7,11 @@
     "pages/decorateService/decorateService",
     "pages/decorateDetail/decorateDetail",
     "pages/furnitureDetail/furnitureDetail",
+    "pages/furnitureService/furnitureService",
+    "pages/joinDetail/joinDetail",
+    "pages/materialsDetail/materialsDetail",
     "pages/aboutDetail/aboutDetail",
+    "pages/materials/materials",
     "pages/userComplete/userComplete",
     "pages/companyConfirm/companyConfirm",
     "pages/clientList/clientList",
@@ -15,7 +19,19 @@
     "pages/credits/credits",
     "pages/rules/rules",
     "pages/login/login",
-    "pages/register/register"
+    "pages/register/register",
+    "pages/threeUser/threeUser",
+    "pages/threeComplete/threeComplete",
+    "pages/threeTeam/threeTeam",
+    "pages/threeClient/threeClient",
+    "pages/threeCredits/threeCredits",
+    "pages/threebackMoney/threebackMoney",
+    "pages/threeAbout/threeAbout",
+    "pages/threeQrcode/threeQrcode",
+    "pages/animite/animite",
+    "pages/clientDetail/clientDetail",
+    "pages/editClient/editClient",
+    "pages/clientModify/clientModify"
 
   ],
   "window":{

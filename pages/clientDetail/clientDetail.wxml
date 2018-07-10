@@ -1,0 +1,51 @@
+<!--great.wxml-->
+
+	<view class="clientDlist">
+		<view class="flexRowBetween">
+			<text class="inputLabel">姓名:</text>
+			<view class="editClient" bindtap="editClient">
+				<image src="/images/user_icon1.png"></image>
+			</view>
+		</view>
+		<view class="greatInput">
+			<input type="text" placeholder="天小七"></input>
+		</view>
+	</view>
+
+	<view class="">
+		<text class="inputLabel">性别:</text>
+		<view class="greatInput">
+			<input type="text" placeholder="男"></input>
+		</view>
+	</view>
+	<view class="">
+		<text class="inputLabel">联系方式:</text>
+		<view class="greatInput">
+			<input type="text" type="password" placeholder="21313223223"></input>
+		</view>
+	</view>
+<view class="contain">
+	<view class="intention flexRowBetween">
+		<view class="intention_s">
+			意向强度:
+		</view>
+		<view class="intention_sort flexRowBetween">
+			<block wx:for="{{purpose}}">
+				<view class="intention_item" bindtap="purpose_choose" data-id="{{index}}">
+					<view class="{{index == chooseId?'active':''}}">{{item.preX}}</view>
+				</view>
+			</block>
+		</view>
+	</view>
+	<view class="intention_area">
+		<view class="intention_s">
+			意向领域:
+		</view>
+		<view class="intention_c">
+			<view wx:for="{{repContent}}" class="inten_item">
+			<text class="{{selectIndex[index].sureid? 'active' : ''}}" data-selectIndex="{{index}}" 
+		      bindtap="selectRep">{{item.message}}</text>
+			</view>
+		</view>
+	</view>
+</view>

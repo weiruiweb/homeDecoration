@@ -1,19 +1,13 @@
 <!--index.wxml-->
 <view class="nav_sort">
-	<view class="sort_item active">
-		家具
-	</view>
-	<view class="sort_item">
-		建材
-	</view>
-	<view class="sort_item">
-		智能家具
-	</view>
-	<view class="sort_item">
-		家装
-	</view>
+	<block wx:for="{{pres}}">
+		<view class="sort_item" bindtap='sort_click' data-id="{{index}}">
+			<view  class="{{index == id?'active':''}}" id="sort_click">{{item.preX}}</view>
+		</view>
+	</block>
 </view>
-<view class="join_list" bindtap="furnitureDetail">
+
+<view class="join_list" bindtap="joinDetail">
 	<view class="join_left">
 		<view class="join_tlt">智能家居_技术不断创新_智能时...
 		</view>
@@ -21,3 +15,12 @@
 	</view>
 	<image src="/images/join1.jpg"></image>
 </view>
+<view class="join_list" bindtap="joinDetail">
+	<view class="join_left">
+		<view class="join_tlt">智能家居_技术不断创新_智能时...
+		</view>
+		<text>智能家居_技术不断创新_智能时智能家居_技术不断创新_智能时...</text>
+	</view>
+	<image src="/images/join1.jpg"></image>
+</view>
+

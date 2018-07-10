@@ -1,0 +1,45 @@
+/**index.wxss**/
+.contain{padding:40rpx;}
+.inputLabel{height:80rpx;line-height:80rpx;font-size:32rpx;color:#2e2e2e;}
+.inputLabel{margin-left:40rpx;}
+.greatInput input{
+	height:80rpx;
+	background:#f4f4f4;
+	border-radius:10rpx;
+	padding-left:40rpx;
+	font-size:30rpx;
+	font-weight:normal;}
+.intention{
+	padding-right:50rpx;
+	height:50rpx;
+	overflow:hidden;
+	margin:20rpx 0rpx 65rpx; 
+}
+.intention_s{color:#2e2e2e;font-size:32rpx;width:140rpx;}
+.intention_item{
+	width:80rpx;
+	height:46rpx;
+	text-align:center;
+	line-height:46rpx;
+	border:solid 1px #b2b2b2;
+	border-radius:20px;
+	color:#ef4f4f;
+	font-size:24rpx;
+	margin-right:66rpx;
+}
+.intention .active{
+	background:#ef4f4f;
+	color:#fff;
+	border-color:#ef4f4f;
+}
+.intention_c{padding-left:100rpx;margin-top:50rpx;}
+.intention_c text{font-size:32rpx;color:#b4b4b4;border-left:solid 1px #b4b4b4;padding:0rpx 40rpx;}
+.intention_c .active{color:#ef4f4f;}
+.editClient{margin-right:40rpx;}
+.editClient image{
+  width:40rpx;
+  height:40rpx;
+}
+.cancle_input{
+	background:#999;
+}

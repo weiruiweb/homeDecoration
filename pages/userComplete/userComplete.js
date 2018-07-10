@@ -12,5 +12,10 @@ Page({
       })
     })
   },
+  userPage:function(){
+    wx.navigateTo({
+      url:'/pages/User/user'
+    })
+  }
   
 })

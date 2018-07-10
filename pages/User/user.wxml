@@ -11,38 +11,38 @@
 	</view>
 	<view class="userInfo">
 		<view class="user_list flexRowBetween" bindtap="userComplete">
-			<image src="/images/user_icon1.jpg"></image>
+			<image src="/images/user_icon1.png"></image>
 			<text>完善资料</text>
 			<image src="/images/next_icon1.jpg" class="next_page" ></image>
 		</view>
 		<view class="user_list flexRowBetween" bindtap="companyConfirm">
-			<image src="/images/user_icon1.jpg"></image>
+			<image src="/images/user_icon2.png"></image>
 			<text>公司认证</text>
 			<image src="/images/next_icon1.jpg" class="next_page" ></image>
 		</view>
 		
 		<view class="user_list flexRowBetween next_item" bindtap="clientList">
-			<image src="/images/user_icon1.jpg"></image>
+			<image src="/images/user_icon3.png"></image>
 			<text>我的客户</text>
 			<image src="/images/next_icon1.jpg" class="next_page" ></image>
 		</view>
 		<view class="user_list flexRowBetween" bindtap="backMoney">
-			<image src="/images/user_icon1.jpg"></image>
+			<image src="/images/user_icon4.png"></image>
 			<text>我的佣金</text>
 			<image src="/images/next_icon1.jpg" class="next_page" ></image>
 		</view>
 		<view class="user_list flexRowBetween" bindtap="credits">
-			<image src="/images/user_icon1.jpg"></image>
+			<image src="/images/user_icon5.png"></image>
 			<text>我的积分</text>
 			<image src="/images/next_icon1.jpg" class="next_page" ></image>
 		</view>
 		<view class="user_list flexRowBetween" bindtap="rules">
-			<image src="/images/user_icon1.jpg"></image>
+			<image src="/images/user_icon6.png"></image>
 			<text>累计佣金积分规则</text>
 			<image src="/images/next_icon1.jpg" class="next_page" ></image>
 		</view>
 		<view class="user_list flexRowBetween next_item" bindtap="login">
-			<image src="/images/user_icon1.jpg"></image>
+			<image src="/images/user_icon7.png"></image>
 			<text>第三方合作商登陆</text>
 			<image src="/images/next_icon1.jpg" class="next_page" ></image>
 		</view>

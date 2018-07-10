@@ -1,0 +1,34 @@
+<!--user.wxml-->
+
+	<view class="user_top">
+		<image src="/images/user_top2.jpg" style="height:388rpx;"></image>
+		<view class="user_info">
+			 <view class="userinfo-avatar">
+		      <open-data  type="userAvatarUrl" style="width:150rpx;height:150rpx;"></open-data>
+		    </view>
+		    <text class="userName"><open-data type="userNickName"></open-data>老马</text>
+	    </view>
+	</view>
+	<view class="userInfo">
+		<view class="userdetail_list flexRowBetween">
+			<text>公司名称:</text>
+			<input type="text"></input>
+		</view>
+		<view class="userdetail_list flexRowBetween" bindtap="company_adrress">
+			<text>公司地址:</text>
+			<image src="/images/next_icon1.jpg" class="next_page" ></image>
+		</view>
+		<view class="userdetail_list flexRowBetween">
+			<text>联系方式:</text>
+			<input type="text"></input>
+		</view>
+		<view class="userdetail_list flexRowBetween">
+			<text>验证码:</text>
+			<input type="text" style="width:450rpx;"></input>
+			<view class="getCode">
+				点击获取
+			</view>
+		</view>
+	</view>
+	<button class="submit_input">提交</button>
+

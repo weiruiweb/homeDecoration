@@ -15,5 +15,10 @@ Page({
   	wx.navigateTo({
   		url:"/pages/decorateDetail/decorateDetail"
   	})
+  },
+  great:function(){
+    wx.navigateTo({
+      url:'/pages/Great/great'
+    })
   }
 })

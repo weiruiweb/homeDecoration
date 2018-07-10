@@ -1,0 +1,48 @@
+.User_cont{background:#f2f2f2;width:100%;height:100%;}
+.clientList{padding:40rpx 22rpx;background:#fff;margin-top:5rpx;}
+.clientList image{width:124rpx;height:124rpx;}
+.clientList_center{width:360rpx;}
+.clientList_right{width:170rpx;}
+.clientName{
+  font-size:28rpx;
+  color:#2e2e2ew;
+  margin-bottom:15rpx;
+}
+.clientType{
+  color:#666;
+  font-size:26rpx;
+  margin-top:40rpx;
+}
+.clientName text{float:left;margin-right:26rpx;}
+.clientName image{
+  width:23rpx;
+  height:23rpx;
+}
+.clientPen{
+  width:80rpx;
+  height:40rpx;
+  border-radius:30rpx;
+  background:#f11f20;
+  text-align:center;
+  line-height:40rpx;
+  color:#fff;
+  font-size:22rpx;
+  margin-top:40rpx;
+  float:right;
+}
+.clientPhone{
+  color:#666;
+  font-size:24rpx;
+  margin-bottom:10rpx;
+  }
+.clientTime{
+  color:#ddd;
+  font-size:22rpx;
+  margin-bottom:10rpx;
+}
+.general{background:#ef4f4f;}
+.weak{background:#f09091;}
+.edit_icon image{
+    width:28rpx;
+    height:28rpx;
+}

@@ -22,28 +22,25 @@
 		<view class="intention_s">
 			意向强度:
 		</view>
-		<view class="intention_sort flexRowBetween">
-			<view class="intention_item">弱</view>
-			<view class="intention_item">一般</view>
-			<view class="intention_item active">强</view>
+		<view class="intention_sort flexRowBetween" >
+			<block wx:for="{{purpose}}">
+				<view class="intention_item"   data-id="{{index}}" bindtap="purpose_choose">
+					<view class="{{index == choose_id?'active':''}}">{{item.preX}}</view>
+				</view>
+			</block>
 		</view>
 	</view>
 	<view class="intention_area">
 		<view class="intention_s">
 			意向领域:
 		</view>
-		<view class="intention_c flexRowBetween">
-			<text style="border:none;"  class="active">家具</text>
-			<text>装修</text>
-			<text>家具</text>
-			<text>家具</text>
+		<view class="intention_c">
+			<view wx:for="{{repContent}}" class="inten_item">
+			<text class="{{selectIndex[index].sureid? 'active' : ''}}" data-selectIndex="{{index}}" 
+		      bindtap="selectRep">{{item.message}}</text>
+			</view>
 		</view>
-		<view class="intention_c flexRowBetween">
-			<text style="border:none;" class="active">家具</text>
-			<text>装修</text>
-			<text>家具</text>
-			<text>家具</text>
-		</view>
+
 	</view>
-	<button class="submit_input">提交</button>
+	<button class="submit_input" bindtap="backIndex">提交</button>
 </view>

@@ -24,8 +24,17 @@
 .intention .active{
 	background:#ef4f4f;
 	color:#fff;
+	border-radius:20px;
 	border-color:#ef4f4f;
 }
-.intention_c{padding-left:100rpx;margin-top:50rpx;}
-.intention_c text{font-size:32rpx;color:#b4b4b4;border-left:solid 1px #b4b4b4;padding:0rpx 40rpx;}
+.intention_c{padding-left:50rpx;margin-top:50rpx;overflow:hidden;}
+.intention_c text{font-size:32rpx;color:#b4b4b4;}
 .intention_c .active{color:#ef4f4f;}
+.inten_item{
+	float:left;
+	text-align:center;
+	self_align:center;
+	width:19%;
+	border-left:solid 1px #b4b4b4;
+	margin-bottom:50rpx;
+	}

@@ -16,6 +16,21 @@ Page({
   		url:'/pages/decorateService/decorateService'
   	})
   },
+  furnitureService:function(){
+    wx.navigateTo({
+      url:'/pages/furnitureService/furnitureService'
+    })
+  },
+  materials:function(){
+    wx.navigateTo({
+      url:'/pages/materials/materials'
+    })
+  },
+  decorateDetail:function(){
+    wx.navigateTo({
+      url:"/pages/decorateDetail/decorateDetail"
+    })
+  },
   aboutDetail:function(){
     wx.navigateTo({
       url:'/pages/aboutDetail/aboutDetail'

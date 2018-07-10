@@ -1,0 +1,57 @@
+<!--user.wxml-->
+
+<view class="User_cont">
+	<view class="clientList flexRowBetween" bindtap="clientDetail">
+		<image src="/images/decorator.jpg"></image>
+		<view class="clientList_center">
+			<view class="clientName">
+				<text>田小七</text>
+				<image src="/images/men.jpg"></image>
+			</view>
+			<view class="clientType">建材，家具,智能建材...</view>
+		</view>
+		<view class="clientList_right" style="flex-direction:column;align-items:flex-end;">
+			<view class="edit_icon flexRowBetween">
+				<view bindtap="modifyInfo"><image src="/images/edit_icon1.jpg"></image></view>
+				
+				<view><image src="/images/delete_icon1.jpg"></image></view>
+			</view>
+			<view class="clientPen weak" style="align-self:flex-end">弱</view>
+		</view>
+	</view>
+	<view class="clientList flexRowBetween" bindtap="clientDetail">
+		<image src="/images/decorator.jpg"></image>
+		<view class="clientList_center">
+			<view class="clientName">
+				<text>田小七</text>
+				<image src="/images/men.jpg"></image>
+			</view>
+			<view class="clientType">建材，家具,智能建材...</view>
+		</view>
+		<view class="clientList_right" style="flex-direction:column;align-items:flex-end;">
+			<view class="edit_icon flexRowBetween">
+				<image src="/images/edit_icon1.jpg"></image>
+				<image src="/images/delete_icon1.jpg"></image>
+			</view>
+			<view class="clientPen weak" style="align-self:flex-end">弱</view>
+		</view>
+	</view>
+	<view class="clientList flexRowBetween" bindtap="clientDetail">
+		<image src="/images/decorator.jpg"></image>
+		<view class="clientList_center">
+			<view class="clientName">
+				<text>田小七</text>
+				<image src="/images/men.jpg"></image>
+			</view>
+			<view class="clientType">建材，家具,智能建材...</view>
+		</view>
+		<view class="clientList_right" style="flex-direction:column;align-items:flex-end;">
+			<view class="edit_icon flexRowBetween">
+				<image src="/images/edit_icon1.jpg"></image>
+				<image src="/images/delete_icon1.jpg"></image>
+			</view>
+			<view class="clientPen weak" style="align-self:flex-end">弱</view>
+		</view>
+	</view>
+</view>
+

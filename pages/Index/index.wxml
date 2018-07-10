@@ -6,70 +6,70 @@
   <image src="/images/banner.jpg"></image>
 </view>
 <view class="indexSort">
-    <view class="sortModel">
-      <image src="/images/sort_icon1.jpg"></image>
+    <view class="sortModel" bindtap="decorateService">
+      <image src="/images/sort_icon2.png"></image>
       <text>家装</text>
+    </view>
+     <view class="sortModel" bindtap="furnitureService">
+      <image src="/images/sort_icon3.png"></image>
+      <text>家具</text>
     </view>
      <view class="sortModel">
-      <image src="/images/sort_icon1.jpg"></image>
-      <text>家装</text>
-    </view>
-     <view class="sortModel">
-      <image src="/images/sort_icon1.jpg"></image>
-      <text>家装</text>
+      <image src="/images/sort_icon4.png"></image>
+      <text>家电</text>
     </view>
     <view class="sortModel">
-      <image src="/images/sort_icon1.jpg"></image>
-      <text>家装</text>
+      <image src="/images/sort_icon5.png"></image>
+      <text>智能家居</text>
     </view>
 </view>
-<view class="indexSort">
-    <view class="sortModel">
-      <image src="/images/sort_icon1.jpg"></image>
-      <text>家装</text>
+<view class="indexSort" style="margin-bottom:35rpx;">
+    <view class="sortModel" bindtap="materials">
+      <image src="/images/sort_icon6.png"></image>
+      <text>建材</text>
     </view>
      <view class="sortModel">
-      <image src="/images/sort_icon1.jpg"></image>
-      <text>家装</text>
+      <image src="/images/sort_icon7.png"></image>
+      <text>软配</text>
     </view>
      <view class="sortModel">
-      <image src="/images/sort_icon1.jpg"></image>
-      <text>家装</text>
+      <image src="/images/sort_icon8.png"></image>
+      <text>其他</text>
     </view>
     <view class="sortModel">
-      <image src="/images/sort_icon1.jpg"></image>
-      <text>家装</text>
+      <image src="/images/sort_icon9.png"></image>
+      <text>敬请期待</text>
     </view>
 </view>
 <view class="container">
     <view class="indexGreat">
         <view class="great_title">
             <text>热门推荐</text>
-            <text class="greatMore">更多 ></text>
+            <text class="greatMore" bindtap="decorateService">更多 ></text>
         </view>
         <view class="great_list">
-            <view class="great_item" bindtap="decorateService">
+            <view class="great_item" bindtap="decorateDetail">
               <image src="/images/decorate1.jpg"></image>
               <view class="decorator">
                 <image src="/images/decorator.jpg"></image>
                 <text>东易日盛装修</text>
               </view>
             </view>
-            <view class="great_item" bindtap="decorateService">
+            <view class="great_item" bindtap="decorateDetail">
               <image src="/images/decorate1.jpg"></image>
               <view class="decorator">
                 <image src="/images/decorator.jpg"></image>
                 <text>东易日盛装修</text>
               </view>
             </view>
-            <view class="great_item" bindtap="decorateService">
+            <view class="great_item" bindtap="decorateDetail">
               <image src="/images/decorate1.jpg"></image>
               <view class="decorator">
                 <image src="/images/decorator.jpg"></image>
                 <text>东易日盛装修</text>
               </view>
             </view>
-            <view class="great_item" bindtap="decorateService">
+            <view class="great_item" bindtap="decorateDetail">
               <image src="/images/decorate1.jpg"></image>
               <view class="decorator">
                 <image src="/images/decorator.jpg"></image>
@@ -81,7 +81,7 @@
     <view class="indexAbout">
         <view class="aboutitle">
             <text>关于我们</text>
-            <image src="/images/kefu.jpg"></image>
+            <image src="/images/kefu.jpg" ></image>
         </view>
         <view class="about_intro" bindtap="aboutDetail">
             <image src="/images/about.jpg"></image>

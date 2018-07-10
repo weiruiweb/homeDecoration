@@ -1,0 +1,38 @@
+.User_cont{background:#f2f2f2}
+.user_top{position:relative;}
+
+.user_top image{width:750rpx;height:300rpx}
+.user_info{position:absolute;left:300rpx;top:45rpx;height:200rpx;text-align:center;}
+.userinfo-avatar {
+  
+  overflow:hidden;
+  display: block;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  width:145rpx;
+  height: 145rpx;
+  margin:0rpx auto 22rpx;
+}
+
+.userName{
+	font-size:32rpx;
+	color:#fff;}
+
+.user_list{
+	background:#fff;
+	padding:0rpx 40rpx 0rpx 50rpx;
+	border-bottom:solid 1px #e2e2e2;
+	height:105rpx;
+	line-height:105rpx;}
+.user_list image{
+	width:28rpx;
+	height:28rpx;
+	margin-right:20rpx;
+	margin-top:38rpx;}
+.user_list text{
+	width:590rpx;
+	color:#4d4d4d;
+	font-size:26rpx;}
+.next_page{width:15rpx;height:29rpx;}
+.next_item{margin-top:20rpx;}

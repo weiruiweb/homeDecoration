@@ -1,0 +1,19 @@
+/**.wxss**/
+.qrcode{
+	margin-top:180rpx;
+	text-align:center;
+
+}
+.qrcode image{
+	width:365rpx;
+	height:365rpx;
+	margin:45rpx auto 100rpx auto;
+}
+.company_name{
+	font-size:38rpx;
+	color:#2e2e2e;
+}
+.notes{
+	font-size:29rpx;
+	color:#999;
+}

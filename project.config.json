@@ -32,12 +32,18 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": -1,
 			"list": [
 				{
-					"id": 0,
+					"id": 1,
 					"name": "111",
 					"pathName": "pages/User/user",
+					"query": ""
+				},
+				{
+					"id": 2,
+					"name": "111",
+					"pathName": "pages/clientDetail/clientDetail",
 					"query": ""
 				}
 			]

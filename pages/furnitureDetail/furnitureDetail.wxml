@@ -16,7 +16,20 @@
 	</view>
 
 </view>
-<view class="detail_cont">
-	运营一家加盟的装饰公司首先看您加盟公司获得的收益，如工艺标准，设计帮助，业务单量及资质挂靠等等。初期尽量节约成本去做一些活动，运营一家加盟的装饰公司首先看您加盟公司获得的收益，如工艺标准，设计帮助，业务单量及资质挂靠等等。初期尽量节约成本去做一些活动，运营一家加盟的装饰公司首先看您加盟公司获得的收益，如工艺标准，设计帮助，业务单量及资质挂靠等等。初期尽量节约成本去做一些活动，
-</view>
-<view class="author">作者:浮生若梦</view>
+<view class="recom_reason">
+			<view class="recom_tltle">推荐理由</view>
+			<view class="reason_intro">
+			推荐原因推荐原因推荐原因推荐原因推荐原因推荐原因
+			推荐原因推荐原因推荐原因推荐原因推荐原因推荐原因推荐原因推荐原因推荐原因推荐原因推荐原因推荐原因
+			</view>
+		</view>
+	<view class="recom_reason">
+			<view class="recom_tltle">佣金积分奖励详情</view>
+			<view class="reason_intro">
+			推荐原因推荐原因推荐原因推荐原因推荐原因推荐原因
+			推荐原因推荐原因推荐原因推荐原因推荐原因推荐原因推荐原因推荐原因推荐原因推荐原因推荐原因推荐原因
+			</view>
+		</view>
+	<view class="recom_other" bindtap="great">
+		推荐客户
+	</view>

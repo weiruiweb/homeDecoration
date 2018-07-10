@@ -16,5 +16,10 @@ Page({
     wx.navigateTo({
       url:"/pages/register/register"
     })
+  },
+  threeUser:function(){
+    wx.navigateTo({
+      url:"/pages/threeUser/threeUser"
+    })
   }
 })

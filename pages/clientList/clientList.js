@@ -12,5 +12,9 @@ Page({
       })
     })
   },
-  
+  clientDetail:function(){
+    wx.navigateTo({
+      url:"/pages/clientDetail/clientDetail"
+    })
+  }
 })
