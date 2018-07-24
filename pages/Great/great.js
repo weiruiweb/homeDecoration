@@ -46,7 +46,7 @@ Page({
     
   },
   backIndex:function(){
-  	wx.navigateTo({
+  	wx.switchTab({
   		url:'/pages/Index/index'
   	})
   }

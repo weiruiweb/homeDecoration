@@ -11,7 +11,10 @@
 	border-radius:0px 0px 3px 3px;
 	text-align:center;
 	margin-top:25rpx;
-	text-align:center;}
+	text-align:center;
+	position:relative;}
+
+.decorate_item:hover.decorate_item .text1{transform:translateY(30rpx;)} 
 .decorate_item image{
 	width:98%;
 	height:244rpx;

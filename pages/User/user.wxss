@@ -1,5 +1,5 @@
 .User_cont{background:#f2f2f2}
-.user_top{position:relative;}
+.user_top{position:relative;height:300rpx;}
 
 .user_top image{width:750rpx;height:300rpx}
 .user_info{position:absolute;left:300rpx;top:45rpx;height:200rpx;text-align:center;}
@@ -34,5 +34,5 @@
 	width:590rpx;
 	color:#4d4d4d;
 	font-size:26rpx;}
-.next_page{width:15rpx;height:29rpx;}
+.user_list .next_page{width:15rpx;height:29rpx;}
 .next_item{margin-top:20rpx;}

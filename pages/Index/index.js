@@ -4,10 +4,18 @@ const app = getApp()
 
 Page({
   data: {
-   
+    multiIndex: [0, 0, 0],
+    
+    region: '西安市',
+    
   },
   //事件处理函数
-  
+  bindRegionChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      region: e.detail.value
+    })
+  },
   onLoad: function () {
     
   },

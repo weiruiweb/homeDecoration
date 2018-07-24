@@ -20,6 +20,10 @@
 	color:#ef4f4f;
 	font-size:24rpx;
 	margin-right:66rpx;
+	transition:all 1s;
+}
+.intention_item:hover{
+	backgorund:#ef4f4f;
 }
 .intention .active{
 	background:#ef4f4f;

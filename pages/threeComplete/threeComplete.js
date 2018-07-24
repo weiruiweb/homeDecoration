@@ -12,5 +12,9 @@ Page({
       })
     })
   },
-  
+  // threeUser:function(){
+  //   wx.navigateTo({
+  //     url:'/pages/threeUser/threeUser'
+  //   })
+  // }
 })

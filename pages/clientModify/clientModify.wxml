@@ -36,15 +36,13 @@
 		<view class="intention_s">
 			意向领域:
 		</view>
-		<view class="intention_c ">
-			<text style="border:none;"  class="active">家具</text>
-			<text>装修</text>
-			<text>家具</text>
-			<text>家具</text>
+		<view class="intention_c">
+			<view wx:for="{{repContent}}" class="inten_item">
+			<text class="{{selectIndex[index].sureid? 'active' : ''}}" data-selectIndex="{{index}}" 
+		      bindtap="selectRep">{{item.message}}</text>
+			</view>
 		</view>
-		<view class="intention_c ">
-			<text style="border:none;" class="active">家具</text>
-		</view>
+		
 	</view>
 	<view class="modiButton flexRowBetween">
 		<button class="submit_input" bindtap="threeUser">提交</button>

@@ -42,5 +42,5 @@
 		</view>
 
 	</view>
-	<button class="submit_input" bindtap="backIndex">提交</button>
+	<view class="submit_input" bindtap="backIndex">提交</view>
 </view>

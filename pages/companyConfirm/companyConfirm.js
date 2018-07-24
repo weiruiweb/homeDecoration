@@ -12,5 +12,9 @@ Page({
       })
     })
   },
-  
+  confirm:function(){
+    wx.switchTab({
+      url:'/pages/User/user'
+    })
+  }
 })

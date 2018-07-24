@@ -13,7 +13,7 @@ Page({
     })
   },
   userPage:function(){
-    wx.navigateTo({
+    wx.switchTab({
       url:'/pages/User/user'
     })
   }

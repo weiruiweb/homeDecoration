@@ -13,7 +13,9 @@
 		</view>
 		<text>智能家居_技术不断创新_智能时智能家居_技术不断创新_智能时...</text>
 	</view>
-	<image src="/images/join1.jpg"></image>
+	<view class="join_img">
+		<image src="/images/join1.jpg"></image>
+	</view>
 </view>
 <view class="join_list" bindtap="joinDetail">
 	<view class="join_left">
@@ -21,6 +23,8 @@
 		</view>
 		<text>智能家居_技术不断创新_智能时智能家居_技术不断创新_智能时...</text>
 	</view>
-	<image src="/images/join1.jpg"></image>
+	<view class="join_img">
+		<image src="/images/join1.jpg"></image>
+	</view>
 </view>
 

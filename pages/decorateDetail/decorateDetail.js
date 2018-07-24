@@ -17,7 +17,7 @@ Page({
   	})
   },
   great:function(){
-    wx.navigateTo({
+    wx.switchTab({
       url:'/pages/Great/great'
     })
   }
