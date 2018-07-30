@@ -26,4 +26,10 @@
 .decorate_address{border-top:1px solid #f2f2f2;height:52rpx;overflow:hidden;}
 .decorate_address image{width:22rpx;height:26rpx;float:left;margin-top:15rpx;}
 .decorate_address text{font-size:20rpx;color:#ccc;text-align:left;}
+.decorate_hidden{
+	display:none;
+}
+.decorate_show{
+	display:block;
+}
 
