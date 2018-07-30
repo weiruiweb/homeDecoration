@@ -1,33 +1,83 @@
 //index.js
 //获取应用实例
-const app = getApp()
+import {Api} from '../../utils/api.js';
+var api = new Api();
 
 Page({
   data: {
-    id:0,
-    pres:[
-      {preX:'木地板'},
-      {preX:'吊顶'},
-      {preX:'木门'},
-      {preX:'橱柜'},
-      {preX:'洁具'},
-    ]
-   
+    num:'361',
+    mainData:[],
+    searchItem:{
+      menu_id:'361'
+    }
   },
   //事件处理函数
-  sort_click:function(e){
-     console.log(e)
-    var ids = e.currentTarget.dataset.id;
+
+
+  menuClick: function (e) {
+    const self = this;
+    const num = e.currentTarget.dataset.num;
+    self.changeSearch(num);
+  },
+
+
+  changeSearch(num){
+    const self = this;
     this.setData({
-      id: ids
-    })
+      num: num
+    });
+    self.data.searchItem.menu_id = num;
+    self.getMainData(true);
   },
-  onLoad: function () {
-    
+
+  onLoad(){
+    const self = this;
+    self.data.paginate = api.cloneForm(getApp().globalData.paginate);
+    self.getMainData()
   },
-  materialsDetail:function(){
-  	wx.navigateTo({
-  		url:"/pages/materialsDetail/materialsDetail"
-  	})
-  }
+
+  getMainData(isNew){
+    const self = this;
+    if(isNew){
+      api.clearPageIndex(self);  
+    };
+    const postData = {};
+    postData.paginate = api.cloneForm(self.data.paginate);
+    postData.searchItem = {
+      thirdapp_id:'59',
+      menu_id:self.data.searchItem.menu_id
+    };
+
+    postData.order = {
+      create_time:'desc'
+    };
+    const callback = (res)=>{
+      if(res.info.data.length>0){
+        self.data.mainData.push.apply(self.data.mainData,res.info.data);
+      }else{
+        self.data.isLoadAll = true;
+        api.showToast('没有更多了','fail');
+      };
+      wx.hideLoading();
+      self.setData({
+        web_mainData:self.data.mainData,
+      });  
+    };
+    api.articleGet(postData,callback);
+  },
+
+  onReachBottom() {
+    const self = this;
+    if(!self.data.isLoadAll){
+      self.data.paginate.currentPage++;
+      self.getMainData();
+    };
+  },
+
+
+  intoPath(e){
+    const self = this;
+    api.pathTo(api.getDataSet(e,'path'),'nav');
+  },
+
 })

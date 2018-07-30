@@ -1,6 +1,6 @@
 /**.wxss**/
 .decorateService{
-	background:#f2f2f2;
+	
 	padding:2% 1%;
 	overflow:hidden;}
 .decorate_item{float:left;

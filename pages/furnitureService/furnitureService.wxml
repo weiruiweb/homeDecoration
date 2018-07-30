@@ -1,72 +1,20 @@
 <view class="nav_sort">
-	<block wx:for="{{pres}}">
-		<view class="sort_item" bindtap='sort_click' data-id="{{index}}">
-			<view  class="{{index == id?'active':''}}" id="sort_click">{{item.preX}}</view>
+	<view data-num="355" class="{{num==355?'active':''}}" bindtap="menuClick" style="text-aligh:center">简中风格</view>
+	<view data-num="356" class="{{num==356?'active':''}}" bindtap="menuClick" style="text-aligh:center">欧式风格</view>
+</view>
+
+<view class="decorateService ">
+	<block wx:for="{{web_mainData}}"  wx:ke="id"> 
+		<view class="decorate_item"  data-path="/pages/decorateDetail/decorateDetail?id={{item.id}}" bindtap="intoPath"> 
+			<image src="{{item.mainImg[0].url}}"></image>
+			<view class="decorate_text">
+				<text class="text1">{{item.title}}</text>
+				<view class="decorate_address">
+					<image src="/images/map_icon1.jpg"></image>
+					<text>{{item.small_title}}</text>
+				</view>
+			</view>
 		</view>
 	</block>
-</view>
-<view class="decorateService furnitrue_hidden {{id == 0?'furnitrue_show':''}}">
-	<view class="decorate_item" bindtap="furnitureDetail">
-		<image src="/images/decorate1.jpg"></image>
-		<view class="decorate_text">
-			<text class="text1">冬日装修</text>
-			<view class="decorate_address">
-				<image src="/images/map_icon1.jpg"></image>
-				<text>陕西省西安市</text>
-			</view>
-		</view>
-	</view>
-	<view class="decorate_item" bindtap="furnitureDetail">
-		<image src="/images/decorate1.jpg"></image>
-		<view class="decorate_text">
-			<text class="text1">冬日装修</text>
-			<view class="decorate_address">
-				<image src="/images/map_icon1.jpg"></image>
-				<text>陕西省西安市</text>
-			</view>
-		</view>
-	</view>
-	<view class="decorate_item" bindtap="furnitureDetail">
-		<image src="/images/decorate1.jpg"></image>
-		<view class="decorate_text">
-			<text class="text1">冬日装修</text>
-			<view class="decorate_address">
-				<image src="/images/map_icon1.jpg"></image>
-				<text>陕西省西安市</text>
-			</view>
-		</view>
-	</view>
-	<view class="decorate_item" bindtap="furnitureDetail">
-		<image src="/images/decorate1.jpg"></image>
-		<view class="decorate_text">
-			<text class="text1">冬日装修</text>
-			<view class="decorate_address">
-				<image src="/images/map_icon1.jpg"></image>
-				<text>陕西省西安市</text>
-			</view>
-		</view>
-	</view>
-</view>
-<view class="decorateService furnitrue_hidden {{id == 1?'furnitrue_show':''}}">
-	<view class="decorate_item" bindtap="furnitureDetail">
-		<image src="/images/decorate1.jpg"></image>
-		<view class="decorate_text">
-			<text class="text1">冬日装修</text>
-			<view class="decorate_address">
-				<image src="/images/map_icon1.jpg"></image>
-				<text>陕西省西安市</text>
-			</view>
-		</view>
-	</view>
-	<view class="decorate_item" bindtap="furnitureDetail">
-		<image src="/images/decorate1.jpg"></image>
-		<view class="decorate_text">
-			<text class="text1">冬日装修</text>
-			<view class="decorate_address">
-				<image src="/images/map_icon1.jpg"></image>
-				<text>陕西省西安市</text>
-			</view>
-		</view>
-	</view>
 </view>
 

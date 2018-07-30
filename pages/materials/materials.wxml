@@ -1,158 +1,22 @@
 <view class="nav_sort">
-	<block wx:for="{{pres}}">
-		<view class="sort_item" bindtap='sort_click' data-id="{{index}}">
-			<view  class="{{index == id?'active':''}}" id="sort_click">{{item.preX}}</view>
+	<view data-num="361" class="{{num==361?'active':''}}" bindtap="menuClick" style="text-aligh:center">木地板</view>
+	<view data-num="362" class="{{num==362?'active':''}}" bindtap="menuClick" style="text-aligh:center">吊顶</view>
+	<view data-num="363" class="{{num==363?'active':''}}" bindtap="menuClick" style="text-aligh:center">木门</view>
+	<view data-num="364" class="{{num==364?'active':''}}" bindtap="menuClick" style="text-aligh:center">橱柜</view>
+	<view data-num="365" class="{{num==365?'active':''}}" bindtap="menuClick" style="text-aligh:center">洁具</view>
+</view>
+
+<view class="decorateService ">
+	<block wx:for="{{web_mainData}}"  wx:key="id"> 
+		<view class="decorate_item"  data-path="/pages/decorateDetail/decorateDetail?id={{item.id}}" bindtap="intoPath"> 
+			<image src="{{item.mainImg[0].url}}"></image>
+			<view class="decorate_text">
+				<text class="text1">{{item.title}}</text>
+				<view class="decorate_address">
+					<image src="/images/map_icon1.jpg"></image>
+					<text>{{item.small_title}}</text>
+				</view>
+			</view>
 		</view>
 	</block>
-</view>
-<view class="decorateService decorate_hidden {{id == 0?'decorate_show':''}}">
-	<view class="decorate_item" bindtap="materialsDetail">
-		<image src="/images/decorate1.jpg"></image>
-		<view class="decorate_text">
-			<text class="text1">冬日装修</text>
-			<view class="decorate_address">
-				<image src="/images/map_icon1.jpg"></image>
-				<text>陕西省西安市</text>
-			</view>
-		</view>
-	</view>
-	<view class="decorate_item" bindtap="materialsDetail">
-		<image src="/images/decorate1.jpg"></image>
-		<view class="decorate_text">
-			<text class="text1">冬日装修</text>
-			<view class="decorate_address">
-				<image src="/images/map_icon1.jpg"></image>
-				<text>陕西省西安市</text>
-			</view>
-		</view>
-	</view>
-</view>
-<view class="decorateService decorate_hidden  {{id == 1?'decorate_show':''}}">
-	<view class="decorate_item" bindtap="materialsDetail">
-		<image src="/images/decorate1.jpg"></image>
-		<view class="decorate_text">
-			<text class="text1">冬日装修</text>
-			<view class="decorate_address">
-				<image src="/images/map_icon1.jpg"></image>
-				<text>陕西省西安市</text>
-			</view>
-		</view>
-	</view>
-	<view class="decorate_item" bindtap="materialsDetail">
-		<image src="/images/decorate1.jpg"></image>
-		<view class="decorate_text">
-			<text class="text1">冬日装修</text>
-			<view class="decorate_address">
-				<image src="/images/map_icon1.jpg"></image>
-				<text>陕西省西安市</text>
-			</view>
-		</view>
-	</view>
-	<view class="decorate_item" bindtap="materialsDetail">
-		<image src="/images/decorate1.jpg"></image>
-		<view class="decorate_text">
-			<text class="text1">冬日装修</text>
-			<view class="decorate_address">
-				<image src="/images/map_icon1.jpg"></image>
-				<text>陕西省西安市</text>
-			</view>
-		</view>
-	</view>
-	<view class="decorate_item" bindtap="materialsDetail">
-		<image src="/images/decorate1.jpg"></image>
-		<view class="decorate_text">
-			<text class="text1">冬日装修</text>
-			<view class="decorate_address">
-				<image src="/images/map_icon1.jpg"></image>
-				<text>陕西省西安市</text>
-			</view>
-		</view>
-	</view>
-</view>
-<view class="decorateService decorate_hidden  {{id == 2?'decorate_show':''}}">
-	<view class="decorate_item" bindtap="materialsDetail">
-		<image src="/images/decorate1.jpg"></image>
-		<view class="decorate_text">
-			<text class="text1">冬日装修</text>
-			<view class="decorate_address">
-				<image src="/images/map_icon1.jpg"></image>
-				<text>陕西省西安市</text>
-			</view>
-		</view>
-	</view>
-	<view class="decorate_item" bindtap="materialsDetail">
-		<image src="/images/decorate1.jpg"></image>
-		<view class="decorate_text">
-			<text class="text1">冬日装修</text>
-			<view class="decorate_address">
-				<image src="/images/map_icon1.jpg"></image>
-				<text>陕西省西安市</text>
-			</view>
-		</view>
-	</view>
-</view>
-<view class="decorateService decorate_hidden  {{id == 3?'decorate_show':''}}">
-	<view class="decorate_item" bindtap="materialsDetail">
-		<image src="/images/decorate1.jpg"></image>
-		<view class="decorate_text">
-			<text class="text1">冬日装修</text>
-			<view class="decorate_address">
-				<image src="/images/map_icon1.jpg"></image>
-				<text>陕西省西安市</text>
-			</view>
-		</view>
-	</view>
-	<view class="decorate_item" bindtap="materialsDetail">
-		<image src="/images/decorate1.jpg"></image>
-		<view class="decorate_text">
-			<text class="text1">冬日装修</text>
-			<view class="decorate_address">
-				<image src="/images/map_icon1.jpg"></image>
-				<text>陕西省西安市</text>
-			</view>
-		</view>
-	</view>
-	<view class="decorate_item" bindtap="materialsDetail">
-		<image src="/images/decorate1.jpg"></image>
-		<view class="decorate_text">
-			<text class="text1">冬日装修</text>
-			<view class="decorate_address">
-				<image src="/images/map_icon1.jpg"></image>
-				<text>陕西省西安市</text>
-			</view>
-		</view>
-	</view>
-	<view class="decorate_item" bindtap="materialsDetail">
-		<image src="/images/decorate1.jpg"></image>
-		<view class="decorate_text">
-			<text class="text1">冬日装修</text>
-			<view class="decorate_address">
-				<image src="/images/map_icon1.jpg"></image>
-				<text>陕西省西安市</text>
-			</view>
-		</view>
-	</view>
-</view>
-<view class="decorateService decorate_hidden  {{id == 4?'decorate_show':''}}">
-	<view class="decorate_item" bindtap="materialsDetail">
-		<image src="/images/decorate1.jpg"></image>
-		<view class="decorate_text">
-			<text class="text1">冬日装修</text>
-			<view class="decorate_address">
-				<image src="/images/map_icon1.jpg"></image>
-				<text>陕西省西安市</text>
-			</view>
-		</view>
-	</view>
-	<view class="decorate_item" bindtap="materialsDetail">
-		<image src="/images/decorate1.jpg"></image>
-		<view class="decorate_text">
-			<text class="text1">冬日装修</text>
-			<view class="decorate_address">
-				<image src="/images/map_icon1.jpg"></image>
-				<text>陕西省西安市</text>
-			</view>
-		</view>
-	</view>
-	
 </view>

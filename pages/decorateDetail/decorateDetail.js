@@ -1,24 +1,56 @@
 //index.js
 //获取应用实例
-const app = getApp()
+import {Api} from '../../utils/api.js';
+var api = new Api();
 
 Page({
+
+  /**
+   * 页面的初始数据
+   */
   data: {
-   
-  },
-  //事件处理函数
-  
-  onLoad: function () {
     
+    mainData:[]
+
   },
-  decorateDetail:function(){
-  	wx.navigateTo({
-  		url:"/pages/decorateDetail/decorateDetail"
-  	})
+    
+
+  onLoad(options){
+    const self = this;
+    self.data.paginate = api.cloneForm(getApp().globalData.paginate);
+    self.data.id = options.id;
+    self.getMainData();
   },
-  great:function(){
-    wx.switchTab({
-      url:'/pages/Great/great'
-    })
-  }
+
+  getMainData(isNew){
+    const self = this;
+    if(isNew){
+      api.clearPageIndex(self);  
+    };
+    const postData = {};
+    postData.paginate = api.cloneForm(self.data.paginate);
+    postData.searchItem = {
+      thirdapp_id:'59',
+    };
+    postData.searchItem.id = self.data.id;
+    const callback = (res)=>{
+      self.data.mainData = res
+      wx.hideLoading();
+      self.data.mainData.content = api.wxParseReturn(res.info.data[0].content).nodes;
+      self.setData({
+        web_mainData:self.data.mainData,
+      });  
+    };
+    api.articleGet(postData,callback);
+  },
+
+
+
+
+  intoPath(e){
+    const self = this;
+    api.pathTo(api.getDataSet(e,'path'),'nav');
+  },
+
+  
 })
