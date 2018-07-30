@@ -33,8 +33,8 @@ Page({
     
   },
   joinDetail:function(){
-  	wx.navigateTo({
-  		url:'/pages/joinDetail/joinDetail'
-  	})
+    wx.navigateTo({
+      url:'/pages/joinDetail/joinDetail'
+    })
   }
 })

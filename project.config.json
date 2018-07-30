@@ -13,7 +13,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.1.1",
 	"appid": "touristappid",
-	"projectname": "jiazhuang1",
+	"projectname": "%E5%AE%B6%E8%A3%85%E4%BF%AE%E6%94%B9",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -32,10 +32,10 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 0,
 			"list": [
 				{
-					"id": 1,
+					"id": 0,
 					"name": "111",
 					"pathName": "pages/User/user",
 					"query": ""
@@ -44,6 +44,12 @@
 					"id": 2,
 					"name": "111",
 					"pathName": "pages/clientDetail/clientDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "111",
+					"pathName": "pages/Join/join",
 					"query": ""
 				}
 			]

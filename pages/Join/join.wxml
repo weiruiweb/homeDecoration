@@ -6,25 +6,75 @@
 		</view>
 	</block>
 </view>
-
-<view class="join_list" bindtap="joinDetail">
-	<view class="join_left">
-		<view class="join_tlt">智能家居_技术不断创新_智能时...
+<view class="join_items  {{id == 0?'joinShow':''}}">
+	<view class="join_list" bindtap="joinDetail">
+		<view class="join_left">
+			<view class="join_tlt">智能家居_技术不断创新_智能时...
+			</view>
+			<text>智能家居_技术不断创新_智能时智能家居_技术不断创新_智能时...</text>
 		</view>
-		<text>智能家居_技术不断创新_智能时智能家居_技术不断创新_智能时...</text>
+		<image src="/images/join1.jpg"></image>
 	</view>
-	<view class="join_img">
+	<view class="join_list" bindtap="joinDetail">
+		<view class="join_left">
+			<view class="join_tlt">智不断创新_智能时...
+			</view>
+			<text>智能家居_技术不断创新_智能时智能家居_技术不断创新_智能时...</text>
+		</view>
 		<image src="/images/join1.jpg"></image>
 	</view>
 </view>
-<view class="join_list" bindtap="joinDetail">
-	<view class="join_left">
-		<view class="join_tlt">智能家居_技术不断创新_智能时...
+<view class="join_items {{id == 1?'joinShow':''}}">
+	<view class="join_list" bindtap="joinDetail">
+		<view class="join_left">
+			<view class="join_tlt">智创新_智能时...
+			</view>
+			<text>智能家居_技术不断创新_智能时智能家居_技术不断创新_智能时...</text>
 		</view>
-		<text>智能家居_技术不断创新_智能时智能家居_技术不断创新_智能时...</text>
+		<image src="/images/join1.jpg"></image>
 	</view>
-	<view class="join_img">
+	<view class="join_list" bindtap="joinDetail">
+		<view class="join_left">
+			<view class="join_tlt">智能家居_技术不断创新_智能时...
+			</view>
+			<text>智能家居_技术不断创新_智能时智能家居_技术不断创新_智能时...</text>
+		</view>
 		<image src="/images/join1.jpg"></image>
 	</view>
 </view>
-
+<view class="join_items {{id == 2?'joinShow':''}}">
+	<view class="join_list" bindtap="joinDetail">
+		<view class="join_left">
+			<view class="join_tlt">智能家居_技术不断创新_智能时...
+			</view>
+			<text>智能家居_技术不断创新_智能时智能家居_技术不断创新_智能时...</text>
+		</view>
+		<image src="/images/join1.jpg"></image>
+	</view>
+	<view class="join_list" bindtap="joinDetail">
+		<view class="join_left">
+			<view class="join_tlt">智能家居_技术不断创新_智能时...
+			</view>
+			<text>智能家居_技术不断创新_智能时智能家居_技术不断创新_智能时...</text>
+		</view>
+		<image src="/images/join1.jpg"></image>
+	</view>
+</view>
+<view class="join_items {{id == 3?'joinShow':''}}">
+	<view class="join_list" bindtap="joinDetail">
+		<view class="join_left">
+			<view class="join_tlt">智能家居_技术不断创新_智能时...
+			</view>
+			<text>智能家居_技术不断创新_智能时智能家居_技术不断创新_智能时...</text>
+		</view>
+		<image src="/images/join1.jpg"></image>
+	</view>
+	<view class="join_list" bindtap="joinDetail">
+		<view class="join_left">
+			<view class="join_tlt">智能家居_技术不断创新_智能时...
+			</view>
+			<text>智能家居_技术不断创新_智能时智能家居_技术不断创新_智能时...</text>
+		</view>
+		<image src="/images/join1.jpg"></image>
+	</view>
+</view>

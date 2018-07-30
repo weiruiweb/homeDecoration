@@ -1,9 +1,9 @@
 /**index.wxss**/
 
 .join_list{
-		flex-direction:row;
-	display:flex;
-	justify-content:space-between;
+    flex-direction:row;
+  display:flex;
+  justify-content:space-between;
 padding:40rpx 28rpx 28rpx;border-bottom:solid 1px #f2f2f2;}
 .join_left{width:450rpx;margin-right:30rpx;}
 .join_tlt{font-size:30rpx;color:#2e2e2e;}
@@ -68,6 +68,9 @@ padding:40rpx 28rpx 28rpx;border-bottom:solid 1px #f2f2f2;}
 
 
  .multi-selection .active{color:red;}
- .join_img image{transition:0.5s ease-in-out;}
-.join_img:hover.join_img image{transform:scale(1.1) translateY(10rpx);}
-.join_img{width:214rpx;height:168rpx;overflow:hidden;}
+ .join_items{
+ display:none;
+ }
+ .joinShow{
+ display:block;
+ }
