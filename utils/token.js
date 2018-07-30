@@ -97,7 +97,7 @@ class Token {
                     method:'POST',
                     data:postData,
                     success:function(res){
-                        if(res.data&&res.data.token){
+                        if(res.data&&res.data.solely_code==100000){
                             wx.setStorageSync('token', res.data.token);
                             wx.setStorageSync('openid', res.data.openid);
                             if(params&&callback){
