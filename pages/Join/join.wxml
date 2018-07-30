@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="nav_sort">
-	<block wx:for="{{pres}}">
+	<block wx:for="{{pres}}" wx:key="id">
 		<view class="sort_item" bindtap='sort_click' data-id="{{index}}">
 			<view  class="{{index == id?'active':''}}" id="sort_click">{{item.preX}}</view>
 		</view>

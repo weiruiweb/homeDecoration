@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -12,8 +12,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.1.1",
-	"appid": "touristappid",
-	"projectname": "%E5%AE%B6%E8%A3%85%E4%BF%AE%E6%94%B9",
+	"appid": "wx5d82471ed11f861d",
+	"projectname": "jzyz",
 	"condition": {
 		"search": {
 			"current": -1,

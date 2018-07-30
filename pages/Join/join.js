@@ -20,7 +20,7 @@ Page({
           }
         ],
     },   
-   sort_click: function (e) {
+  sort_click: function (e) {
     console.log(e)
     var ids = e.currentTarget.dataset.id;
     this.setData({
@@ -32,6 +32,7 @@ Page({
   onLoad: function () {
     
   },
+  
   joinDetail:function(){
     wx.navigateTo({
       url:'/pages/joinDetail/joinDetail'
