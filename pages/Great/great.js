@@ -25,10 +25,11 @@ Page({
       title:'',
       keywords:'',
       phone:'',
-      gender:'',
+      gender:1,
       type:4,
       content:'',
-      score:''
+      score:1,
+      relation_id:''
     },
 
     sexItem:[
@@ -77,7 +78,11 @@ Page({
   },
   
   onLoad: function () {
-    
+    const self = this;
+    self.labelGetTwo();
+    self.setData({
+      web_submitData:self.data.submitData
+    })
   },
 
   backIndex:function(){
@@ -115,12 +120,81 @@ Page({
 
   changeBind(e){
     const self = this;
-    api.fillChange(e,self,'submitData');
+    console.log(e);
+    if(api.getDataSet(e,'value')){
+      self.data.submitData[api.getDataSet(e,'key')] = api.getDataSet(e,'value');
+    }else{
+      api.fillChange(e,self,'submitData');
+    };
+
     console.log(self.data.submitData);
     self.setData({
       web_submitData:self.data.submitData,
-    });    
+    }); 
+
+    if(api.getDataSet(e,'key')=='keywords'&&self.data.submitData.keywords){
+      console.log(self.data.timeFunc);
+      if(self.data.timeFunc){
+        return;
+      };
+      self.data.timeFunc = setTimeout(function(){
+        self.labelGet(self.data.submitData.keywords);
+        self.data.timeFunc = false;
+      },1000);
+    };
+
+    if(!self.data.submitData.keywords){
+      self.data.lock = true;
+    };
+
   },
+
+
+  labelGet(Name){
+    const self = this;
+    const postData = {
+      searchItem:{
+        title:['LIKE',['%'+Name+'%']],
+        thirdapp_id:59,
+        type:9
+      }
+    };
+    const callback = (res)=>{
+      console.log(res);
+      if(!self.data.lock){
+        if(res.info.data.length>0){
+          self.data.submitData.keywords = res.info.data[0].title;
+          self.data.submitData.relation_id = res.info.data[0].id;
+        }else{
+          api.showToast('公司不存在','fail');
+        };
+        self.setData({
+          web_submitData:self.data.submitData,
+        });
+      }else{
+        self.data.lock = false;
+      }
+      
+    };
+    api.labelGet(postData,callback);
+  },
+
+  labelGetTwo(Name){
+    const self = this;
+    const postData = {
+      searchItem:{
+        thirdapp_id:59,
+        parentid:352
+      }
+    };
+    const callback = (res)=>{
+      console.log(res);
+      self.setData({
+        web_labelData:res.info.data
+      });
+    };
+    api.labelGet(postData,callback);
+  }
 
 
 

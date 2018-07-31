@@ -11,12 +11,17 @@
 
 	<view class="flexRowBetween" style="justify-content:flex-start">
 		<text class="inputLabel">性别:</text>
-		<radio-group class="group_radio"  data-key="gender" bindchange="changeBind" style="margin-left:100rpx;line-height:80rpx">
-        <radio id="man" checked="{{web_submitData.gender=='1'?true:''}}" class='sex_class' value="1" name="sex" ></radio>
-        <label style="font-size:30rpx"><text>男</text></label>
-        <radio id="woman" checked="{{web_submitData.gender=='0'?true:''}}" class='sex_class' value="0" name="sex" style="margin-left:60rpx" ></radio>
-        <label style="font-size:30rpx"><text>女</text></label>
-   		</radio-group>
+		<view data-value="1" data-key="gender" bindtap="changeBind">
+			<image src="{{web_submitData.gender=='1'?'/images/radio-active.png':'/images/radio.png'}}" style="width:40rpx;height:40rpx;margin-right:20rpx" ></image>
+      		<view style="font-size:15px">男</view>
+		</view>
+   		
+		<view data-value="0" data-key="gender" bindtap="changeBind">
+			<image src="{{web_submitData.gender=='0'?'/images/radio-active.png':'/images/radio.png'}}" style="width:40rpx;height:40rpx;margin-right:20rpx" ></image>
+      		<view style="font-size:15px">女</view>
+		</view>
+      	
+
 	</view>
 
 	<view class="flexRowBetween">
@@ -29,7 +34,7 @@
 	<view class="flexRowBetween">
 		<text class="inputLabel">意向公司:</text>
 		<view class="greatInput">
-			<input type="text" bindblur="changeBind" data-key="keywords" value="{{web_submitData.keywords}}"></input>
+			<input type="text" bindinput="changeBind" data-key="keywords" value="{{web_submitData.keywords}}"></input>
 		</view>
 	</view>
 
@@ -38,16 +43,16 @@
 			意向强度:
 		</view>
 		<view class="intention_sort flexRowBetween" >
-			<view class="intention_item" data-key="score" bindtap="changeBind" >
-				<view class="{{web_submitData.score == '1'?'active':''}}" value="1" name="purpose">弱</view>
+			<view class="intention_item"  >
+				<view class="{{web_submitData.score == '1'?'active':''}}" data-value="1" data-key="score" bindtap="changeBind"  >弱</view>
 			</view>
 
-			<view class="intention_item" data-key="score" bindtap="changeBind">
-				<view class="{{web_submitData.score == '2'?'active':''}}"  value="2" name="purpose">一般</view>
+			<view class="intention_item" >
+				<view class="{{web_submitData.score == '2'?'active':''}}"  data-value="2" data-key="score" bindtap="changeBind"  >一般</view>
 			</view>
 
-			<view class="intention_item" data-key="score" bindtap="changeBind" >
-				<view class="{{web_submitData.score == '3'?'active':''}}" value="3" name="purpose">强</view>
+			<view class="intention_item" >
+				<view class="{{web_submitData.score == '3'?'active':''}}" data-value="3" data-key="score" bindtap="changeBind" >强</view>
 			</view>		
 		</view>
 	</view>
@@ -57,9 +62,8 @@
 			意向领域:
 		</view>
 		<view class="intention_c">
-			<view wx:for="{{repContent}}" class="inten_item">
-			<text class="{{selectIndex[index].sureid? 'active' : ''}}" data-selectIndex="{{index}}" 
-		      bindtap="selectRep">{{item.message}}</text>
+			<view wx:for="{{web_labelData}}" class="inten_item">
+			<text class="{{web_submitData.content == item.title? 'active' : ''}}" data-value="{{item.title}}" data-key="content" bindtap="changeBind" >{{item.title}}</text>
 			</view>
 		</view>
 	</view>
