@@ -42,3 +42,13 @@
 	border-left:solid 1px #b4b4b4;
 	margin-bottom:50rpx;
 	}
+.radio-group {
+    
+    display:flex;
+    
+}
+.radio {
+    display: block;
+    
+    padding: 5px;
+}

@@ -389,6 +389,56 @@ class Api extends Base{
     }  
 
 
+
+    messageGet(param,callback){
+        var allParams ={
+            url:'Common/Message/get',
+            type:'post',
+            data:param,
+            sCallback: function(data) {
+                callback && callback(data);
+            }
+        };
+        this.request(allParams);
+    }
+
+    messageUpdate(param,callback){
+        var allParams ={
+            url:'Common/Message/update',
+            type:'post',
+            data:param,
+            sCallback: function(data) {
+                callback && callback(data);
+            }
+        };
+        this.request(allParams);
+    }
+
+    messageAdd(param,callback){
+        var allParams ={
+            url:'Common/Message/add',
+            type:'post',
+            data:param,
+            sCallback: function(data) {
+                callback && callback(data);
+            }
+        };
+        this.request(allParams);
+    }
+
+    messageCompute(param,callback){
+        var allParams ={
+            url:'Common/Message/compute',
+            type:'post',
+            data:param,
+            sCallback: function(data) {
+                callback && callback(data);
+            }
+        };
+        this.request(allParams);
+    }  
+
+
     tokenGet(param,callback) {
         var allParams = {
             url:'token/user',

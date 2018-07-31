@@ -1,18 +1,18 @@
 <view class="login">
 	<view class="login_item flexRowBetween">
 		<text class="nameInput">姓名:</text>
-		<input class="login_input"></input>
+		<input class="login_input"  data-key="login_name" bindchange="bindInputChange" ></input>
 	</view>
 	<view class="login_item flexRowBetween">
 		<text class="nameInput">手机号:</text>
-		<input class="login_input"></input>
+		<input class="login_input" data-key="password" bindchange="bindInputChange"></input>
 	</view>
 	<view class="login_item flexRowBetween">
 		<text class="nameInput">验证码:</text>
 		<input class="login_input" style="width:350rpx;margin-left:38rpx;"></input>
 		<button style="">获取验证码</button>
 	</view>
-	<button class="submit_input" bindtap="threeUser">登录</button>
+	<button class="submit_input" bindtap="check">登录</button>
 	<view class="notice_reg" bindtap="register">还没注册吗？请立即注册</view>
 </view>
 

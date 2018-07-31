@@ -1,6 +1,7 @@
 //index.js
 //获取应用实例
-const app = getApp()
+import {Api} from '../../utils/api.js';
+var api = new Api();
 
 Page({
   data: {
@@ -19,9 +20,42 @@ Page({
       { sureid: false },
     ],
 
-    purpose:[{preX:'弱'},{preX:'一般'},{preX:'强'}],
 
-    choose_id:0,
+    submitData:{
+      title:'',
+      keywords:'',
+      phone:'',
+      gender:'',
+      type:4,
+      content:'',
+      score:''
+    },
+
+    sexItem:[
+      {
+          name:'男',
+          value:'1'
+      },
+      {
+          name:'女',
+          value:'0'
+      }
+    ],
+
+    purposeItem:[
+      {
+          name:'弱',
+          value:'1'
+      },
+      {
+          name:'一般',
+          value:'2'
+      },
+      {
+          name:'强',
+          value:'3'
+      },
+    ]
   },
 
   purpose_choose:function(e){
@@ -45,9 +79,49 @@ Page({
   onLoad: function () {
     
   },
+
   backIndex:function(){
   	wx.switchTab({
   		url:'/pages/Index/index'
   	})
-  }
+  },
+
+  messageAdd(){
+    const self = this;
+    const postData = {};
+    postData.token = wx.getStorageSync('token');
+    postData.data = {};
+    postData.data = api.cloneForm(self.data.submitData);
+    const callback = (data)=>{
+      wx.hideLoading();
+      api.dealRes(data);
+    };
+    api.messageAdd(postData,callback);
+  },
+
+  submit(){
+    const self = this;
+    const pass = api.checkComplete(self.data.submitData);
+    if(pass){
+      wx.showLoading();
+   /*   const callback = (res) =>{
+        console.log(res)*/
+        self.messageAdd();
+     /* };*/
+    }else{
+      api.showToast('请补全信息','fail');
+    };
+  },
+
+  changeBind(e){
+    const self = this;
+    api.fillChange(e,self,'submitData');
+    console.log(self.data.submitData);
+    self.setData({
+      web_submitData:self.data.submitData,
+    });    
+  },
+
+
+
 })

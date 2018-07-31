@@ -11,7 +11,7 @@ Page({
       menu_id:'361'
     }
   },
-  //事件处理函数
+
 
 
   menuClick: function (e) {

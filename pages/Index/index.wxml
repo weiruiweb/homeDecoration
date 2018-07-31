@@ -12,14 +12,14 @@
   <image src="/images/banner.jpg"></image>
 </view>
 <view class="indexSort">
-    <view class="sortModel" bindtap="decorateService">
+    <view class="sortModel" data-path="/pages/decorateService/decorateService" bindtap="intoPath">
       <view class="img_animate model1">
         <image src="/images/index_icon1.png" class="imageFirst"></image>
         <image src="/images/index_icon1_a.png"  class="imageTwo"></image>
       </view>
       <text>家装</text>
     </view>
-     <view class="sortModel" bindtap="furnitureService">
+     <view class="sortModel" data-path="/pages/furnitureService/furnitureService" bindtap="intoPath">
       <view class="img_animate model2">
         <image src="/images/index_icon2.png" class="imageFirst"></image>
         <image src="/images/index_icon2_a.png"  class="imageTwo"></image>
@@ -41,7 +41,7 @@
       <text>智能家居</text>
     </view>
 </view>
-<view class="indexSort" style="margin-bottom:35rpx;">
+<view class="indexSort" style="margin-bottom:35rpx;" data-path="/pages/materials/materials" bindtap="intoPath">
     <view class="sortModel" bindtap="materials">
       <view class="img_animate model5">
         <image src="/images/index_icon5.png" class="imageFirst"></image>
@@ -75,11 +75,11 @@
     <view class="indexGreat">
         <view class="great_title">
             <text>热门推荐</text>
-            <text class="greatMore" bindtap="decorateService">更多 ></text>
+            <text class="greatMore" >更多 ></text>
         </view>
         <view class="great_list">
             <block wx:for="{{web_mainData}}"  wx:key="id">
-              <view class="great_item" bindtap="decorateDetail">
+              <view class="great_item" data-path="/pages/decorateDetail/decorateDetail?id={{item.id}}" bindtap="intoPath">
                 <view class="great_caseImg">
                   <image src="{{item.mainImg[0].url}}"></image>
                 </view>
@@ -96,7 +96,7 @@
             <text>关于我们</text>
             <image src="/images/kefu.jpg" ></image>
         </view>
-        <view class="about_intro" bindtap="aboutDetail">
+        <view class="about_intro" data-path="/pages/aboutDetail/aboutDetail" bindtap="intoPath">
             <image src="/images/about.jpg"></image>
             <text>家装E站家装E站家装E站家装E站家装E站家装E站家装E站家装E站家装E站家装E站家装E站家装E站家装E站家装E站家装E站家装E站家装E站家装E站家装E站家装E站家装E站家装E站家装E站家装E站</text>
         </view>

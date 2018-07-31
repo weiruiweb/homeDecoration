@@ -133,16 +133,15 @@ class Token {
             }
 
             wx.request({
-                url: 'http://solelytech.iicp.net/jzyz/public/api/v1/Base/ProgrameToken/get',
+                url: 'http://solelytech.iicp.net/jzyz/public/api/v1/Func/Common/loginByUp',
                 method:'POST',
                 data:postData,
                 success:function(res){
                     console.log(res)
                     if(res.data&&res.data.token){
-                        wx.setStorageSync('token', res.data.token);
+                        wx.setStorageSync('threeToken', res.data.token);
                         var login = wx.getStorageSync('login');   
                         wx.setStorageSync('login',login);
-                        wx.setStorageSync('type',res.data.info.type);
                         if(params&&callback){  
                             params.data.token = res.data.token;
                              
@@ -175,7 +174,7 @@ class Token {
             })
         }else{
             wx.redirectTo({
-              url: '/pages/index/index'
+              url: '/pages/Index/index'
             });
         };
         

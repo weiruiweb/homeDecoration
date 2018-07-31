@@ -4,42 +4,22 @@
 	<view class="nowMoney">
 		<text>当前积分：</text>
 		<view class="moneyNumber">
-			¥<text>4900.00</text>
+			<text>{{web_user.info.data[0].info.score}}.00</text>
 		</view>
 	</view>
-	<view class="record_list flexRowBetween">
-		<view class="recordName">
-			<view>我是田小七</view>
-			<view class="recordTime">
-				2018-9-9
+	<block wx:for="{{web_mainData}}" wx:key="id">
+		<view class="record_list flexRowBetween">	
+			<view class="recordName">
+				<view>{{item.trade_info}}</view>
+				<view class="recordTime">
+					{{item.create_time}}
+				</view>
+			</view>
+			<view class="record_money">
+				{{item.count}}
 			</view>
 		</view>
-		<view class="record_money">
-			¥899.00
-		</view>
-	</view>
-	<view class="record_list flexRowBetween">
-		<view class="recordName">
-			<view>我是田小七</view>
-			<view class="recordTime">
-				2018-9-9
-			</view>
-		</view>
-		<view class="record_money">
-			¥899.00
-		</view>
-	</view>
-	<view class="record_list flexRowBetween">
-		<view class="recordName">
-			<view>我是田小七</view>
-			<view class="recordTime">
-				2018-9-9
-			</view>
-		</view>
-		<view class="record_money">
-			¥899.00
-		</view>
-	</view>
+	</block>
 </view>
 
 
