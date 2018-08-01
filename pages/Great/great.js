@@ -85,7 +85,6 @@ Page({
 
   changeBind(e){
     const self = this;
-    console.log(e);
     if(api.getDataSet(e,'value')){
       self.data.submitData[api.getDataSet(e,'key')] = api.getDataSet(e,'value');
     }else{
@@ -98,7 +97,6 @@ Page({
     }); 
 
     if(api.getDataSet(e,'key')=='keywords'&&self.data.submitData.keywords){
-      console.log(self.data.timeFunc);
       if(self.data.timeFunc){
         return;
       };
@@ -125,7 +123,6 @@ Page({
       }
     };
     const callback = (res)=>{
-      console.log(res);
       if(!self.data.lock){
         if(res.info.data.length>0){
           self.data.submitData.keywords = res.info.data[0].title;
@@ -154,7 +151,6 @@ Page({
       }
     };
     const callback = (res)=>{
-      console.log(res);
       self.setData({
         web_labelData:res.info.data
       });

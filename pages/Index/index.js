@@ -30,8 +30,6 @@ Page({
   },
 
 
- 
-    
 
   onLoad(){
     const self = this;

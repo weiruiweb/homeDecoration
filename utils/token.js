@@ -81,6 +81,7 @@ class Token {
         var self  = this;
         wx.login({
             success: function (res) {
+                console.log(res)
                 var postData = {};
                 postData.thirdapp_id = getApp().globalData.thirdapp_id;
                 postData.code = res.code;
@@ -97,7 +98,7 @@ class Token {
                     method:'POST',
                     data:postData,
                     success:function(res){
-                        console.log(res)
+                      
                         if(res.data&&res.data.solely_code==100000){
                             wx.setStorageSync('info',res.data.info);
                             wx.setStorageSync('token', res.data.token);
