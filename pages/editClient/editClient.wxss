@@ -1,5 +1,5 @@
-.User_cont{background:#f2f2f2;width:100%;height:100%;}
-.clientList{padding:40rpx 22rpx;background:#fff;margin-top:5rpx;}
+.User_cont{width:100%;height:100%;}
+.clientList{padding:40rpx 22rpx;margin-top:5rpx;}
 .clientList image{width:124rpx;height:124rpx;}
 .clientList_center{width:360rpx;}
 .clientList_right{width:170rpx;}
@@ -15,8 +15,8 @@
 }
 .clientName text{float:left;margin-right:26rpx;}
 .clientName image{
-  width:23rpx;
-  height:23rpx;
+  width:30rpx;
+  height:30rpx;
 }
 .clientPen{
   width:80rpx;
@@ -43,6 +43,41 @@
 .general{background:#ef4f4f;}
 .weak{background:#f09091;}
 .edit_icon image{
-    width:28rpx;
-    height:28rpx;
+    width:40rpx;
+    height:40rpx;
+}
+
+.decorateService{
+  
+  padding:2% 1%;
+  overflow:hidden;}
+.decorate_item{float:left;
+  overflow:hidden;
+  background:#fff;
+  padding:0 1%;
+  width:48%;
+  border-radius:0px 0px 3px 3px;
+  text-align:center;
+  margin-top:25rpx;
+  text-align:center;
+  position:relative;}
+
+.decorate_item:hover.decorate_item .text1{transform:translateY(30rpx;)} 
+.decorate_item image{
+  width:98%;
+  height:244rpx;
+  display:block;
+  margin:0 auto;}
+.decorate_text{padding:0rpx 30rpx;}
+.decorate_item .text1{height:64rpx;
+    line-height:64rpx;
+    text-align:center;
+    color:#2e2e2e;
+    font-size:22rpx;}
+.decorate_address{border-top:1px solid #f2f2f2;height:52rpx;overflow:hidden;}
+.decorate_address image{width:22rpx;height:26rpx;float:left;margin-top:15rpx;}
+.decorate_address text{font-size:20rpx;color:#ccc;text-align:left;}
+.furnitrue_hidden{display:none}
+.furnitrue_show{
+  display:block;
 }

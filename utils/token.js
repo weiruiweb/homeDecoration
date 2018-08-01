@@ -45,12 +45,12 @@ class Token {
                             success: function(res) {                     
                                    wxUserInfo = res.userInfo;
                                 self.getTokenFromServer(wxUserInfo,params,callback);
-                                self.getToken(callback,params)
+                               
                             }
                         });
                     }else{
                         self.getTokenFromServer(wxUserInfo,params,callback);
-                        self.getToken(callback,params)
+                        
                     }
                 },
                 fail: res=>{
@@ -67,7 +67,7 @@ class Token {
                 success: function(res) {
                     wxUserInfo = res.userInfo;
                     self.getTokenFromServer(wxUserInfo,params,callback);
-                    self.getToken(callback,params)   
+                   
                     
                 }
             });
@@ -97,7 +97,9 @@ class Token {
                     method:'POST',
                     data:postData,
                     success:function(res){
+                        console.log(res)
                         if(res.data&&res.data.solely_code==100000){
+                            wx.setStorageSync('info',res.data.info);
                             wx.setStorageSync('token', res.data.token);
                             wx.setStorageSync('openid', res.data.openid);
                             if(params&&callback){

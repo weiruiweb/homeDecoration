@@ -22,7 +22,7 @@ Page({
     const self = this;
     wx.setStorageSync('login',self.data.sForm);
     const callback = (res)=>{  
-    wx.setStorageSync('info',res.data.info);  
+    wx.setStorageSync('threeInfo',res.data.info);  
       if(res){
         wx.navigateTo({
           url: '/pages/threeUser/threeUser'
@@ -32,7 +32,6 @@ Page({
         api.showToast('用户不存在','fail')
       }
     }
-
     token.getToken(callback);
   },
 

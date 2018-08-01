@@ -9,7 +9,13 @@
   </picker>
 </view>
 <view class="mainImage">
-  <image src="/images/banner.jpg"></image>
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" >
+    <block wx:for="{{web_sliderData.info.data[0].mainImg}}" wx:key="id">
+      <swiper-item>
+          <image src="{{item.url}}" />
+      </swiper-item>
+    </block>
+  </swiper>
 </view>
 <view class="indexSort">
     <view class="sortModel" data-path="/pages/decorateService/decorateService" bindtap="intoPath">
@@ -96,9 +102,8 @@
             <text>关于我们</text>
             <image src="/images/kefu.jpg" ></image>
         </view>
-        <view class="about_intro" data-path="/pages/aboutDetail/aboutDetail" bindtap="intoPath">
-            <image src="/images/about.jpg"></image>
-            <text>家装E站家装E站家装E站家装E站家装E站家装E站家装E站家装E站家装E站家装E站家装E站家装E站家装E站家装E站家装E站家装E站家装E站家装E站家装E站家装E站家装E站家装E站家装E站家装E站</text>
+        <view class="about_intro" data-path="/pages/aboutDetail/aboutDetail?id={{web_artData.id}}" bindtap="intoPath" style="margin-bottom:10rpx">
+            <image src="{{web_artData.mainImg[0].url}}" ></image>
         </view>
     </view>
 </view>

@@ -12,11 +12,11 @@
 	<view class="userInfo">
 		<view class="userdetail_list flexRowBetween">
 			<text>公司名称:</text>
-			<input type="text" value="{{web_sForm.title}}" ></input>
+			<input type="text" value="{{web_sForm.title}}" disabled="true"></input>
 		</view>
 		<view class="userdetail_list flexRowBetween" bindtap="company_adrress">
 			<text>公司地址:</text>
-			<input type="text" value="{{web_sForm.description}}" ></input>
+			<input type="text" value="{{web_sForm.description}}" disabled="true"></input>
 		</view>
 		<view class="userdetail_list flexRowBetween">
 			<text>联系方式:</text>

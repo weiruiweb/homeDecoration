@@ -11,12 +11,12 @@
 
 	<view class="flexRowBetween" style="justify-content:flex-start">
 		<text class="inputLabel">性别:</text>
-		<view data-value="1" data-key="gender" bindtap="changeBind">
-			<image src="{{web_submitData.gender=='1'?'/images/radio-active.png':'/images/radio.png'}}" style="width:40rpx;height:40rpx;margin-right:20rpx" ></image>
+		<view data-value="1" data-key="gender" bindtap="changeBind" style="display:flex;margin-left:100rpx;align-items:center">
+			<image src="{{web_submitData.gender=='1'?'/images/radio-active.png':'/images/radio.png'}}" style="width:40rpx;height:40rpx;margin-right:20rpx;" ></image>
       		<view style="font-size:15px">男</view>
 		</view>
    		
-		<view data-value="0" data-key="gender" bindtap="changeBind">
+		<view data-value="0" data-key="gender" bindtap="changeBind" style="display:flex;margin-left:80rpx;align-items:center">
 			<image src="{{web_submitData.gender=='0'?'/images/radio-active.png':'/images/radio.png'}}" style="width:40rpx;height:40rpx;margin-right:20rpx" ></image>
       		<view style="font-size:15px">女</view>
 		</view>
@@ -68,5 +68,5 @@
 		</view>
 	</view>
 
-	<view class="submit_input" bindtap="submit">提交</view>
+	<button class="submit_input" bindtap="submit" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">提交</button>
 </view>

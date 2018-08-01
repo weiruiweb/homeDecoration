@@ -4,7 +4,7 @@
 	<view class="nowMoney">
 		<text>当前佣金：</text>
 		<view class="moneyNumber">
-			¥<text>{{web_user.info.data[0].info.score}}.00</text>
+			¥<text>{{web_user.info.data[0].info.balance}}.00</text>
 		</view>
 	</view>
 	<view class="getRecord flexRowBetween">

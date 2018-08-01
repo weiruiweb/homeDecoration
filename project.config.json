@@ -32,7 +32,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 4,
+			"current": 6,
 			"list": [
 				{
 					"id": 0,
@@ -61,7 +61,19 @@
 				{
 					"id": -1,
 					"name": "推荐",
-					"pathName": "pages/Great/great"
+					"pathName": "pages/Great/great",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的客户",
+					"pathName": "pages/editClient/editClient",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "第三方我的",
+					"pathName": "pages/threeUser/threeUser"
 				}
 			]
 		}

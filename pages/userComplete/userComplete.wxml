@@ -12,9 +12,9 @@
 	<view class="userInfo">
 		<view class="userdetail_list flexRowBetween">
 			<text>公司名称:</text>
-			<input type="text" value="{{web_sForm.passage2}}" data-key="passage2" bindblur="changeBind"></input>
+			<input type="text" value="{{web_sForm.name}}" data-key="name" bindblur="changeBind"></input>
 		</view>
-		<view class="userdetail_list flexRowBetween" bindtap="company_adrress">
+		<view class="userdetail_list flexRowBetween" >
 			<text>公司地址:</text>
 			<input type="text" value="{{web_sForm.city}}" data-key="city" bindblur="changeBind"></input>
 		</view>

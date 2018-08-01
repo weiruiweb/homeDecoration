@@ -1,51 +1,68 @@
 <!--great.wxml-->
 
-	<view class="clientDlist">
-		<view class="flexRowBetween">
-			<text class="inputLabel">姓名:</text>
-			<view class="editClient" bindtap="editClient">
-				<image src="/images/user_icon1.png"></image>
-			</view>
-		</view>
+<view class="contain">
+	<view class="flexRowBetween">
+		<text class="inputLabel">姓名:</text>
 		<view class="greatInput">
-			<input type="text" placeholder="天小七"></input>
+			<input type="text" bindblur="changeBind" data-key="title" value="{{web_submitData.title}}"></input>
 		</view>
 	</view>
 
-	<view class="">
+
+
+	<view class="flexRowBetween" style="justify-content:flex-start">
 		<text class="inputLabel">性别:</text>
+		<view data-value="1" data-key="gender" bindtap="changeBind" style="display:flex;margin-left:100rpx;align-items:center">
+			<image src="{{web_submitData.gender=='1'?'/images/radio-active.png':'/images/radio.png'}}" style="width:40rpx;height:40rpx;margin-right:20rpx;" ></image>
+      		<view style="font-size:15px">男</view>
+		</view>
+   		
+		<view data-value="0" data-key="gender" bindtap="changeBind" style="display:flex;margin-left:80rpx;align-items:center">
+			<image src="{{web_submitData.gender=='0'?'/images/radio-active.png':'/images/radio.png'}}" style="width:40rpx;height:40rpx;margin-right:20rpx" ></image>
+      		<view style="font-size:15px">女</view>
+		</view>
+      	
+
+	</view>
+
+	<view class="flexRowBetween">
+		<text class="inputLabel">联系方式:{{web_messageData.phone}}</text>
 		<view class="greatInput">
-			<input type="text" placeholder="男"></input>
+			<input type="number" bindblur="changeBind" data-key="phone" value="{{web_submitData.phone}}"></input>
 		</view>
 	</view>
-	<view class="">
-		<text class="inputLabel">联系方式:</text>
-		<view class="greatInput">
-			<input type="text" type="password" placeholder="21313223223"></input>
-		</view>
-	</view>
-<view class="contain">
+
+
+
 	<view class="intention flexRowBetween">
 		<view class="intention_s">
 			意向强度:
 		</view>
-		<view class="intention_sort flexRowBetween">
-			<block wx:for="{{purpose}}" wx:key="id">
-				<view class="intention_item" bindtap="purpose_choose" data-id="{{index}}">
-					<view class="{{index == chooseId?'active':''}}">{{item.preX}}</view>
-				</view>
-			</block>
+		<view class="intention_sort flexRowBetween" >
+			<view class="intention_item"  >
+				<view class="{{web_submitData.score == '1'?'active':''}}" data-value="1" data-key="score" bindtap="changeBind"  >弱</view>
+			</view>
+
+			<view class="intention_item" >
+				<view class="{{web_submitData.score == '2'?'active':''}}"  data-value="2" data-key="score" bindtap="changeBind"  >一般</view>
+			</view>
+
+			<view class="intention_item" >
+				<view class="{{web_submitData.score == '3'?'active':''}}" data-value="3" data-key="score" bindtap="changeBind" >强</view>
+			</view>		
 		</view>
 	</view>
+
 	<view class="intention_area">
 		<view class="intention_s">
 			意向领域:
 		</view>
 		<view class="intention_c">
-			<view wx:for="{{repContent}}" class="inten_item" wx:key="id">
-			<text class="{{selectIndex[index].sureid? 'active' : ''}}" data-selectIndex="{{index}}" 
-		      bindtap="selectRep">{{item.message}}</text>
+			<view wx:for="{{web_labelData}}" class="inten_item">
+			<text class="{{web_submitData.content == item.title? 'active' : ''}}" data-value="{{item.title}}" data-key="content" bindtap="changeBind" >{{item.title}}</text>
 			</view>
 		</view>
 	</view>
+
+	<view class="submit_input" bindtap="submit">提交</view>
 </view>

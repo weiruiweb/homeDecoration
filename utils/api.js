@@ -426,9 +426,9 @@ class Api extends Base{
         this.request(allParams);
     }
 
-    messageCompute(param,callback){
+    messageDelete(param,callback){
         var allParams ={
-            url:'Common/Message/compute',
+            url:'Common/Message/delete',
             type:'post',
             data:param,
             sCallback: function(data) {

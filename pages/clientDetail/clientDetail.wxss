@@ -1,14 +1,8 @@
 /**index.wxss**/
-.contain{padding:40rpx;}
+.contain{padding:50rpx 30rpx;}
+.flexRowBetween{margin-bottom:40rpx;}
 .inputLabel{height:80rpx;line-height:80rpx;font-size:32rpx;color:#2e2e2e;}
-.inputLabel{margin-left:40rpx;}
-.greatInput input{
-	height:80rpx;
-	background:#f4f4f4;
-	border-radius:10rpx;
-	padding-left:40rpx;
-	font-size:30rpx;
-	font-weight:normal;}
+.greatInput input{width:520rpx;height:80rpx;background:#f4f4f4;border-radius:10rpx;font-size:28rpx;color:#666}
 .intention{
 	padding-right:50rpx;
 	height:50rpx;
@@ -26,26 +20,35 @@
 	color:#ef4f4f;
 	font-size:24rpx;
 	margin-right:66rpx;
+	transition:all 1s;
+}
+.intention_item:hover{
+	backgorund:#ef4f4f;
 }
 .intention .active{
 	background:#ef4f4f;
 	color:#fff;
-	border-color:#ef4f4f;
 	border-radius:20px;
+	border-color:#ef4f4f;
 }
-.intention_c{padding-left:100rpx;margin-top:50rpx;}
+.intention_c{padding-left:50rpx;margin-top:50rpx;overflow:hidden;}
 .intention_c text{font-size:32rpx;color:#b4b4b4;}
-.editClient{margin-right:40rpx;}
-.editClient image{
-  width:40rpx;
-  height:40rpx;
-}
 .intention_c .active{color:#ef4f4f;}
 .inten_item{
 	float:left;
 	text-align:center;
 	self_align:center;
-	width:19%;
-	border-left:solid 1px #b4b4b4;
+	width:30%;
+	
 	margin-bottom:50rpx;
 	}
+.radio-group {
+    
+    display:flex;
+    
+}
+.radio {
+    display: block;
+    
+    padding: 5px;
+}

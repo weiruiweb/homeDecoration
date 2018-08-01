@@ -24,7 +24,7 @@ Page({
   },
   clientList:function(){
      wx.navigateTo({
-      url:"/pages/clientList/clientList"
+      url:"/pages/editClient/editClient"
     })
     
   },
