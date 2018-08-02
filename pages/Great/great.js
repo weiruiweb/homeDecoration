@@ -72,12 +72,13 @@ Page({
 
   submit(){
     const self = this;
-    const pass = api.checkComplete(self.data.submitData);
+    const pass = api.checkComplete(self.data.sForm);
     if(pass){
       wx.showLoading();
-        api.getAuthSetting();
-        self.messageAdd();
-
+      const callback = (user,res) =>{
+        self.messageAdd(user);
+      };
+      api.getAuthSetting(callback);
     }else{
       api.showToast('请补全信息','fail');
     };

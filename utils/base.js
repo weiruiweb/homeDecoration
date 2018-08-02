@@ -25,12 +25,13 @@ class Base extends Token{
                 'token': wx.getStorageSync('token')
             },*/
             success: function (res) {
-                    
+                    console.log(res)
                 // 判断以2（2xx)开头的状态码为正确
                 // 异常不要返回到回调中，就在request中处理，记录日志并showToast一个统一的错误即可
                 var code = res.data.solely_code;
                 if (res.data.solely_code == '200000') {
                     const callback = (data)=>{
+                        console.log(data)
                         that.request(data);
                     };
                     that.getUserInfo(params,callback);
@@ -332,6 +333,24 @@ class Base extends Token{
         });
     };
 
+    getAuthSettingOfImg(callback){
+        wx.getSetting({
+            success: setting => {
+              if(!setting.authSetting['scope.writePhotosAlbum']){
+                wx.hideLoading();
+                this.showToast('授权请点击同意','fail');
+              }else{
+                wx.getUserInfo({
+                    success: function(user) {
+                        callback&&callback(user.userInfo,setting);  
+                    }
+                });
+                
+              };
+            }
+        });
+    };
+
     checkTokenLogin(){
         const self = this;
         if(wx.getStorageSync('token')){   
@@ -350,6 +369,17 @@ class Base extends Token{
         }else{
           setTimeout(function(){
             self.pathTo('/pages/teacher/login/login','redi');
+          },500);                
+        }; 
+    };
+
+    checkThreeLogin(){
+        const self = this;
+        if(wx.getStorageSync('login')&&wx.getStorageSync('threeToken')&&wx.getStorageSync('threeInfo')){   
+           return wx.getStorageSync('login');
+        }else{
+          setTimeout(function(){
+            self.pathTo('/pages/User/user','redi');
           },500);                
         }; 
     };
@@ -408,8 +438,10 @@ class Base extends Token{
     logOff(){
         const self = this;
         wx.removeStorageSync('login');
-        if(!wx.removeStorageSync('login')){
-            self.pathTo('/pages/index/index','redi')
+        wx.removeStorageSync('threeInfo');
+        wx.removeStorageSync('threeToken');
+        if(!wx.getStorageSync('login')){
+            self.pathTo('/pages/User/user','tab')
         }else{
             self.showToast('系统故障','fail')
         }

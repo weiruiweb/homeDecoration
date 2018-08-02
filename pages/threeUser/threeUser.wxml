@@ -45,10 +45,7 @@
 			<text>推广二维码</text>
 			<image src="/images/next_icon1.jpg" class="next_page" ></image>
 		</view>
-		<view class="user_list flexRowBetween" bindtap="threeAbout">
-			<image src="/images/user_icon10.png"></image>
-			<text>关于我们</text>
-			<image src="/images/next_icon1.jpg" class="next_page" ></image>
-		</view>
+		
+		<button class="submit_input" bindtap="removeStorageSync" style="margin-top:60rpx;width:300rpx">退出登录</button>
 	</view>
 </view>

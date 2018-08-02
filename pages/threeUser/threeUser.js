@@ -1,17 +1,30 @@
 //logs.js
-const util = require('../../utils/util.js')
+import {Api} from '../../utils/api.js';
+var api = new Api();
 
 Page({
   data: {
-    logs: []
+    web_show:false
   },
+
   onLoad: function () {
-    this.setData({
-      logs: (wx.getStorageSync('logs') || []).map(log => {
-        return util.formatTime(new Date(log))
-      })
-    })
   },
+  
+  onShow(){
+    const self = this;
+    const pass = api.checkThreeLogin();
+    if(pass){
+      self.setData({
+        web_show:true
+      })
+    };
+  },
+
+  removeStorageSync(){
+    const self= this;
+    api.logOff();
+  },
+
   threeComplete:function(){
     wx.navigateTo({
       url:"/pages/threeComplete/threeComplete"

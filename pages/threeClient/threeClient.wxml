@@ -1,53 +1,29 @@
 <!--user.wxml-->
 
-<view class="User_cont">
-	<view class="clientList flexRowBetween">
-		<image src="/images/decorator.jpg"></image>
-		<view class="clientList_center">
-			<view class="clientName">
-				<text>田小七</text>
-				<image src="/images/men.jpg"></image>
-			</view>
-			<view class="clientType">类型:有效</view>
-			<view class="clientType">建材，家具,智能建材...</view>
-		</view>
-		<view class="clientList_right">
-			<view class="clientPen">强</view>
-			<view class="clientPhone">1281288239</view>
-			<view class="clientTime">2014-2-2</view>
-		</view>
-	</view>
-	<view class="clientList flexRowBetween">
-		<image src="/images/decorator.jpg"></image>
-		<view class="clientList_center">
-			<view class="clientName">
-				<text>田小七</text>
-				<image src="/images/men.jpg"></image>
-			</view>
-			<view class="clientType">类型:有效</view>
-			<view class="clientType">建材，家具,智能建材...</view>
-		</view>
-		<view class="clientList_right">
-			<view class="clientPen weak">弱</view>
-			<view class="clientPhone">1281288239</view>
-			<view class="clientTime">2014-2-2</view>
-		</view>
-	</view>
-	<view class="clientList flexRowBetween">
-		<image src="/images/decorator.jpg"></image>
-		<view class="clientList_center">
-			<view class="clientName">
-				<text>田小七</text>
-				<image src="/images/men.jpg"></image>
-			</view>
-			<view class="clientType">类型:有效</view>
-			<view class="clientType">建材，家具,智能建材...</view>
-		</view>
-		<view class="clientList_right">
-			<view class="clientPen general">一般</view>
-			<view class="clientPhone">1281288239</view>
-			<view class="clientTime">2014-2-2</view>
-		</view>
-	</view>
+<view class="nav_sort">
+	<view data-key="" class="{{key==''?'active':''}}" bindtap="menuClick" style="text-aligh:center">未成交</view>
+	<view data-key="已成交" class="{{key=='已成交'?'active':''}}" bindtap="menuClick" style="text-aligh:center">已成交</view>
 </view>
 
+<view class="User_cont">
+	<block wx:for="{{web_mainData}}" wx:key="id">
+		<view class="clientList flexRowBetween" bindtap="clientDetail" style="border-bottom:5rpx solid #f2f2f2;margin-top:0;position:relative" data-path="/pages/clientDetail/clientDetail?id={{item.id}}" bindtap="intoPath">
+			<view class="clientList_center">
+				<view class="clientName">
+					<text>{{item.title}}</text>
+					<image src="{{item.gender =='1'?'/images/men.png':'/images/women.png'}}" ></image>
+				</view>
+				
+				<view class="clientType">{{item.content}}</view>
+			</view>
+			<view class="clientList_right" style="flex-direction:column;align-items:flex-end;">
+				<view class="edit_icon flexRowBetween" style="position:absolute;top:10rpx;right:10rpx">
+					<image src="/images/delete_icon1.jpg" bindtap="messageDelete" data-id="{{item.id}}" ></image>
+				</view>
+				<view class="clientPen weak" style="align-self:flex-end" wx:if="{{item.score == '1'}}">弱</view>
+				<view class="clientPen weak" style="align-self:flex-end" wx:if="{{item.score == '2'}}">一般</view>
+				<view class="clientPen weak" style="align-self:flex-end" wx:if="{{item.score == '3'}}">强</view>
+			</view>
+		</view>
+	</block>
+</view>

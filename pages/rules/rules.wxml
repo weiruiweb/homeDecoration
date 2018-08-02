@@ -1,20 +1,14 @@
 <view class="rulesBanner">
-	<image src="/images/rules.png"></image>
+	<image src="{{web_mainData.bannerImg[0].url}}"></image>
 </view>
 <view class="rulesCont">
 	<view class="getCredits">
-		积分获取
+		{{web_mainData.title}}
 	</view>
-	<view class="text1">
-		<text>1.注册普通会员并完善基本资料获得5积分;</text>
-		<text>2.绑定银行卡获取5积分;</text>
-		<text>3.实名认证获得5积分;</text>
-		<text>4.每日完成签到获得2积分;</text>
-		<text>5.邀请好友得积分：每成功邀请1名新会员并完成注册获</text>
-		<text>得5积分，上不封顶，多邀多得;</text>
-		<text>6.分享得积分：分享荟生活(包含且不限于公众号，资</text>
-		<text>讯，文章，楼书)任意板块内荣都可得1积分,每日上线5积分;</text>
+		<view class="content ql-editor" style="color:#666;font-size:25rpx">
+			<import src="../../wxParse/wxParse.wxml"/>
+		    <template is="wxParse" data="{{wxParseData:web_mainData.content}}"/>
+		</view>	
 		
-	</view>
 </view>
 

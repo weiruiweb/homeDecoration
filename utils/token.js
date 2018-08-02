@@ -17,22 +17,7 @@ class Token {
             
     }
 
-    _veirfyFromServer(token) {
-        var that = this;
-        wx.request({
-            url: that.verifyUrl,
-            method: 'POST',
-            data: {
-                token: token
-            },
-            success: function (res) {
-                var valid = res.data.isValid;
-                if(!valid){
-                    that.getTokenFromServer();
-                }
-            }
-        })
-    }
+
 
     getUserInfo(params,callback){
         var self = this;
@@ -87,12 +72,12 @@ class Token {
                 postData.code = res.code;
                 if(data.nickName&&data.avatarUrl){
                     postData.nickname = data.nickName;
-                    postData.headimgurl = data.avatarUrl;
+                    postData.headImgUrl = data.avatarUrl;
                 };
                 if(wx.getStorageSync('openidP')){
                     postData.openid = wx.getStorageSync('openidP');
                 };
-                postData.headimgurl = data.avatarUrl;
+
                 wx.request({
                     url: 'http://solelytech.iicp.net/jzyz/public/api/v1/Base/ProgrameToken/get',
                     method:'POST',
