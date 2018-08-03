@@ -23,3 +23,16 @@
 }
 
 .userdetail_list image{margin-top:38rpx;}
+
+.yanzheng_btn {
+  width: 207rpx;
+  background: #ef4f4f;
+  height: 75rpx;
+  margin-top: 15rpx;
+  text-align: center;
+  line-height: 75rpx;
+  border-radius: 15rpx;
+  color: #fff;
+  font-size: 30rpx;
+  padding: 0 10rpx;
+}

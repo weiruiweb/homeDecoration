@@ -20,8 +20,6 @@
 			<image src="{{web_submitData.gender=='0'?'/images/radio-active.png':'/images/radio.png'}}" style="width:40rpx;height:40rpx;margin-right:20rpx" ></image>
       		<view style="font-size:15px">女</view>
 		</view>
-      	
-
 	</view>
 
 	<view class="flexRowBetween">

@@ -1,5 +1,5 @@
 <view class="qrcode">
 	<view class="company_name">天有装饰有限公司</view>
-	<image src="/images/qrcode.jpg" bindtap="saveImgToPhotosAlbum"></image>
+	<image src="{{web_QrData.info.url}}" bindtap="saveImgToPhotosAlbum"></image>
 	<view class="notes">扫一扫二维码，赶快加入我们</view>
 </view>

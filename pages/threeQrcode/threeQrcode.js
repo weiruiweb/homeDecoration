@@ -11,8 +11,28 @@ Page({
   },
 
   onLoad: function () {
-    
+    const self = this;
+    self.getQrData()
   },
+
+  getQrData(){
+    const self = this;
+    const postData = {};
+    postData.token = wx.getStorageSync('token');
+    postData.param = wx.getStorageSync('info').user_no;
+    postData.output = 'url';
+    postData.ext = 'png';
+    const callback = (res)=>{
+      console.log(res);
+      self.data.QrData = res;
+      self.setData({
+        web_QrData:self.data.QrData,
+      });
+     
+      wx.hideLoading();
+    };
+    api.getQrCode(postData,callback);
+ },
 
 
   saveImgToPhotosAlbum(){

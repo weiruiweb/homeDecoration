@@ -9,7 +9,10 @@ Page({
       city:'',
       name:'',    
     },
-
+    text: '获取验证码', //按钮文字
+    currentTime: 61, //倒计时
+    disabled: false, //按钮是否禁用
+    phone: '',//获取到的手机栏中的值
     mainData:{},
     
   },
@@ -100,5 +103,62 @@ Page({
     };
   },
 
-  
+
+  phoneInput: function (e) {
+    const self = this;
+    self.setData({
+      phone: e.detail.value
+    })
+  },
+ 
+
+
+  bindButtonTap: function () {
+    const self = this;
+    self.setData({
+      disabled: true, 
+      color: '#ccc',
+    });
+    var phone = self.data.phone;
+    var currentTime = self.data.currentTime 
+    var warn = null; 
+    if(phone == ''){
+      warn = "号码不能为空";
+    }else if(phone.trim().length != 11 || !/^1[3|4|5|6|7|8|9]\d{9}$/.test(phone)) {
+      warn = "手机号格式不正确";
+    }else{
+      wx.showToast({
+        title: '短信验证码已发送',
+        icon: 'none',
+        duration: 2000
+      });
+      var interval = setInterval(function () {
+        currentTime--; 
+        self.setData({
+          text: currentTime + 's', 
+        });
+        if (currentTime <= 0) { 
+          clearInterval(interval)
+          self.setData({
+            text: '重新发送',
+            currentTime: 61,
+            disabled: false,
+            color: '#929fff'
+          })
+        }
+      },1000);
+    };
+    if(warn != null){
+      wx.showModal({
+        title: '提示',
+        content: warn
+      });
+      self.setData({
+        disabled: false,
+        color: '#ef4f4f'
+      });
+        return;
+    };
+  },
+ 
 })
