@@ -34,7 +34,12 @@ class Base extends Token{
                         console.log(data)
                         that.request(data);
                     };
-                    that.getUserInfo(params,callback);
+                    if(wx.getStorageSync('threeToken')&&params.data.token == wx.getStorageSync('threeToken')){
+
+                    }else{
+                       that.getUserInfo(params,callback); 
+                    };
+                    
                     
                     
                 } else {
