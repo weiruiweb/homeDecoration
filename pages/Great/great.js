@@ -72,7 +72,7 @@ Page({
 
   submit(){
     const self = this;
-    const pass = api.checkComplete(self.data.sForm);
+    const pass = api.checkComplete(self.data.submitData);
     if(pass){
       wx.showLoading();
       const callback = (user,res) =>{

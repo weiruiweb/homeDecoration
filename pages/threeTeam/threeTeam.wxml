@@ -1,47 +1,18 @@
 <!--user.wxml-->
 
 <view class="User_cont">
-	<view class="clientList flexRowBetween">
-		<image src="/images/decorator.jpg"></image>
-		<view class="clientList_center" style="align-items:center;">
-			<view class="clientName">
-				<text>田小七</text>
-				<image src="/images/men.jpg"></image>
+	<block wx:for="{{web_mainData}}" wx:key="id">
+		<view class="clientList flexRowBetween">
+			<image src="{{item.headImgUrl}}" style="border-radius:50%"></image>
+			<view class="clientList_center" style="align-items:center;">
+				<view class="clientName">
+					<text style="line-height:63px">{{item.nickname}}</text>
+				</view>
 			</view>
-			<view class="clientType">建材，家具,智能建材...</view>
-		</view>
-		<view class="clientList_right">
-			<view class="clientPhone">1281288239</view>
-			<view class="clientTime">2014-2-2</view>
-		</view>
-	</view>
-	<view class="clientList flexRowBetween">
-		<image src="/images/decorator.jpg"></image>
-		<view class="clientList_center">
-			<view class="clientName">
-				<text>田小七</text>
-				<image src="/images/men.jpg"></image>
+			<view class="clientList_right">
+				<view class="clientTime">{{item.create_time}}</view>
 			</view>
-			<view class="clientType">建材，家具,智能建材...</view>
 		</view>
-		<view class="clientList_right">
-			<view class="clientPhone">1281288239</view>
-			<view class="clientTime">2014-2-2</view>
-		</view>
-	</view>
-	<view class="clientList flexRowBetween">
-		<image src="/images/decorator.jpg"></image>
-		<view class="clientList_center">
-			<view class="clientName">
-				<text>田小七</text>
-				<image src="/images/men.jpg"></image>
-			</view>
-			<view class="clientType">建材，家具,智能建材...</view>
-		</view>
-		<view class="clientList_right">
-			<view class="clientPhone">1281288239</view>
-			<view class="clientTime">2014-2-2</view>
-		</view>
-	</view>
+	</block>
 </view>
 

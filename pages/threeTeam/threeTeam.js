@@ -32,7 +32,7 @@ Page({
       thirdapp_id:'59',
       user_type:'0',
       behavior:'0',
-      passage1:wx.getStorageSync('threeinfo').passage1
+      passage1:wx.getStorageSync('threeInfo').passage1
     };
     postData.order = {
       create_time:'desc'
