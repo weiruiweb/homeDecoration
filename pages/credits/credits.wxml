@@ -4,7 +4,7 @@
 	<view class="nowMoney">
 		<text>当前积分：</text>
 		<view class="moneyNumber">
-			<text>{{web_user.info.data[0].info.score}}.00</text>
+			<text>{{web_computeData.FlowLog.countsum}}分</text>
 		</view>
 	</view>
 	<block wx:for="{{web_mainData}}" wx:key="id">

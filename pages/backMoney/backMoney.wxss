@@ -15,7 +15,6 @@
   height:60rpx;
   line-height:60rpx;
   width:50%;
-  border-right:solid 1px #f04e4f;
   color:#f04e4f;
   font-size:32rpx;
   }
@@ -27,3 +26,22 @@
     font-size:32rpx;
     color:#2e2e2e;
     }
+.nav_sort{
+  flex-direction:row;
+  display:flex;
+  justify-content:space-around;
+  height:88rpx;
+  line-height:88rpx;
+  border-bottom:solid 1px #e2e2e2;
+  font-size:32rpx;
+  color:#444; 
+  backround:#fff 
+}
+#sort_click{
+  line-height: 88rpx;  
+  font-size: 32rpx;
+  padding:0rpx 28rpx;}
+
+.nav_sort .active{
+  color:#ef4f4f;
+  border-bottom:solid 1px #ef4f4f;}

@@ -34,7 +34,6 @@ Page({
     api.userGet(postData,callback);   
   },
 
-
   getMainData(isNew){
     const self = this;
     if(isNew){
@@ -49,6 +48,7 @@ Page({
     postData.order = {
       create_time:'desc',
     };
+   
     const callback = (res)=>{
       if(res.info.data.length>0){
         self.data.mainData.push.apply(self.data.mainData,res.info.data);

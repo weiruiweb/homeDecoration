@@ -4,9 +4,13 @@ const api = new Api();
 
 Page({
   data: {
-
+    num:'1',
     mainData:[],
-    userData:[]
+    userData:[],
+    searchItem:{
+      type:'2',
+      count:['>','0']
+    }
 
   },
 
@@ -16,6 +20,32 @@ Page({
     self.data.paginate = api.cloneForm(getApp().globalData.paginate);
     self.getMainData();
     self.getUserData()
+  },
+
+  menuClick: function (e) {
+    const self = this;
+    const num = e.currentTarget.dataset.num;
+    self.changeSearch(num);
+  },
+
+
+  changeSearch(num){
+    const self = this;
+    this.setData({
+      num: num
+    });
+    if(num == 1){
+      self.data.searchItem ={
+        type:'2',
+        count:['>','0']
+      }
+    }else if(num == 2){
+      self.data.searchItem ={
+        type:'2',
+        count:['<','0']
+      }
+    }
+    self.getMainData(true);
   },
 
 
@@ -33,7 +63,7 @@ Page({
     };
     api.userGet(postData,callback);   
   },
-  
+
 
   getMainData(isNew){
     const self = this;
@@ -43,9 +73,7 @@ Page({
     const postData = {};
     postData.paginate = api.cloneForm(self.data.paginate);
     postData.token = wx.getStorageSync('token');
-    postData.searchItem = {
-      type:'2',   
-    };
+    postData.searchItem = api.cloneForm(self.data.searchItem)
     postData.order = {
       create_time:'desc',
     };
@@ -63,6 +91,8 @@ Page({
     };
     api.flowLogGet(postData,callback);
   },
+
+  
 
 
   onReachBottom() {
