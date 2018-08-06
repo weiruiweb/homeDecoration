@@ -23,7 +23,6 @@ Page({
     const postData = {};
     postData.token = wx.getStorageSync('threeToken');
     const callback = (res)=>{
-      console.log(res);
       self.data.userData = res;
       self.setData({
         web_user:self.data.userData,

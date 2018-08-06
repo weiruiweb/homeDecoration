@@ -2,6 +2,7 @@
 //获取应用实例
 import {Api} from '../../utils/api.js';
 var api = new Api();
+var app = getApp();
 
 Page({
 
@@ -21,6 +22,7 @@ Page({
     self.data.id = options.id;
     self.getMainData();
   },
+
 
   getMainData(isNew){
     const self = this;
@@ -46,10 +48,13 @@ Page({
 
 
 
-
-  intoPath(e){
+  intoPath:function(e){
     const self = this;
-    api.pathTo(api.getDataSet(e,'path'),'nav');
+    var id = e.currentTarget.dataset.id;
+    app.globalData.id=id;
+    wx.switchTab({
+      url: '/pages/Great/great'
+    });
   },
 
   

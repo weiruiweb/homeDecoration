@@ -8,8 +8,7 @@ class Token {
     constructor() {
     }
 
-    verify() {
-
+    verify() { 
         var token = wx.getStorageSync('token');
         if (!token) {
             this.getUserInfo();
@@ -27,7 +26,8 @@ class Token {
                 success: res => {
                     if (res.authSetting['scope.userInfo']) { 
                         wx.getUserInfo({
-                            success: function(res) {                     
+                            success: function(res) {     
+                            console.log(res)                
                                    wxUserInfo = res.userInfo;
                                 self.getTokenFromServer(wxUserInfo,params,callback);
                                
@@ -66,24 +66,24 @@ class Token {
         var self  = this;
         wx.login({
             success: function (res) {
-                console.log(res)
                 var postData = {};
                 postData.thirdapp_id = getApp().globalData.thirdapp_id;
                 postData.code = res.code;
                 if(data.nickName&&data.avatarUrl){
                     postData.nickname = data.nickName;
                     postData.headImgUrl = data.avatarUrl;
+
                 };
                 if(wx.getStorageSync('openidP')){
                     postData.openid = wx.getStorageSync('openidP');
                 };
 
                 wx.request({
-                    url: 'http://solelytech.iicp.net/jzyz/public/api/v1/Base/ProgrameToken/get',
+                    url: 'https://api.yisuiyanghuoguo.com/public/index.php/api/v1/Base/ProgrameToken/get',
                     method:'POST',
                     data:postData,
                     success:function(res){
-                      
+                        console.log(res)
                         if(res.data&&res.data.solely_code==100000){
                             wx.setStorageSync('info',res.data.info);
                             wx.setStorageSync('token', res.data.token);
@@ -121,7 +121,7 @@ class Token {
             }
 
             wx.request({
-                url: 'http://solelytech.iicp.net/jzyz/public/api/v1/Func/Common/loginByUp',
+                url: 'https://api.yisuiyanghuoguo.com/public/index.php/api/v1/Func/Common/loginByUp',
                 method:'POST',
                 data:postData,
                 success:function(res){

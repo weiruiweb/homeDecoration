@@ -23,4 +23,4 @@
 	</view>	
 </view>
 
-<view class="recom_other" bindtap="great">推荐客户</view>
+<view class="recom_other" data-path="/pages/Great/great" bindtap="intoPath">推荐客户</view>

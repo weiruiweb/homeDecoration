@@ -12,35 +12,35 @@
 	    </view>
 	</view>
 	<view class="userInfo">
-		<view class="user_list flexRowBetween" bindtap="threeComplete">
+		<view class="user_list flexRowBetween" bindtap="intoPath" data-path="/pages/threeComplete/threeComplete">
 			<image src="/images/user_icon1.png"></image>
 			<text>基本信息</text>
 			<image src="/images/next_icon1.jpg" class="next_page" ></image>
 		</view>
-		<view class="user_list flexRowBetween" bindtap="threeTeam">
+		<view class="user_list flexRowBetween" bindtap="intoPath" data-path="/pages/threeTeam/threeTeam">
 			<image src="/images/user_icon8.png"></image>
 			<text>我的团队</text>
 			<image src="/images/next_icon1.jpg" class="next_page" ></image>
 		</view>
 		
-		<view class="user_list flexRowBetween next_item" bindtap="threeClient">
+		<view class="user_list flexRowBetween next_item" bindtap="intoPath" data-path="/pages/threeClient/threeClient">
 			<image src="/images/user_icon11.png"></image>
 			<text>客户记录</text>
 			<image src="/images/next_icon1.jpg" class="next_page" ></image>
 		</view>
 
-		<view class="user_list flexRowBetween" bindtap="threeCredits">
+		<view class="user_list flexRowBetween" bindtap="intoPath" data-path="/pages/threeCredits/threeCredits">
 			<image src="/images/user_icon5.png"></image>
 			<text>积分记录</text>
 			<image src="/images/next_icon1.jpg" class="next_page" ></image>
 		</view>
-		<view class="user_list flexRowBetween" bindtap="threebackMoney">
+		<view class="user_list flexRowBetween" bindtap="intoPath" data-path="/pages/threebackMoney/threebackMoney">
 			<image src="/images/user_icon6.png"></image>
 			<text>佣金记录</text>
 			<image src="/images/next_icon1.jpg" class="next_page" ></image>
 		</view>
 		
-		<view class="user_list flexRowBetween next_item" bindtap="threeQrcode">
+		<view class="user_list flexRowBetween next_item"bindtap="intoPath" data-path="/pages/threeQrcode/threeQrcode">
 			<image src="/images/user_icon9.png"></image>
 			<text>推广二维码</text>
 			<image src="/images/next_icon1.jpg" class="next_page" ></image>

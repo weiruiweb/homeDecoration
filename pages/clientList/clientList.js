@@ -19,6 +19,7 @@ Page({
     self.data.paginate = api.cloneForm(getApp().globalData.paginate);
     self.getMainData()
   },
+  
 
   getMainData(isNew){
     const self = this;

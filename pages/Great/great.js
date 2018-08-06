@@ -15,7 +15,7 @@ Page({
       type:4,
       content:'',
       score:1,
-      relation_id:''
+      relation_id:'',
     },
 
     sexItem:[
@@ -48,12 +48,9 @@ Page({
 
 
   
-  onLoad: function () {
+  onLoad(options) {
     const self = this;
     self.labelGetTwo();
-    self.setData({
-      web_submitData:self.data.submitData
-    })
   },
 
 
@@ -63,12 +60,14 @@ Page({
     postData.token = wx.getStorageSync('token');
     postData.data = {};
     postData.data = api.cloneForm(self.data.submitData);
+    postData.data.product_no = wx.getStorageSync('info').parent_no
     const callback = (data)=>{
       wx.hideLoading();
       api.dealRes(data);
     };
     api.messageAdd(postData,callback);
   },
+
 
   submit(){
     const self = this;
@@ -91,8 +90,6 @@ Page({
     }else{
       api.fillChange(e,self,'submitData');
     };
-
-    console.log(self.data.submitData);
     self.setData({
       web_submitData:self.data.submitData,
     }); 
@@ -102,7 +99,7 @@ Page({
         return;
       };
       self.data.timeFunc = setTimeout(function(){
-        self.labelGet(self.data.submitData.keywords);
+        self.articleGet(self.data.submitData.keywords);
         self.data.timeFunc = false;
       },1000);
     };
@@ -114,13 +111,12 @@ Page({
   },
 
 
-  labelGet(Name){
+  articleGet(Name){
     const self = this;
     const postData = {
       searchItem:{
         title:['LIKE',['%'+Name+'%']],
         thirdapp_id:59,
-        type:9
       }
     };
     const callback = (res)=>{
@@ -139,7 +135,7 @@ Page({
       }
       
     };
-    api.labelGet(postData,callback);
+    api.articleGet(postData,callback);
   },
   
 

@@ -10,8 +10,8 @@ Page({
   data: {
 
     sForm:{
-      login_name:'222',
-      password:'111111'
+      login_name:'',
+      password:''
     }
     
   },

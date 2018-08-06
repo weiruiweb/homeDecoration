@@ -1,29 +1,34 @@
 //index.js
 //获取应用实例
-const app = getApp()
+import {Api} from '../../utils/api.js';
+var api = new Api();
 
 Page({
   data: {
 
-    imgURL:'http://yijiao.oss-cn-qingdao.aliyuncs.com/images/http://tmp/wx1b4e5e756cd48af1.o6zAJsws4grEQvYrWTjBigy-6QaU.0llhudiKSF2V955a1c48350d9328ef064b4d36d12746.jpg'
+    
+    userData:[],
+    QrData:[]
 
-  //事件处理函数
   },
 
   onLoad: function () {
     const self = this;
-    self.getQrData()
+    self.getQrData();
+    self.getMainData()
   },
 
   getQrData(){
     const self = this;
     const postData = {};
-    postData.token = wx.getStorageSync('token');
-    postData.param = wx.getStorageSync('info').user_no;
+    postData.token = wx.getStorageSync('threeToken');
+    postData.qrInfo = {
+      scene:wx.getStorageSync('threeInfo').user_no,
+      path:'pages/index/index',
+    };
     postData.output = 'url';
     postData.ext = 'png';
     const callback = (res)=>{
-      console.log(res);
       self.data.QrData = res;
       self.setData({
         web_QrData:self.data.QrData,
@@ -34,11 +39,25 @@ Page({
     api.getQrCode(postData,callback);
  },
 
+  getMainData(){
+    const self = this;
+    const postData = {};
+    postData.token = wx.getStorageSync('threeToken');
+    const callback = (res)=>{
+      self.data.userData = res.info.data[0].info;
+      self.setData({
+        web_userData:self.data.userData,
+      });
+      wx.hideLoading();
+    };
+    api.userGet(postData,callback);
+  },
+
 
   saveImgToPhotosAlbum(){
     const self = this;
     wx.downloadFile({
-      url: self.data.imgURL,
+      url: self.data.QrData.info.url,
       success: function (res) {
         wx.saveImageToPhotosAlbum({
           filePath: res.tempFilePath,
@@ -55,7 +74,6 @@ Page({
             }
           },
           complete(res){
-            console.log(res);
           }
         })
       }

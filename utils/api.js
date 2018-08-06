@@ -52,6 +52,18 @@ class Api extends Base{
         this.request(allParams);
     }
 
+    getQrCode(param,callback){
+        var allParams ={
+            url:'Base/Qr/ProgramQrGet',
+            type:'post',
+            data:param,
+            sCallback: function(data) {
+                callback && callback(data);
+            }
+        };
+        this.request(allParams);
+    }  
+
 
     changeCourseStatus(param,callback){
         var allParams ={
@@ -429,6 +441,18 @@ class Api extends Base{
     messageDelete(param,callback){
         var allParams ={
             url:'Common/Message/delete',
+            type:'post',
+            data:param,
+            sCallback: function(data) {
+                callback && callback(data);
+            }
+        };
+        this.request(allParams);
+    }
+
+    companyAuth(param,callback){
+        var allParams ={
+            url:'Project/Jzyz/companyAuth',
             type:'post',
             data:param,
             sCallback: function(data) {

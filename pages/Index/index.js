@@ -3,6 +3,9 @@
 import {Api} from '../../utils/api.js';
 var api = new Api();
 
+import {Token} from '../../utils/token.js';
+var token = new Token();
+
 Page({
   data: {
     multiIndex: [0, 0, 0],
@@ -16,6 +19,7 @@ Page({
     autoplay: true,
     interval: 3000,
     duration: 1000,
+    parent_no:''
   },
   //事件处理函数
 
@@ -31,13 +35,22 @@ Page({
 
 
 
-  onLoad(){
+  onLoad(options){
+    
     const self = this;
     self.data.paginate = api.cloneForm(getApp().globalData.paginate);
     self.getMainData();
     self.getartData();
-    self.getSliderData()
+    self.getSliderData();
+ 
+    var scene = decodeURIComponent(options.scene)
+    console.log(scene)
+    if(scene){
+      token.getUserInfo();
+    }
   },
+
+
 
   getMainData(isNew){
     const self = this;
@@ -96,6 +109,7 @@ Page({
     api.pathTo(api.getDataSet(e,'path'),'nav');
   },
 
+
   getSliderData(){
     const self = this;
     const postData = {};
@@ -108,8 +122,6 @@ Page({
       self.setData({
         web_sliderData:self.data.sliderData,
       });
-      console.log(self.data.sliderData)
-
     };
     api.labelGet(postData,callback);
   },

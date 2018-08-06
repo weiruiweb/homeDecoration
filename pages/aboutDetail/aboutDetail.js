@@ -5,9 +5,7 @@ var api = new Api();
 
 Page({
 
-  /**
-   * 页面的初始数据
-   */
+
   data: {
     
     mainData:[]
@@ -21,6 +19,7 @@ Page({
     self.data.id = options.id;
     self.getMainData();
   },
+
 
   getMainData(isNew){
     const self = this;

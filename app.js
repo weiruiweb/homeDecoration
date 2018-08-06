@@ -22,7 +22,8 @@ App({
         is_page:true,
     },
     categoryIndex:'',
-
+    title:'',
+    id:''
 
   },
 

@@ -13,24 +13,27 @@
 	</view>
 	<view class="userInfo">
 		<view class="userdetail_list flexRowBetween">
-			<text>公司名称:</text>
-			<input type="text" value="{{web_sForm.title}}" disabled="true"></input>
+			<text>公司ID:</text>
+			<input type="text" value="{{web_submitData.id}}" disabled="true"></input>
 		</view>
+		<view class="userdetail_list flexRowBetween">
+			<text>公司名称:</text>
+			<input type="text" value="{{web_submitData.name}}" disabled="true"></input>
+		</view>
+
 		<view class="userdetail_list flexRowBetween" bindtap="company_adrress">
 			<text>公司地址:</text>
-			<input type="text" value="{{web_sForm.description}}" disabled="true"></input>
+			<input type="text" value="{{web_submitData.address}}" disabled="true"></input>
+		</view>
+		<view class="userdetail_list flexRowBetween" >
+			<text>联系人:</text>
+			<input type="text" value="{{web_submitData.passage1}}" ></input>
 		</view>
 		<view class="userdetail_list flexRowBetween">
 			<text>联系方式:</text>
 			<input type="text" value="{{web_submitData.phone}}" data-key="phone" bindblur="changeBind"></input>
 		</view>
-		<view class="userdetail_list flexRowBetween">
-			<text>验证码:</text>
-			<input type="text" style="width:450rpx;"></input>
-			<view class="getCode">
-				点击获取
-			</view>
-		</view>
+
 	</view>
 	<button class="submit_input" bindtap="submit">提交</button>
 

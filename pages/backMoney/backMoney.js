@@ -18,6 +18,7 @@ Page({
     self.getUserData()
   },
 
+
   getUserData(){
     const self = this;
     const postData = {};
@@ -27,12 +28,12 @@ Page({
       self.data.userData = res;
       self.setData({
         web_user:self.data.userData,
-      });
-     
+      });  
       wx.hideLoading();
     };
     api.userGet(postData,callback);   
   },
+  
 
   getMainData(isNew){
     const self = this;

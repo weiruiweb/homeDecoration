@@ -1,20 +1,80 @@
 //logs.js
-const util = require('../../utils/util.js')
+import {Api} from '../../utils/api.js';
+const api = new Api();
 
 Page({
   data: {
-    logs: []
+ 
+
+    submitData:{
+      name:'',
+      id:''
+    },
+
+    mainData:{},
+    
   },
-  onLoad: function () {
-    this.setData({
-      logs: (wx.getStorageSync('logs') || []).map(log => {
-        return util.formatTime(new Date(log))
-      })
-    })
+
+
+  onLoad(){
+    const self = this;
+    self.setData({
+      web_submitData:self.data.submitData,
+    });
   },
-  confirm:function(){
-    wx.switchTab({
-      url:'/pages/User/user'
-    })
-  }
+
+
+  getMainData(){
+    const self = this;
+    const postData = {};
+    postData.token = wx.getStorageSync('token');
+    postData.searchItem = {
+      name:self.data.submitData.name,
+      id:self.data.submitData.id
+    }
+    const callback = (res)=>{
+      self.setData({
+        web_submitData:self.data.submitData,
+      });
+      wx.hideLoading();
+      api.dealRes(res);
+    };
+    api.companyAuth(postData,callback);
+  },
+
+
+  changeBind(e){
+    const self = this;
+    api.fillChange(e,self,'submitData');
+    self.setData({
+      web_submitData:self.data.submitData,
+    });  
+  },
+
+
+  intoPath(e){
+    const self = this;
+    api.pathTo(api.getDataSet(e,'path'),'nav');
+  },
+
+
+
+
+
+  submit(){
+    const self = this;
+    const pass = api.checkComplete(self.data.submitData);
+    if(pass){
+      if(JSON.stringify(wx.getStorageSync('info').info) != '[]'){
+        wx.showLoading();
+        self.getMainData();
+      }else{
+        api.showToast('请前往完善资料','fail');
+      } 
+    }else{
+      api.showToast('请补全信息','fail');
+    };
+  },
+
+  
 })

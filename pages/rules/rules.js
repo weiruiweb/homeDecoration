@@ -32,7 +32,6 @@ Page({
       thirdapp_id:'59'
     };
     const callback = (res)=>{
-      console.log(res)
       self.data.mainData = res.info.data[0];
       wx.hideLoading();
       self.data.mainData.content = api.wxParseReturn(res.info.data[0].content).nodes;

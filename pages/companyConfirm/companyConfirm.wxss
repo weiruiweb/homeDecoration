@@ -18,5 +18,5 @@
 .userName{
 	font-size:32rpx;
 	color:#fff;}
-.userdetail_list input{width:350rpx;}
+
 .submit_input{position:absolute;bottom:125rpx;left:280rpx;}

@@ -6,7 +6,7 @@ Page({
   data: {
     sForm:{
       phone:'',
-      city:'',
+      address:'',
       name:'',    
     },
     text: '获取验证码', //按钮文字
@@ -31,15 +31,15 @@ Page({
     const callback = (res)=>{
       console.log(res)
       self.data.mainData = res;
-      self.data.sForm.phone = res.info.data[0].phone;
-      self.data.sForm.city = res.info.data[0].city;
-      self.data.sForm.name = res.info.data[0].name;
+      self.data.sForm.phone = res.info.data[0].info.phone;
+      self.data.sForm.address = res.info.data[0].info.address;
+      self.data.sForm.name = res.info.data[0].info.name;
       self.setData({
         web_sForm:self.data.sForm,
       });
       wx.hideLoading();
     };
-    api.userInfoGet(postData,callback);
+    api.userGet(postData,callback);
   },
 
 
@@ -91,12 +91,12 @@ Page({
     const self = this;
     const pass = api.checkComplete(self.data.sForm);
     if(pass){
-      if(wx.getStorageSync('info').info){
-        wx.showLoading();
-        self.userInfoUpdate();
-      }else{
+      if(JSON.stringify(wx.getStorageSync('info').info)=='[]'){
         wx.showLoading();
         self.userInfoAdd();
+      }else{
+        wx.showLoading();
+        self.userInfoUpdate();
       }  
     }else{
       api.showToast('请补全信息','fail');

@@ -11,7 +11,7 @@ class Base extends Token{
     //http 请求类, 当noRefech为true时，不做未授权重试机制
     request(params) {
         var that = this;
-        var baseRestUrl = 'http://solelytech.iicp.net/jzyz/public/api/v1/';
+        var baseRestUrl = 'https://api.yisuiyanghuoguo.com/public/index.php/api/v1/';
         var url=baseRestUrl + params.url;
         
         
@@ -25,7 +25,6 @@ class Base extends Token{
                 'token': wx.getStorageSync('token')
             },*/
             success: function (res) {
-                    console.log(res)
                 // 判断以2（2xx)开头的状态码为正确
                 // 异常不要返回到回调中，就在request中处理，记录日志并showToast一个统一的错误即可
                 var code = res.data.solely_code;

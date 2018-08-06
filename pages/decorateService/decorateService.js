@@ -49,6 +49,7 @@ Page({
     };
     api.articleGet(postData,callback);
   },
+  
 
   onReachBottom() {
     const self = this;

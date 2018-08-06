@@ -18,17 +18,13 @@
 		</view>
 		<view class="userdetail_list flexRowBetween" >
 			<text>公司地址:</text>
-			<input type="text" value="{{web_sForm.city}}" data-key="city" bindblur="changeBind"></input>
+			<input type="text" value="{{web_sForm.address}}" data-key="address" bindblur="changeBind"></input>
 		</view>
 		<view class="userdetail_list flexRowBetween">
 			<text>联系方式:</text>
-			<input type="text"  bindinput="phoneInput"></input>
+			<input type="text"  value="{{web_sForm.phone}}" data-key="phone" bindblur="changeBind"></input>
 		</view>
-		<view class="userdetail_list flexRowBetween">
-			<text style="width:55px">验证码:</text>
-			<input type="text" style="width:450rpx;"></input>
-			<button class='right yanzheng_btn' bindtap="bindButtonTap" disabled='{{disabled}}' style="background-color:{{color}}">{{text}}</button>
-		</view>
+		
 	</view>
 	<button class="submit_input" bindtap="submit">提交</button>
 

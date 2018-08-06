@@ -81,7 +81,7 @@
     <view class="indexGreat">
         <view class="great_title">
             <text>热门推荐</text>
-            <text class="greatMore" >更多 ></text>
+            <text class="greatMore" data-path="/pages/animite/animite" bindtap="intoPath">更多 ></text>
         </view>
         <view class="great_list">
             <block wx:for="{{web_mainData}}"  wx:key="id">

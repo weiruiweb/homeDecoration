@@ -1,4 +1,4 @@
-.login{padding:46rpx 26rpx;}
+.login{padding:46rpx 26rpx;margin-top:50rpx}
 .nameInput{
 	width:100rpx;
 	height:80rpx;
@@ -30,5 +30,5 @@
 	margin-top:30rpx;
 	text-align:center;
 }
-.submit_input{margin-top:300rpx;}
+
 .userInfo{padding:0rpx;}

@@ -109,12 +109,12 @@ Page({
       api.showToast('不可修改了','fail')
     }else{
       const pass = api.checkComplete(self.data.submitData);
-        if(pass){
-          wx.showLoading();
-          self.messageUpdate(); 
-        }else{
-          api.showToast('请补全信息','fail');
-        };
+      if(pass){
+        wx.showLoading();
+        self.messageUpdate(); 
+      }else{
+        api.showToast('请补全信息','fail');
+      };
     } 
   },
 
@@ -126,12 +126,9 @@ Page({
     }else{
       api.fillChange(e,self,'submitData');
     };
-
-    console.log(self.data.submitData);
     self.setData({
       web_submitData:self.data.submitData,
     }); 
-
     if(api.getDataSet(e,'key')=='keywords'&&self.data.submitData.keywords){
       console.log(self.data.timeFunc);
       if(self.data.timeFunc){
@@ -142,7 +139,6 @@ Page({
         self.data.timeFunc = false;
       },1000);
     };
-
     if(!self.data.submitData.keywords){
       self.data.lock = true;
     };
@@ -160,7 +156,6 @@ Page({
       }
     };
     const callback = (res)=>{
-      console.log(res);
       if(!self.data.lock){
         if(res.info.data.length>0){
           self.data.submitData.keywords = res.info.data[0].title;
@@ -189,7 +184,6 @@ Page({
       }
     };
     const callback = (res)=>{
-      console.log(res);
       self.setData({
         web_labelData:res.info.data
       });
