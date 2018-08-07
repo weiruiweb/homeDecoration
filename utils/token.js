@@ -4,8 +4,10 @@
 
 
 class Token {
+    g_params={};
 
-    constructor() {
+    constructor(params) {
+        this.g_params = params;
     }
 
     verify() { 
@@ -17,10 +19,11 @@ class Token {
     }
 
 
-
     getUserInfo(params,callback){
         var self = this;
         var wxUserInfo = {};
+        
+        
         if(wx.canIUse('button.open-type.getUserInfo')){
             wx.getSetting({
                 success: res => {
@@ -73,6 +76,9 @@ class Token {
                     postData.nickname = data.nickName;
                     postData.headImgUrl = data.avatarUrl;
 
+                };
+                if(self.g_params&&self.g_params.parent_no){
+                    postData.parent_no = self.g_params.parent_no;
                 };
                 if(wx.getStorageSync('openidP')){
                     postData.openid = wx.getStorageSync('openidP');

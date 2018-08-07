@@ -4,7 +4,7 @@ import {Api} from '../../utils/api.js';
 var api = new Api();
 
 import {Token} from '../../utils/token.js';
-var token = new Token();
+
 
 Page({
   data: {
@@ -42,12 +42,13 @@ Page({
     self.getMainData();
     self.getartData();
     self.getSliderData();
- 
     var scene = decodeURIComponent(options.scene)
     console.log(scene)
     if(scene){
+      var token = new Token({parent_no:scene});
       token.getUserInfo();
     }
+
   },
 
 
