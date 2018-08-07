@@ -12,7 +12,6 @@ Page({
     spuItem:{},
     web_index:-1,
     web_show:false,
-    region: app.globalData.region,
     mainData:[],
     artData:[],
     sliderData:[],
@@ -22,6 +21,7 @@ Page({
     interval: 3000,
     duration: 1000,
     parent_no:'',
+    open:false
   },
   //事件处理函数
 
@@ -46,22 +46,18 @@ Page({
   spuChange(e){
     const self = this;
     console.log(e);
-    var index = api.getDataSet(e,'index');
     var itemId = api.getDataSet(e,'id');
-    if(itemId){
+    var title = api.getDataSet(e,'title')
+    console.log(title)
+    if(itemId&&title){
+      self.data.open = false;
       getApp().globalData.passage1 = itemId;
+      getApp().globalData.title = title;
       self.getMainData(true);
-    };
-    if(index||index==0){
-      if(self.data.web_index>=0){
-        self.data.web_index = -1;
-      }else{
-        self.data.web_index = index;
-      };
-      self.setData({
-        web_index:self.data.web_index
-      }); 
-    };     
+    };  
+    self.setData({
+      web_labelTitle:api.cloneForm(getApp().globalData.title),
+    });
   },
 
 
@@ -179,6 +175,19 @@ Page({
 
     self.getMainData(true);
   },
+
+  tap_ch: function(e){
+    const self = this;
+    if(!self.data.open){
+      self.setData({
+        open : true
+      });
+    }else{
+      self.setData({
+        open : false
+      });
+    }
+  }
 
   
 })
