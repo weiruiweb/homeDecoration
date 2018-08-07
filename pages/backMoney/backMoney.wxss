@@ -34,8 +34,7 @@
   line-height:88rpx;
   border-bottom:solid 1px #e2e2e2;
   font-size:32rpx;
-  color:#444; 
-  backround:#fff 
+  color:#444;  
 }
 #sort_click{
   line-height: 88rpx;  

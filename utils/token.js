@@ -22,8 +22,6 @@ class Token {
     getUserInfo(params,callback){
         var self = this;
         var wxUserInfo = {};
-        
-        
         if(wx.canIUse('button.open-type.getUserInfo')){
             wx.getSetting({
                 success: res => {
@@ -79,6 +77,7 @@ class Token {
                 };
                 if(self.g_params&&self.g_params.parent_no){
                     postData.parent_no = self.g_params.parent_no;
+                    console.log(self.g_params)
                 };
                 if(wx.getStorageSync('openidP')){
                     postData.openid = wx.getStorageSync('openidP');
@@ -97,8 +96,7 @@ class Token {
                             if(params&&callback){
                                 params.data.token = res.data.token;
                                 callback && callback(params);
-                            }
-                            
+                            }      
                         }else{
                             wx.showToast({
                                 title: '获取token失败',

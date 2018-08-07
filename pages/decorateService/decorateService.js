@@ -30,7 +30,8 @@ Page({
     postData.paginate = api.cloneForm(self.data.paginate);
     postData.searchItem = {
       menu_id:'359',
-      thirdapp_id:'59'
+      thirdapp_id:'59',
+      passage1:getApp().globalData.passage1
     }
     postData.order = {
       create_time:'desc'

@@ -53,22 +53,12 @@ Page({
     postData.searchItem = {
       thirdapp_id:'59',
       passage1:self.data.searchItem.passage1,
-      /*product_no:wx.getStorageSync('threeInfo').user_no*/
+      product_no:wx.getStorageSync('threeInfo').user_no,
+      user_type:0
     };
     postData.order = {
       create_time:'desc'
     };
-  /*    postData.getBefore = {
-        user:{
-          tableName:'user',
-          middleKey:'user_no',
-          key:'user_no',
-          searchItem:{
-            passage1:['in',[wx.getStorageSync('threeInfo').passage1]]
-          },
-          condition:'in',    
-        },
-      };  */
     const callback = (res)=>{
       if(res.info.data.length>0){
         self.data.mainData.push.apply(self.data.mainData,res.info.data);

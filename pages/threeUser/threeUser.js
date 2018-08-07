@@ -27,5 +27,9 @@ Page({
     api.pathTo(api.getDataSet(e,'path'),'nav');
   },
 
+  removeStorageSync(){
+    api.logOff();
+  },
+
 
 })

@@ -135,3 +135,19 @@ transform:scale(1.1) translateY(10rpx);
   transition: all .5s ease-in-out;
 }
 .great_caseImg:hover.great_caseImg:before{height:100%;}
+.c-state1{
+
+   display:block;
+   
+   width:100%;height:auto;background:#2e2e2e;position:fixed; bottom:0rpx;opacity: 0;
+   transition: all .3s ease-in .1s;
+   transform: translateY(200px);
+   
+ }  
+
+ .c-state2{
+
+   transform: translateY(0px);
+   opacity: 1;
+   
+ }  

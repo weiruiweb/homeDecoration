@@ -2,54 +2,90 @@
 //获取应用实例
 import {Api} from '../../utils/api.js';
 var api = new Api();
+const app = getApp();
 
 import {Token} from '../../utils/token.js';
 
 
 Page({
   data: {
-    multiIndex: [0, 0, 0],
-    
-    region: '西安市',
+    spuItem:{},
+    web_index:-1,
+    web_show:false,
+    region: app.globalData.region,
     mainData:[],
     artData:[],
     sliderData:[],
-
+    labelData:[],
     indicatorDots: true,
     autoplay: true,
     interval: 3000,
     duration: 1000,
-    parent_no:''
+    parent_no:'',
   },
   //事件处理函数
 
 
 
 
-  bindRegionChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
-    this.setData({
-      region: e.detail.value
-    })
-  },
-
-
 
   onLoad(options){
-    
     const self = this;
     self.data.paginate = api.cloneForm(getApp().globalData.paginate);
     self.getMainData();
     self.getartData();
     self.getSliderData();
+    self.getLabelData();
     var scene = decodeURIComponent(options.scene)
-    console.log(scene)
     if(scene){
       var token = new Token({parent_no:scene});
       token.getUserInfo();
     }
 
   },
+
+  spuChange(e){
+    const self = this;
+    console.log(e);
+    var index = api.getDataSet(e,'index');
+    var itemId = api.getDataSet(e,'id');
+    if(itemId){
+      getApp().globalData.passage1 = itemId;
+      self.getMainData(true);
+    };
+    if(index||index==0){
+      if(self.data.web_index>=0){
+        self.data.web_index = -1;
+      }else{
+        self.data.web_index = index;
+      };
+      self.setData({
+        web_index:self.data.web_index
+      }); 
+    };     
+  },
+
+
+  getLabelData(){
+    const self = this;
+    const postData = {};
+    postData.searchItem = {
+      thirdapp_id:['=','59'],
+      type:
+        ['in','9']
+    };
+    const callback = (res)=>{
+      self.data.labelData = res;    
+      wx.hideLoading();
+      self.setData({
+        web_labelData:self.data.labelData,
+      });
+    };
+
+    api.labelGet(postData,callback);
+    
+  },
+
 
 
 
@@ -62,7 +98,8 @@ Page({
     postData.paginate = api.cloneForm(self.data.paginate);
     postData.searchItem = {
       keywords:'热门推荐',
-      thirdapp_id:'59'
+      thirdapp_id:'59',
+      passage1:getApp().globalData.passage1
     };
     postData.order = {
       create_time:'desc'
@@ -73,7 +110,15 @@ Page({
       }else{
         self.data.isLoadAll = true;
       };
+      setTimeout(function()
+      {
+        wx.hideNavigationBarLoading();
+        wx.stopPullDownRefresh();
+      },300);
+
       wx.hideLoading();
+      wx.stopPullDownRefresh();
+      wx.hideNavigationBarLoading(); 
       self.setData({
         web_mainData:self.data.mainData,
       });  
@@ -125,6 +170,15 @@ Page({
       });
     };
     api.labelGet(postData,callback);
+  },
+
+
+  onPullDownRefresh:function(){
+    const self = this;
+    wx.showNavigationBarLoading();
+    delete getApp().globalData.passage1;
+
+    self.getMainData(true);
   },
 
   

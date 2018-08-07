@@ -8,10 +8,10 @@
 		</view>
 	</view>
 	<view class="getRecord flexRowBetween">
-		<view class="record_left">
+		<view  data-num="1" class="{{num==1?'record_left':'record_right'}}" bindtap="menuClick" style="text-align:center">
 			获取记录
 		</view>
-		<view class="record_right">
+		<view  data-num="2" class="{{num==2?'record_left':'record_right'}}" bindtap="menuClick" style="text-align:center">
 			结佣记录
 		</view>
 	</view>

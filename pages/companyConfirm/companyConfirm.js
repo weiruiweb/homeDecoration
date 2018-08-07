@@ -74,6 +74,9 @@ Page({
     }else{
       api.showToast('请补全信息','fail');
     };
+      setTimeout(function(){
+        api.pathTo('/pages/User/user','tab')
+      },1000);  
   },
 
   

@@ -24,7 +24,7 @@ App({
     categoryIndex:'',
     title:'',
     id:'',
-    region:'陕西省西安市莲湖区'
+    passage1:''
 
   },
 

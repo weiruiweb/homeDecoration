@@ -62,7 +62,7 @@ Page({
   },
 
 
-  edit(){
+  userInfoUpdate(){
     const self = this;
     const postData = {};
     postData.token = wx.getStorageSync('threeToken');
@@ -78,13 +78,22 @@ Page({
 
   submit(){
     const self = this;
+    var phone = self.data.submitData.phone;
     const pass = api.checkComplete(self.data.submitData);
     if(pass){
-      wx.showLoading();
-      self.edit();
+      if(phone.trim().length != 11 || !/^1[3|4|5|6|7|8|9]\d{9}$/.test(phone)){
+        api.showToast('手机格式不正确','fail')
+      }else{
+        wx.showLoading();
+        self.userInfoUpdate()
+      }
+        setTimeout(function(){
+          api.pathTo('/pages/threeUser/threeUser','redi')
+        },1000); 
     }else{
       api.showToast('请补全信息','fail');
     };
+    
   },
 
   
