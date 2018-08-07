@@ -51,7 +51,9 @@ Page({
   intoPath:function(e){
     const self = this;
     var id = e.currentTarget.dataset.id;
-    app.globalData.id=id;
+    var title = e.currentTarget.dataset.title;
+    getApp().globalData.id = id;
+    getApp().globalData.title = title;
     wx.switchTab({
       url: '/pages/Great/great'
     });

@@ -6,7 +6,7 @@ var api = new Api();
 Page({
   data: {
 
-
+    articleData:[],
     submitData:{
       title:'',
       keywords:'',
@@ -51,6 +51,12 @@ Page({
   onLoad(options) {
     const self = this;
     self.labelGetTwo();
+    var id = getApp().globalData.id;
+    var title = getApp().globalData.title;
+    if(getApp().globalData.id&&getApp().globalData.title){
+      self.data.submitData.keywords = getApp().globalData.title,
+      self.data.submitData.relation_id = getApp().globalData.id
+    };
     self.setData({
       web_submitData:self.data.submitData,
     }); 
@@ -145,6 +151,8 @@ Page({
     };
     api.articleGet(postData,callback);
   },
+
+  
   
 
   labelGetTwo(Name){

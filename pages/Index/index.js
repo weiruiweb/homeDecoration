@@ -41,7 +41,6 @@ Page({
       var token = new Token({parent_no:scene});
       token.getUserInfo();
     }
-
   },
 
   spuChange(e){
