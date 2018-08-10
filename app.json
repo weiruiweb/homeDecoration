@@ -31,8 +31,10 @@
     "pages/animite/animite",
     "pages/clientDetail/clientDetail",
     "pages/editClient/editClient",
-    "pages/clientModify/clientModify"
-
+    "pages/clientModify/clientModify",
+    "pages/intelligent/intelligent",
+    "pages/Softmatching/Softmatching",
+    "pages/appliances/appliances"
   ],
   "window":{
     "backgroundTextStyle":"light",

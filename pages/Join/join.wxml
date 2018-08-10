@@ -1,10 +1,9 @@
 <!--index.wxml-->
-<view class="nav_sort" >
-	<view data-num="369" class="{{num==369?'active':''}}" bindtap="menuClick" style="text-aligh:center">家具</view>
-	<view data-num="370" class="{{num==370?'active':''}}" bindtap="menuClick" style="text-aligh:center">建材</view>
-	<view data-num="371" class="{{num==371?'active':''}}" bindtap="menuClick" style="text-aligh:center">智能家居</view>
-	<view data-num="372" class="{{num==372?'active':''}}" bindtap="menuClick" style="text-aligh:center">家装</view>
-</view>
+<scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+	<block wx:for="{{web_labelData}}" wx:key="id">
+		<view data-num="{{item.id}}" class="nav-item {{num==item.id?'active':''}}" bindtap="menuClick" style="width:{{web_viewWidth}}">{{item.title}}</view>
+	</block>
+</scroll-view>
 
 <view class="joinShow">
 	<block wx:for="{{web_mainData}}" wx:key="id">

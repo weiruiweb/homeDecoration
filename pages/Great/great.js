@@ -2,6 +2,7 @@
 //获取应用实例
 import {Api} from '../../utils/api.js';
 var api = new Api();
+const app = getApp();
 
 Page({
   data: {
@@ -51,15 +52,21 @@ Page({
   onLoad(options) {
     const self = this;
     self.labelGetTwo();
+  },
+
+  onShow(){
+    const self = this;
     var id = getApp().globalData.id;
-    var title = getApp().globalData.title;
-    if(getApp().globalData.id&&getApp().globalData.title){
-      self.data.submitData.keywords = getApp().globalData.title,
+    var keywords = getApp().globalData.keywords;
+    console.log(getApp().globalData.keywords)
+    if(getApp().globalData.id&&getApp().globalData.keywords){
+      self.data.submitData.keywords = getApp().globalData.keywords,
       self.data.submitData.relation_id = getApp().globalData.id
     };
     self.setData({
       web_submitData:self.data.submitData,
     }); 
+    console.log(self.data.submitData)
   },
 
 

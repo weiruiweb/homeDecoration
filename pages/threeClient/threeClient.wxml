@@ -1,8 +1,7 @@
 <!--user.wxml-->
-
-<view class="nav_sort">
-	<view data-key="" class="{{key==''?'active':''}}" bindtap="menuClick" style="text-aligh:center">未成交</view>
-	<view data-key="已成交" class="{{key=='已成交'?'active':''}}" bindtap="menuClick" style="text-aligh:center">已成交</view>
+<view class="nav">
+	<view data-key="" class="nav-item {{key==''?'active':''}}" bindtap="menuClick" style="width:50%">未成交</view>
+	<view data-key="已成交" class="nav-item {{key=='已成交'?'active':''}}" bindtap="menuClick" style="width:50%	">已成交</view>
 </view>
 
 <view class="User_cont">

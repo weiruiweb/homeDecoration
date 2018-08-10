@@ -21,10 +21,12 @@ App({
         pagesize:10,
         is_page:true,
     },
+    
     categoryIndex:'',
-    title:'',
+    title:'西安市莲湖区',
+    passage1:'389',
     id:'',
-    passage1:''
+    keywords:''
 
   },
 

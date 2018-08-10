@@ -1,10 +1,8 @@
-<view class="nav_sort">
-	<view data-num="361" class="{{num==361?'active':''}}" bindtap="menuClick" style="text-aligh:center">木地板</view>
-	<view data-num="362" class="{{num==362?'active':''}}" bindtap="menuClick" style="text-aligh:center">吊顶</view>
-	<view data-num="363" class="{{num==363?'active':''}}" bindtap="menuClick" style="text-aligh:center">木门</view>
-	<view data-num="364" class="{{num==364?'active':''}}" bindtap="menuClick" style="text-aligh:center">橱柜</view>
-	<view data-num="365" class="{{num==365?'active':''}}" bindtap="menuClick" style="text-aligh:center">洁具</view>
-</view>
+<scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+	<block wx:for="{{web_labelData}}" wx:key="id">
+	<view data-num="{{item.id}}" class="nav-item {{num==item.id?'active':''}}" bindtap="menuClick" style="width:{{viewWidth}}">{{item.title}}</view>
+	</block>
+</scroll-view>
 
 <view class="decorateService ">
 	<block wx:for="{{web_mainData}}"  wx:key="id"> 

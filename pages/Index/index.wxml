@@ -8,9 +8,9 @@
   </view>
 <view class="mainImage">
   <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" >
-    <block wx:for="{{web_sliderData.info.data[0].mainImg}}" wx:key="id">
+    <block wx:for="{{web_sliderData}}" wx:key="id">
       <swiper-item>
-          <image src="{{item.url}}" />
+          <image src="{{item.mainImg[0].url}}" data-path="/pages/register/register?id={{item.id}}" bindtap="intoPath" />
       </swiper-item>
     </block>
   </swiper>
@@ -30,7 +30,7 @@
       </view>
       <text>家具</text>
     </view>
-     <view class="sortModel">
+     <view class="sortModel" data-path="/pages/appliances/appliances" bindtap="intoPath">
       <view class="img_animate model3">
         <image src="/images/index_icon3.png" class="imageFirst"></image>
         <image src="/images/index_icon3_a.png"  class="imageTwo"></image>
@@ -38,7 +38,7 @@
       <text>家电</text>
     </view>
     <view class="sortModel">
-      <view class="img_animate model4">
+      <view class="img_animate model4" data-path="/pages/intelligent/intelligent" bindtap="intoPath">
         <image src="/images/index_icon4.png" class="imageFirst"></image>
         <image src="/images/index_icon4_a.png"  class="imageTwo"></image>
       </view>
@@ -54,7 +54,7 @@
       <text>建材</text>
     </view>
      <view class="sortModel">
-      <view class="img_animate model6">
+      <view class="img_animate model6" data-path="/pages/Softmatching/Softmatching" bindtap="intoPath">
         <image src="/images/index_icon6.png" class="imageFirst"></image>
         <image src="/images/index_icon6_a.png"  class="imageTwo"></image>
       </view>
@@ -98,7 +98,6 @@
     <view class="indexAbout">
         <view class="aboutitle">
             <text>关于我们</text>
-            <image src="/images/kefu.jpg" ></image>
         </view>
         <view class="about_intro" data-path="/pages/aboutDetail/aboutDetail?id={{web_artData.id}}" bindtap="intoPath" style="margin-bottom:10rpx">
             <image src="{{web_artData.mainImg[0].url}}" ></image>
@@ -113,4 +112,11 @@
       <view style="width:300rpx;height:60rpx;border:2rpx solid #ec514f;border-radius:10rpx;text-align:center;line-height:60rpx;color:#ec514f;font-size:30rpx;float:left;margin:10rpx 15rpx" data-id="{{item.id}}" data-title="{{item.title}}"  bindtap="spuChange">{{item.title}}</view>
     </block>
   </view>
+</view>
+
+<view>  
+<contact-button type="default-dark" size="20" session-from="weapp" class="img-plus-style zindex100 yc">
+</contact-button>
+<image class="cs_image" src="/images/kefu.png" class="img-plus-style"></image>
+
 </view>

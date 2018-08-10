@@ -30,7 +30,6 @@ class Base extends Token{
                 var code = res.data.solely_code;
                 if (res.data.solely_code == '200000') {
                     const callback = (data)=>{
-                        console.log(data)
                         that.request(data);
                     };
                     if(wx.getStorageSync('threeToken')&&params.data.token == wx.getStorageSync('threeToken')){

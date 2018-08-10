@@ -1,32 +1,24 @@
-<!--user.wxml-->
-	<view class="userInfo">
-		<view class="userdetail_list flexRowBetween">
-			<text>公司名称:</text>
-			<input type="text"></input>
-		</view>
-		<view class="userdetail_list flexRowBetween" bindtap="company_adrress">
-			<text>公司地址:</text>
-		</view>
-		<view class="userdetail_list flexRowBetween">
-			<text>详细地址:</text>
-			<input type="text"></input>
-		</view>
-		<view class="userdetail_list flexRowBetween">
-			<text>平台业务员:</text>
-			<input type="text"></input>
-		</view>
-		<view class="userdetail_list flexRowBetween">
-			<text>联系方式:</text>
-			<input type="text"></input>
-		</view>
-		<view class="userdetail_list flexRowBetween">
-			<text>获取验证码:</text>
-			<input type="text" style="width:400rpx;"></input>
-			<view class="getCode">
-				点击获取
+<view class="decorateDetail">
+	<image src="{{web_mainData.info.data[0].bannerImg[0].url}}" style="width:100%"></image>
+	<view class="decorateDetails">
+			<text class="text1">{{web_mainData.info.data[0].title}}</text>
+			<view class="adrress_phone">
+				<view class="adrress_left">
+					<image src="/images/map_icon1.jpg" style="width:24rpx;height:24rpx;"></image>
+					<text>{{web_mainData.info.data[0].small_title}}</text>
+				</view>
+				<view class="adrress_left adrress_right" bindtap="calling">
+					<image src="/images/phone_icon1.jpg" style="width:28rpx;height:24rpx;"></image>
+					<text >{{web_mainData.info.data[0].contactPhone}}</text>
+				</view>
 			</view>
-		</view>
-		
 	</view>
-	<button class="submit_input">注册</button>
+
+</view>
+<view class="recom_reason">
+	<view class="content ql-editor" style="color:#666;font-size:22rpx">
+		<import src="../../wxParse/wxParse.wxml"/>
+	    <template is="wxParse" data="{{wxParseData:web_mainData.content}}"/>
+	</view>	
+</view>
 

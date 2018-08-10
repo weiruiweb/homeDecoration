@@ -5,15 +5,13 @@ var api = new Api();
 
 Page({
   data: {
-    num:'361',
-    labelData:[],
+    num:'393',
     mainData:[],
     searchItem:{
-      menu_id:'361'
-    },
-    viewWidth:''
+      menu_id:'393'
+    }
   },
-
+  //事件处理函数
 
 
   menuClick: function (e) {
@@ -32,40 +30,40 @@ Page({
     self.getMainData(true);
   },
 
-  getLabelData(){
-    const self = this;
-    const postData = {};
-    postData.searchItem = {
-      thirdapp_id:['=','59'],
-      parentid:['=','360']
-    };
-    const callback = (res)=>{
-      console.log(res.info.data.length)
-      if(res.info.data.length<5){
-        
-        function toPercent(num, total) { 
-          return (Math.round(res.info.data.length / 100 * 10000) / 100.00 + "%");
-        };
-
-      }else{
-        self.data.viewWidth = '20'+'%'
-      };
-      self.data.labelData = res.info.data;    
-      wx.hideLoading();
-      self.setData({
-        web_labelData:self.data.labelData,
-      });
-    };
-
-    api.labelGet(postData,callback);
-    
-  },
-
   onLoad(){
     const self = this;
     self.data.paginate = api.cloneForm(getApp().globalData.paginate);
     self.getMainData();
     self.getLabelData()
+  },
+
+  getLabelData(){
+    const self = this;
+    const postData = {};
+    postData.searchItem = {
+      thirdapp_id:['=','59'],
+      parentid:['=','366']
+    };
+    const callback = (res)=>{
+      console.log(res.info.data.length)
+      if(res.info.data.length<5){  
+
+        self.data.viewWidth = (100/(res.info.data.length)).toString()+'%';
+   
+      }else{
+        self.data.viewWidth = '20'+'%'
+
+      };
+      self.data.labelData = res.info.data;    
+      wx.hideLoading();
+      self.setData({
+        web_labelData:self.data.labelData,
+        web_viewWidth:self.data.viewWidth
+      });
+    };
+
+    api.labelGet(postData,callback);
+    
   },
 
   getMainData(isNew){
@@ -80,7 +78,6 @@ Page({
       menu_id:self.data.searchItem.menu_id,
       passage1:getApp().globalData.passage1
     };
-
     postData.order = {
       create_time:'desc'
     };

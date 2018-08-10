@@ -77,6 +77,19 @@
     }
 .record_money{color:#f04e4f;}
 /********************点击改变样式***********************/
+
+.nav {
+    height: 88rpx;
+    width: 100%;
+    box-sizing: border-box;
+    line-height: 85rpx;
+    font-size: 16px;
+    white-space: nowrap;
+    background: #f7f7f7;
+    color:#444; 
+    z-index: 99
+}
+
 .nav_sort{
 	flex-direction:row;
 	display:flex;
@@ -85,13 +98,22 @@
 	line-height:88rpx;
 	border-bottom:solid 1px #e2e2e2;
 	font-size:32rpx;
-	color:#444;  
+	color:#444; 
+	white-space:nowrap;
+	overflow-y: scroll
 }
+
+.nav-item {
+	width: 20%;
+    display: inline-block;
+    text-align: center;
+}
+
 #sort_click{
   line-height: 88rpx;  
   font-size: 32rpx;
   padding:0rpx 28rpx;}
 
-.nav_sort .active{
+.nav-item.active{
 	color:#ef4f4f;
 	border-bottom:solid 1px #ef4f4f;}

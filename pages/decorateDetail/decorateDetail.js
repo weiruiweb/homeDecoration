@@ -12,7 +12,7 @@ Page({
   data: {
     
     mainData:[]
-
+    
   },
     
 
@@ -51,13 +51,27 @@ Page({
   intoPath:function(e){
     const self = this;
     var id = e.currentTarget.dataset.id;
-    var title = e.currentTarget.dataset.title;
+    var keywords = e.currentTarget.dataset.keywords;
     getApp().globalData.id = id;
-    getApp().globalData.title = title;
+    getApp().globalData.keywords = keywords;
     wx.switchTab({
       url: '/pages/Great/great'
     });
   },
+
+  calling() {
+    const self = this;
+    var phone = self.data.mainData.info.data[0].contactPhone;
+    wx.makePhoneCall({
+        phoneNumber: phone,
+        success: function () {
+            console.log("拨打电话成功！")
+        },
+        fail: function () {
+            console.log("拨打电话失败！")
+        }
+    })
+  }
 
   
 })

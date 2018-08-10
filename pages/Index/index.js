@@ -21,7 +21,8 @@ Page({
     interval: 3000,
     duration: 1000,
     parent_no:'',
-    open:false
+    open:false,
+
   },
   //事件处理函数
 
@@ -36,6 +37,9 @@ Page({
     self.getartData();
     self.getSliderData();
     self.getLabelData();
+    self.setData({
+      web_labelTitle:api.cloneForm(getApp().globalData.title),
+    });
     var scene = decodeURIComponent(options.scene)
     if(scene){
       var token = new Token({parent_no:scene});
@@ -46,11 +50,11 @@ Page({
   spuChange(e){
     const self = this;
     console.log(e);
+
     var itemId = api.getDataSet(e,'id');
     var title = api.getDataSet(e,'title')
     console.log(title)
     if(itemId&&title){
-      self.data.open = false;
       getApp().globalData.passage1 = itemId;
       getApp().globalData.title = title;
       self.getMainData(true);
@@ -102,6 +106,9 @@ Page({
     const callback = (res)=>{
       if(res.info.data.length>0){
         self.data.mainData.push.apply(self.data.mainData,res.info.data);
+        if(res.info.data.length>4){
+          self.data.mainData = self.data.mainData.slice(0,4) 
+        }
       }else{
         self.data.isLoadAll = true;
       };
@@ -131,7 +138,7 @@ Page({
     const postData = {};
     postData.paginate = api.cloneForm(self.data.paginate);
     postData.searchItem = {
-      menu_id:'380',
+      menu_id:'405',
       thirdapp_id:'59'
     };
     const callback = (res)=>{
@@ -155,16 +162,16 @@ Page({
     const self = this;
     const postData = {};
     postData.searchItem = {
-      parentid:'381',
+      menu_id:'381',
       thirdapp_id:'59'
     };
     const callback = (res)=>{ 
-     self.data.sliderData = res;
+     self.data.sliderData = res.info.data;
       self.setData({
         web_sliderData:self.data.sliderData,
       });
     };
-    api.labelGet(postData,callback);
+    api.articleGet(postData,callback);
   },
 
 
@@ -172,9 +179,13 @@ Page({
     const self = this;
     wx.showNavigationBarLoading();
     delete getApp().globalData.passage1;
+    self.setData({
+      web_labelTitle:'',
 
+    })
     self.getMainData(true);
   },
+
 
   tap_ch: function(e){
     const self = this;

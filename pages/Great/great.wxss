@@ -9,7 +9,7 @@
 	overflow:hidden;
 	margin:20rpx 0rpx 65rpx; 
 }
-.intention_s{color:#2e2e2e;font-size:32rpx;width:140rpx;}
+.intention_s{color:#2e2e2e;font-size:32rpx;width:180rpx;}
 .intention_item{
 	width:80rpx;
 	height:46rpx;

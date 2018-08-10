@@ -20,3 +20,43 @@
 	color:#fff;}
 .userdetail_list input{width:350rpx;}
 .submit_input{position:absolute;bottom:125rpx;left:280rpx;}
+@import "../../wxParse/wxParse.wxss"; 
+.detail_top{
+  width:750rpx;height:348rpx;
+}
+.decorateDetails{padding:40rpx 24rpx;}
+
+.decorateDetails .text1{
+  font-size:28rpx;
+  color:#2e2e2e;
+}
+.adrress_phone{
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;}
+.adrress_phone image{margin-right:12rpx;}
+
+.adrress_phone .adrress_left text{color:#cbcbcb;font-size:22rpx;}
+.recom_reason{
+
+  padding:34rpx 24rpx;
+  border-top:solid 1px #f2f2f2;
+}
+.recom_tltle{font-size:30rpx;margin:0rpx;display:flex;}
+.reason_intro{
+  color:#666;
+  font-size:22rpx;
+  
+}
+.recom_other{
+  width:250rpx;
+  height:80rpx;
+  background:#ef4f4f;
+  border-radius:30px;
+  color:#fff;
+  margin:100rpx auto;
+  font-size:30rpx;
+  text-align:center;
+  line-height:80rpx;
+}
+
