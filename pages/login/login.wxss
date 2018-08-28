@@ -6,7 +6,8 @@
 	color:#2e2e2e;
 	font-size:30rpx;}
 .login_input{
-	width:560rpx;
+	padding-left:4%;
+	width:76%;
 	height:80rpx;
 	background:#f4f4f4;
 	line-height:80rpx;

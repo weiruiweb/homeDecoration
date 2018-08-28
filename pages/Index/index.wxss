@@ -4,9 +4,6 @@
 left:0;}
 .cityPosition image{width:32rpx;height:44rpx;}**/
 
-
-
-
 .mainImage image{
 	width:750rpx;
 	height:330rpx;
@@ -18,7 +15,6 @@ left:0;}
 	flex-direction:row;
 	justify-content:space-around;
 }
-
 .sortModel{text-align:center;margin-top:35rpx;}
 .sortModel image{
 	width:94rpx;
@@ -34,10 +30,10 @@ left:0;}
   .great_title{padding:30rpx 12rpx 30rpx 12rpx;justify-content: space-between;flex-direction: row;}
   .great_title text{font-size:28rpx;}
   .greatMore{float:right;color:#ec514f;}
-  .great_item{width:48%;height:315rpx;float:left;padding:0 1%;margin:30rpx 1%rpx;overflow:hidden;}
+  .great_item{width:48%;height:315rpx;float:left;padding:0 1%;margin:10rpx 0;overflow:hidden;}
   .great_item image{width:100%;height:245rpx;}
   .decorator{margin-top:20rpx;height:45rpx;line-height:45rpx;}
-  .decorator image{float:left;width:45rpx;height:45rpx;margin-right:22rpx;}
+  .decorator image{width:45rpx;height:45rpx;}
   .decorator text{font-size:22rpx;color:#252525;}
   /******************关于我们****************/
   .indexAbout{padding:0rpx 22rpx;background:#fff;overflow:hidden;}
@@ -79,46 +75,6 @@ transform:scale(1.1) translateY(10rpx);
  .picker image{margin-right:10rpx;margin-top:5rpx;}
  /***************动画*****************/
  
-.img_animate{
-  width:94rpx;
-  height:94rpx;
-  border-radius:50%;
-  position:relative;
-  line-height:94rpx;
-  text-align:center;
-  transition:all 0.5s;
-  overflow:hidden;}
- .model1{background:#feefea;}
- .model1:hover{background:#f8693f;}
-.model2{background:#ebf1fd;}
-.model2:hover{background:#4c83e0;}
-.model3{background:#f0f7e7;}
-.model3:hover{background:#73ac07;}
-.model4{background:#e8f7fa;}
-.model4:hover{background:#1fbed1;}
-.model5{background:#f0f7e7;}
-.model5:hover{background:#73ab08;}
-.model6{background:#e8f7fa;}
-.model6:hover{background:#31b0e7;}
-.model7{background:#feefea;}
-.model7:hover{background:#ff9c7d;}
-.model8{background:#f0f7e7;}
-.model8:hover{background:#70ad08;}
-.img_animate .imageFirst{
-  width:49rpx;
-  height:49rpx;
-  position:absolute;
-  left:20rpx;top:20rpx;
-  transition: all .5s ease-in-out;}
-.img_animate .imageTwo{
-  width:49rpx;
-  height:49rpx;
-  top:20rpx;
-  left:94rpx;
-  position:absolute;
-  transition: all .5s ease-in-out;}
-.img_animate:hover.img_animate .imageFirst{left:-70rpx;}
-.img_animate:hover.img_animate .imageTwo{left:20rpx;}
 
 .great_caseImg{overflow:hidden;width:340rpx;height:246rpx;margin:0px auto;position:relative;}
 .great_item image{transition:all 1s;}

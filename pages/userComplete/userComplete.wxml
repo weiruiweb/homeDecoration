@@ -13,28 +13,28 @@
 	</view>
 	<view class="userInfo">
 		<view class="userdetail_list flexRowBetween">
-			<text>姓名:</text>
-			<input type="text" value="{{web_sForm.name}}" data-key="name" bindblur="changeBind"></input>
+			<text style="width:14%;">姓名:</text>
+			<input type="text" value="{{web_sForm.name}}" data-key="name" bindblur="changeBind" style="width:86%;"></input>
 		</view>
 
 		<view class="userdetail_list flexRowBetween">
-			<text>联系方式:</text>
-			<input type="text"  value="{{web_sForm.phone}}" data-key="phone" bindblur="changeBind"></input>
+			<text  style="width:22%;">联系方式:</text>
+			<input type="text"  value="{{web_sForm.phone}}" data-key="phone" bindblur="changeBind" style="width:78%;"></input>
 		</view>
 		
 		<view class="userdetail_list flexRowBetween">
-			<text>公司:</text>
-			<input type="text"  value="{{web_sForm.email}}" data-key="email" bindblur="changeBind"></input>
+			<text  style="width:14%;">公司:</text>
+			<input type="text"  value="{{web_sForm.email}}" data-key="email" bindblur="changeBind" style="width:86%;"></input>
 		</view>
 
 		<view class="userdetail_list flexRowBetween">
-			<text>职位:</text>
-			<input type="text"  value="{{web_sForm.level}}" data-key="level" bindblur="changeBind"></input>
+			<text  style="width:14%;">职位:</text>
+			<input style="width:86%;" type="text"  value="{{web_sForm.level}}" data-key="level" bindblur="changeBind"></input>
 		</view>
 
 		<view class="userdetail_list flexRowBetween">
-			<text>地址:</text>
-			<input type="text"  value="{{web_sForm.address}}" data-key="address" bindblur="changeBind"></input>
+			<text style="width:14%;">地址:</text>
+			<input style="width:86%;" type="text"  value="{{web_sForm.address}}" data-key="address" bindblur="changeBind"></input>
 		</view>
 
 

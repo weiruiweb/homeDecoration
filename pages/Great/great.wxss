@@ -2,7 +2,7 @@
 .contain{padding:50rpx 30rpx;}
 .flexRowBetween{margin-bottom:40rpx;}
 .inputLabel{height:80rpx;line-height:80rpx;font-size:32rpx;color:#2e2e2e;}
-.greatInput input{width:520rpx;height:80rpx;background:#f4f4f4;border-radius:10rpx;font-size:28rpx;color:#666}
+.greatInput input{height:80rpx;background:#f4f4f4;border-radius:10rpx;font-size:28rpx;color:#666;padding-left:20rpx;}
 .intention{
 	padding-right:50rpx;
 	height:50rpx;

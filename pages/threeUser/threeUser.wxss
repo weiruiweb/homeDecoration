@@ -27,17 +27,15 @@ page {
 
 .user_list{
 	background:#fff;
-	padding:0rpx 40rpx 0rpx 50rpx;
+	padding:0rpx 40rpx;
 	border-bottom:solid 1px #e2e2e2;
 	height:105rpx;
 	line-height:105rpx;}
 .user_list image{
 	width:28rpx;
-	height:28rpx;
-	margin-right:20rpx;
-	margin-top:38rpx;}
+	height:28rpx;}
 .user_list text{
-	width:590rpx;
+	
 	color:#4d4d4d;
 	font-size:26rpx;}
 .user_list .next_page{width:15rpx;height:29rpx;}

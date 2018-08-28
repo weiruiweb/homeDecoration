@@ -1,10 +1,10 @@
 <view class="login">
 	<view class="login_item flexRowBetween">
-		<text class="nameInput">登录名:</text>
-		<input class="login_input"  data-key="login_name" bindchange="bindInputChange" ></input>
+		<text class="nameInput" style="width:20%;">登录名:</text>
+		<input class="login_input"  data-key="login_name" bindchange="bindInputChange"></input>
 	</view>
 	<view class="login_item flexRowBetween">
-		<text class="nameInput">密码:</text>
+		<text class="nameInput"  style="width:20%;">密码:</text>
 		<input class="login_input" data-key="password" bindchange="bindInputChange"></input>
 	</view>
 

@@ -26,7 +26,7 @@ page {
 
 .user_list{
 	background:#fff;
-	padding:0rpx 40rpx 0rpx 50rpx;
+	padding:0rpx 40rpx;
 	border-bottom:solid 1px #e2e2e2;
 	height:105rpx;
 	line-height:105rpx;

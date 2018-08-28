@@ -72,7 +72,7 @@
 			<view class="" style="width:10%">
 				<image src="/images/user_icon6.png"></image>
 			</view>
-			<view style="width:75%;font-size:26rpx;color:#666;text-align:left">第三方合作商登陆</view>
+			<view style="width:75%;font-size:26rpx;color:#666;text-align:left">第三方合作商登录</view>
 			<view style="width:20%;text-align:right">
 				<image src="/images/next_icon1.jpg" class="next_page" ></image>
 			</view>

@@ -17,13 +17,17 @@
 </view>
 <view class="author">
 	<view class="adrress_phone">
-		<view class="adrress_left">
-			<image src="/images/map_icon1.jpg" style="width:24rpx;height:24rpx;"></image>
-			<text>{{web_mainData.info.data[0].small_title}}</text>
+		<view class="adrress_left flexRowBetween">
+			<view style="width:5%;overhidden;">
+				<image src="/images/map_icon1.jpg" style="width:20rpx;height:24rpx;align-items:center;"></image>
+			</view>
+			<text style="width:95%;overhidden;align-items:center;">{{web_mainData.info.data[0].small_title}}</text>
 		</view>
-		<view class="adrress_left adrress_right">
-			<image src="/images/phone_icon1.jpg" style="width:28rpx;height:24rpx;"></image>
-			<text>{{web_mainData.info.data[0].contactPhone}}</text>
+		<view class="adrress_left adrress_right flexRowBetween">
+		<view style="width:5%;overhidden;">
+			<image src="/images/phone_icon1.jpg" style="width:24rpx;height:24rpx;"></image>
+		</view>
+			<text style="width:95%;overhidden;align-items:center;">{{web_mainData.info.data[0].contactPhone}}</text>
 		</view>
 	</view>
 </view>

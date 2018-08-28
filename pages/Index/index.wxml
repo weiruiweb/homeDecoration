@@ -15,60 +15,54 @@
 </view>
 <view class="indexSort">
     <view class="sortModel" data-path="/pages/decorateService/decorateService" bindtap="intoPath">
-      <view class="img_animate model1">
-        <image src="/images/index_icon1.png" class="imageFirst"></image>
-        <image src="/images/index_icon1_a.png"  class="imageTwo"></image>
+      <view >
+        <image src="/images/sort_icon2.png"></image>
       </view>
       <text>家装</text>
     </view>
      <view class="sortModel" data-path="/pages/furnitureService/furnitureService" bindtap="intoPath">
-      <view class="img_animate model2">
-        <image src="/images/index_icon2.png" class="imageFirst"></image>
-        <image src="/images/index_icon2_a.png"  class="imageTwo"></image>
+      <view >
+        <image src="/images/sort_icon3.png"></image>
       </view>
       <text>家具</text>
     </view>
      <view class="sortModel" data-path="/pages/appliances/appliances" bindtap="intoPath">
-      <view class="img_animate model3">
-        <image src="/images/index_icon3.png" class="imageFirst"></image>
-        <image src="/images/index_icon3_a.png"  class="imageTwo"></image>
+      <view >
+        <image src="/images/sort_icon4.png"></image>
       </view>
       <text>家电</text>
     </view>
     <view class="sortModel">
-      <view class="img_animate model4" data-path="/pages/intelligent/intelligent" bindtap="intoPath">
-        <image src="/images/index_icon4.png" class="imageFirst"></image>
-        <image src="/images/index_icon4_a.png"  class="imageTwo"></image>
+      <view  data-path="/pages/intelligent/intelligent" bindtap="intoPath">
+        <image src="/images/sort_icon.png"></image>
+     
       </view>
       <text>智能家居</text>
     </view>
 </view>
 <view class="indexSort" >
     <view class="sortModel" bindtap="materials" style="margin-bottom:35rpx;" data-path="/pages/materials/materials" bindtap="intoPath">
-      <view class="img_animate model5">
-        <image src="/images/index_icon5.png" class="imageFirst"></image>
-        <image src="/images/index_icon5_a.png"  class="imageTwo"></image>
+      <view class="">
+        <image src="/images/sort_icon6.png"></image>
+
       </view>
       <text>建材</text>
     </view>
      <view class="sortModel">
-      <view class="img_animate model6" data-path="/pages/Softmatching/Softmatching" bindtap="intoPath">
-        <image src="/images/index_icon6.png" class="imageFirst"></image>
-        <image src="/images/index_icon6_a.png"  class="imageTwo"></image>
+      <view data-path="/pages/Softmatching/Softmatching" bindtap="intoPath">
+        <image src="/images/sort_icon7.png"></image>
       </view>
       <text>软配</text>
     </view>
      <view class="sortModel">
-      <view class="img_animate model7">
-        <image src="/images/index_icon7.png" class="imageFirst"></image>
-        <image src="/images/index_icon7_a.png"  class="imageTwo"></image>
+      <view >
+        <image src="/images/sort_icon8.png"></image>
       </view>
       <text>其他</text>
     </view>
     <view class="sortModel">
-      <view class="img_animate model8">
-        <image src="/images/index_icon8.png" class="imageFirst"></image>
-        <image src="/images/index_icon8_a.png"  class="imageTwo"></image>
+      <view >
+       <image src="/images/sort_icon9.png"></image>
       </view>
       <text>敬请期待</text>
     </view>
@@ -93,9 +87,13 @@
                 <view class="great_caseImg">
                   <image src="{{item.mainImg[0].url}}"></image>
                 </view>
-                <view class="decorator">
-                  <image src="/images/decorator.jpg"></image>
-                  <text>{{item.title}}</text>
+                <view class="decorator flexRowBetween">
+                  <view style="width:20%;overflow:hidden;align-items:center;">
+                    <image src="/images/decorator.jpg"></image>
+                  </view>
+                  <view style="width:80%;overflow:hidden;align-items:center;font-size:22rpx;color:#252525;">
+                  {{item.title}}
+                  </view>
                 </view>
               </view>
             </block>
