@@ -11,7 +11,7 @@ Page({
 
     sForm:{
       login_name:'',
-      password:'',
+      password:''
 
     }
     
@@ -19,7 +19,7 @@ Page({
 
   onShow(){
     const self = this;
-    if(wx.getStorageSync('threeToken')){
+    if(wx.getStorageSync('threeInfo')){
         wx.redirectTo({
           url: '/pages/threeUser/threeUser'
         })
@@ -28,11 +28,11 @@ Page({
 
   submit(){
     const self = this;
+    wx.setStorageSync('login',self.data.sForm);
     const callback = (res)=>{
       if(res){
         if(res.data.info.scope==1){
           wx.setStorageSync('threeInfo',res.data.info); 
-          wx.setStorageSync('login',self.data.sForm); 
           wx.navigateTo({
             url: '/pages/threeUser/threeUser'
           })

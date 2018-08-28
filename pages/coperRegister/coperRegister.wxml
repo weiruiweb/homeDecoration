@@ -21,7 +21,7 @@
 
 	<view class="userdetail_list flexRowBetween">
 		<text>联系人:</text>
-		<input type="text"   data-key="passage1" bindblur="changeBind"></input>
+		<input type="text"   data-key="email" bindblur="changeBind"></input>
 	</view>
 
 	<view class="userdetail_list flexRowBetween">

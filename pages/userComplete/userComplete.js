@@ -10,7 +10,8 @@ Page({
       email:'',
       level:'',
       address:'',
-      passage1:'0'    
+      passage1:'0',
+      behavior:0 
     },
     mainData:{},
     

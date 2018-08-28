@@ -8,7 +8,7 @@ Page({
       name:'',
       phone:'',
       address:'',
-      passage1:'',
+      email:'',
       login_name:'',
       password:''  
     },
@@ -57,8 +57,9 @@ Page({
       userInfo:{
         name:self.data.sForm.name,
         address:self.data.sForm.address,
-        passage1:self.data.sForm.passage1,
+        email:self.data.sForm.email,
         phone:self.data.sForm.phone,
+        behavior:3,
       }
     };
     const callback = (res)=>{
