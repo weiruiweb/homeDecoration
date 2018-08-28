@@ -55,6 +55,7 @@ Page({
         scope:0
       },
       userInfo:{
+        thirdapp_id:getApp().globalData.thirdapp_id,
         name:self.data.sForm.name,
         address:self.data.sForm.address,
         email:self.data.sForm.email,

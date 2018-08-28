@@ -10,8 +10,8 @@ Page({
       email:'',
       level:'',
       address:'',
-      passage1:'0',
-      behavior:0 
+/*    passage1:0,
+      behavior:0,*/  
     },
     mainData:{},
     
@@ -36,7 +36,7 @@ Page({
       self.data.sForm.name = res.info.data[0].info.name;
       self.data.sForm.email = res.info.data[0].info.email;
       self.data.sForm.level = res.info.data[0].info.level;
-      self.data.sForm.address = res.info.data[0].info.address;
+      self.data.sForm.address = res.info.data[0].info.address; 
       self.setData({
         web_sForm:self.data.sForm,
         web_mainData:self.data.mainData
@@ -69,6 +69,8 @@ Page({
     postData.token = wx.getStorageSync('token');
     postData.data = {};
     postData.data = api.cloneForm(self.data.sForm);
+    postData.data.passage1 = 0;
+    postData.data.behavior = 0;
     const callback = (data)=>{
       wx.hideLoading();
       api.dealRes(data);
@@ -83,6 +85,8 @@ Page({
     postData.token = wx.getStorageSync('token');
     postData.data = {};
     postData.data = api.cloneForm(self.data.sForm);
+    postData.data.passage1 = 0;
+    postData.data.behavior = 0;
     const callback = (data)=>{
       wx.hideLoading();
       api.dealRes(data);
