@@ -121,7 +121,7 @@ Page({
         if(phone.trim().length != 11 || !/^1[3|4|5|6|7|8|9]\d{9}$/.test(phone)){
           api.showToast('手机格式错误','fail')
         }else{
-            self.coperRegister();       
+          self.coperRegister();       
         }
     }else{
       api.showToast('请补全信息','fail');

@@ -33,7 +33,7 @@ Page({
       if(res){
         if(res.data.info.scope==1){
           wx.setStorageSync('threeInfo',res.data.info); 
-          wx.navigateTo({
+          wx.redirectTo({
             url: '/pages/threeUser/threeUser'
           })
           api.showToast('登陆成功','success')  
@@ -59,8 +59,10 @@ Page({
 
 
   check(e){
-    const self = this;   
+    const self = this;  
+    wx.showLoading(); 
     if(api.checkComplete(self.data.sForm)){
+      wx.hideLoading();  
       self.submit();
     }else{
       api.showToast('请填写账号密码','fail')
