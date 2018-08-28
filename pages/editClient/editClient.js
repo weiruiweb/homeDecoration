@@ -11,7 +11,8 @@ Page({
     key:'',
     mainData:[],
     searchItem:{
-      passage1:''
+      thirdapp_id:getApp().globalData.thirdapp_id,
+      user_type:0
     }
 
   },
@@ -47,10 +48,7 @@ Page({
     const postData = {};
     postData.paginate = api.cloneForm(self.data.paginate);
     postData.token = wx.getStorageSync('token');
-    postData.searchItem = {
-      thirdapp_id:getApp().globalData.thirdapp_id,
-      passage1:self.data.searchItem.passage1
-    }
+    postData.searchItem = api.cloneForm(self.data.searchItem);
     postData.order = {
       create_time:'desc'
     }

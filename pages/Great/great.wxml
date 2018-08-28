@@ -87,5 +87,5 @@
 		</view>
 	</view>
 
-	<button class="submit_input"  open-type="getUserInfo" bindgetuserinfo="submit" bindtap="{{!buttonClicked?'submit':''}}">提交</button>
+	<button class="submit_input"  open-type="getUserInfo" bindgetuserinfo="{{!buttonClicked?'submit':''}}" >提交</button>
 </view>

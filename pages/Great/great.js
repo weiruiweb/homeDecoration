@@ -95,7 +95,6 @@ Page({
       token:wx.getStorageSync('token')
     }
     const callback = (res)=>{
-      console.log(res)
       if(res.info.data.length>0){
         api.showToast('客户已被推荐','fail');
         self.data.submitData.phone='';
