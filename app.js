@@ -8,7 +8,6 @@ App({
       // 展示本地存储能力
     var token = new Token();
     token.verify();
-
   },
 
   globalData: {
@@ -23,12 +22,7 @@ App({
     },
     
     categoryIndex:'',
-    title:'西安市莲湖区',
-    passage1:'389',
-    id:'',
-    keywords:''
-
-  },
+  }
 
 
 

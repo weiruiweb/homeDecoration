@@ -75,7 +75,7 @@ class Token {
                     postData.headImgUrl = data.avatarUrl;
 
                 };
-                if(self.g_params&&self.g_params.parent_no){
+                if(self.g_params&&self.g_params.parent_no&&self.g_params.parent_no!='undefined'){
                     postData.parent_no = self.g_params.parent_no;
                     console.log(self.g_params)
                 };
@@ -123,7 +123,6 @@ class Token {
                 login_name:wx.getStorageSync('login').login_name,
                 password:wx.getStorageSync('login').password,
             }
-
             wx.request({
                 url: 'https://api.yisuiyanghuoguo.com/public/index.php/api/v1/Func/Common/loginByUp',
                 method:'POST',
@@ -154,8 +153,8 @@ class Token {
                         },500);
 
                        
-                        wx.removeStorageSync('token');
-                        wx.removeStorageSync('login');
+/*                        wx.removeStorageSync('token');
+                        wx.removeStorageSync('login');*/
 /*                        wx.redirectTo({
                             url:'/pages/teacher/login/login'
                         })*/

@@ -29,7 +29,7 @@ Page({
     postData.paginate = api.cloneForm(self.data.paginate);
     postData.searchItem = {
       keywords:'热门推荐',
-      thirdapp_id:'59'
+      thirdapp_id:getApp().globalData.thirdapp_id
     };
     postData.order = {
       create_time:'desc'

@@ -9,6 +9,9 @@
 	</view>
 
 	<button class="submit_input" bindtap="check">登录</button>
+
+
+	<view style="font-size:14px;color:#666;text-align:center;margin-top:50px" data-path="/pages/coperRegister/coperRegister"  bindtap='intoPath'>没有账号？去注册</view>
 </view>
 
 

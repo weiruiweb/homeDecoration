@@ -2,12 +2,12 @@
 	<view class="userInfo">
 		<view class="userdetail_list flexRowBetween">
 			<text>所属公司:</text>
-			<input type="text" value="{{web_submitData.name}}" data-key="name" bindblur="changeBind"></input>
+			<input type="text" value="{{web_userData.info.data[0].threeInfo.name}}" data-key="name" bindblur="changeBind"></input>
 		</view>
 		<view class="userdetail_list flexRowBetween">
 			<text>公司ID号:</text>
-			<input type="number" value="{{web_submitData.id}}" data-key="id" bindblur="changeBind"></input>
+			<input type="number" value="{{web_userData.info.data[0].threeInfo.id}}" data-key="id" bindblur="changeBind"></input>
 		</view>
 	</view>
-	<button class="submit_input" bindtap="submit">提交</button>
+	<button class="submit_input" bindtap="submit">提 交</button>
 

@@ -6,13 +6,12 @@ Page({
   data: {
     sForm:{
       phone:'',
+      name:'',
+      email:'',
+      level:'',
       address:'',
-      name:'',    
+      passage1:'0'    
     },
-    text: '获取验证码', //按钮文字
-    currentTime: 61, //倒计时
-    disabled: false, //按钮是否禁用
-    phone: '',//获取到的手机栏中的值
     mainData:{},
     
   },
@@ -20,22 +19,26 @@ Page({
 
   onLoad(){
     const self = this;
-    self.userInfoGet();
+    self.userGet();
   },
 
 
-  userInfoGet(){
+  userGet(){
     const self = this;
-    const postData = {};
-    postData.token = wx.getStorageSync('token');
+    const postData = {
+      token:wx.getStorageSync('token'),
+    }
     const callback = (res)=>{
       console.log(res)
       self.data.mainData = res;
       self.data.sForm.phone = res.info.data[0].info.phone;
-      self.data.sForm.address = res.info.data[0].info.address;
       self.data.sForm.name = res.info.data[0].info.name;
+      self.data.sForm.email = res.info.data[0].info.email;
+      self.data.sForm.level = res.info.data[0].info.level;
+      self.data.sForm.address = res.info.data[0].info.address;
       self.setData({
         web_sForm:self.data.sForm,
+        web_mainData:self.data.mainData
       });
       wx.hideLoading();
     };

@@ -9,8 +9,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
-    mainData:[]
+    num:'409',
+    mainData:[],
+    searchItem:{
+      menu_id:'409'
+    }
 
   },
     
@@ -29,8 +32,8 @@ Page({
     const postData = {};
     postData.paginate = api.cloneForm(self.data.paginate);
     postData.searchItem = {
-      menu_id:'359',
-      thirdapp_id:'59',
+      menu_id:self.data.searchItem.menu_id,
+      thirdapp_id:getApp().globalData.thirdapp_id,
       passage1:getApp().globalData.passage1
     }
     postData.order = {
@@ -50,6 +53,55 @@ Page({
     };
     api.articleGet(postData,callback);
   },
+
+  getLabelData(){
+    const self = this;
+    const postData = {};
+    postData.searchItem = {
+      thirdapp_id:getApp().globalData.thirdapp_id,
+      parentid:['=','359']
+    };
+    const callback = (res)=>{
+      console.log(res.info.data.length)
+      if(res.info.data.length<5){  
+        self.data.viewWidth = (100/(res.info.data.length)).toString()+'%';
+      }else{
+        self.data.viewWidth = '20'+'%'
+      };
+  
+      self.data.labelData = res.info.data;    
+      wx.hideLoading();
+      self.setData({
+        web_labelData:self.data.labelData,
+        web_viewWidth:self.data.viewWidth
+      });
+    };
+    api.labelGet(postData,callback);   
+  },
+
+  menuClick: function (e) {
+    const self = this;
+    const num = e.currentTarget.dataset.num;
+    self.changeSearch(num);
+  },
+
+
+  changeSearch(num){
+    const self = this;
+    this.setData({
+      num: num
+    });
+    self.data.searchItem.menu_id = num;
+    self.getMainData(true);
+  },
+
+  onLoad(){
+    const self = this;
+    self.data.paginate = api.cloneForm(getApp().globalData.paginate);
+    self.getMainData();
+    self.getLabelData()
+  },
+
   
 
   onReachBottom() {

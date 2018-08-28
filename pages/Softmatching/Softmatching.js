@@ -41,7 +41,7 @@ Page({
     const self = this;
     const postData = {};
     postData.searchItem = {
-      thirdapp_id:['=','59'],
+      thirdapp_id:getApp().globalData.thirdapp_id,
       parentid:['=','368']
     };
     const callback = (res)=>{
@@ -74,7 +74,7 @@ Page({
     const postData = {};
     postData.paginate = api.cloneForm(self.data.paginate);
     postData.searchItem = {
-      thirdapp_id:'59',
+      thirdapp_id:getApp().globalData.thirdapp_id,
       menu_id:self.data.searchItem.menu_id,
       passage1:getApp().globalData.passage1
     };

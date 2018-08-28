@@ -75,6 +75,18 @@ class Api extends Base{
             }
         };
         this.request(allParams);
+    }     
+
+    coperRegister(param,callback){
+        var allParams ={
+            url:'Project/Jzyz/coperRegister',
+            type:'post',
+            data:param,
+            sCallback: function(data) {
+                callback && callback(data);
+            }
+        };
+        this.request(allParams);
     }    
 
 
@@ -173,6 +185,19 @@ class Api extends Base{
     userGet(param,callback){
         var allParams ={
             url:'Base/User/get',
+            type:'post',
+            data:param,
+            sCallback: function(data) {
+                callback && callback(data);
+            }
+        };
+        this.request(allParams);
+    }    
+
+
+    thirdAppGet(param,callback){
+        var allParams ={
+            url:'Base/ThirdApp/get',
             type:'post',
             data:param,
             sCallback: function(data) {

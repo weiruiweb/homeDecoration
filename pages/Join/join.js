@@ -5,11 +5,11 @@ var api = new Api();
 
 Page({
   data: {
-    num:'369',
+    num:'371',
     mainData:[],
     labelData:[],
     searchItem:{
-      menu_id:'369'
+      menu_id:'371'
     }
   },
 
@@ -37,29 +37,17 @@ Page({
     self.getLabelData()
   },
 
-  getMainData(isNew){
+  getMainData(){
     const self = this;
-    if(isNew){
-      api.clearPageIndex(self);  
-    };
     const postData = {};
-    postData.paginate = api.cloneForm(self.data.paginate);
     postData.searchItem = {
-      thirdapp_id:'59',
+      thirdapp_id:getApp().globalData.thirdapp_id,
       menu_id:self.data.searchItem.menu_id
     };
-
-    postData.order = {
-      create_time:'desc'
-    };
     const callback = (res)=>{
-      if(res.info.data.length>0){
-        self.data.mainData.push.apply(self.data.mainData,res.info.data);
-      }else{
-        self.data.isLoadAll = true;
-        api.showToast('没有更多了','fail');
-      };
+      self.data.mainData = res
       wx.hideLoading();
+      self.data.mainData.content = api.wxParseReturn(res.info.data[0].content).nodes;
       self.setData({
         web_mainData:self.data.mainData,
       });  
@@ -67,11 +55,13 @@ Page({
     api.articleGet(postData,callback);
   },
 
+
+
   getLabelData(){
     const self = this;
     const postData = {};
     postData.searchItem = {
-      thirdapp_id:['=','59'],
+      thirdapp_id:getApp().globalData.thirdapp_id,
       parentid:['=','353']
     };
     const callback = (res)=>{
@@ -94,13 +84,6 @@ Page({
     
   },
 
-  onReachBottom() {
-    const self = this;
-    if(!self.data.isLoadAll){
-      self.data.paginate.currentPage++;
-      self.getMainData();
-    };
-  },
 
 
   intoPath(e){

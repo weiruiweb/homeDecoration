@@ -24,15 +24,11 @@ Page({
   },
 
 
-  getMainData(isNew){
+  getMainData(){
     const self = this;
-    if(isNew){
-      api.clearPageIndex(self);  
-    };
     const postData = {};
-    postData.paginate = api.cloneForm(self.data.paginate);
     postData.searchItem = {
-      thirdapp_id:'59',
+      thirdapp_id:getApp().globalData.thirdapp_id,
     };
     postData.searchItem.id = self.data.id;
     const callback = (res)=>{

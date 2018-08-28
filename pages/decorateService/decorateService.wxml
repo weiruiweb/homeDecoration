@@ -1,4 +1,8 @@
-
+<scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+	<block wx:for="{{web_labelData}}" wx:key="id">
+		<view data-num="{{item.id}}" class="nav-item {{num==item.id?'active':''}}" bindtap="menuClick" style="width:{{web_viewWidth}}">{{item.title}}</view>
+	</block>
+</scroll-view>
 	<view class="decorateService">
 	<block wx:for="{{web_mainData}}" wx:key="id">
 		<view class="decorate_item" data-path="/pages/decorateDetail/decorateDetail?id={{item.id}}" bindtap="intoPath">

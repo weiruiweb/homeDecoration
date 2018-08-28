@@ -5,12 +5,12 @@ var api = new Api();
 const app = getApp();
 
 import {Token} from '../../utils/token.js';
+const token = new Token();
 
 
 Page({
   data: {
-    spuItem:{},
-    web_index:-1,
+    
     web_show:false,
     mainData:[],
     artData:[],
@@ -21,8 +21,7 @@ Page({
     interval: 3000,
     duration: 1000,
     parent_no:'',
-    open:false,
-
+    region: ['陕西省'+'西安市'+'雁塔区'],
   },
   //事件处理函数
 
@@ -36,9 +35,8 @@ Page({
     self.getMainData();
     self.getartData();
     self.getSliderData();
-    self.getLabelData();
     self.setData({
-      web_labelTitle:api.cloneForm(getApp().globalData.title),
+      web_region: self.data.region
     });
     var scene = decodeURIComponent(options.scene)
     if(scene){
@@ -47,43 +45,7 @@ Page({
     }
   },
 
-  spuChange(e){
-    const self = this;
-    console.log(e);
 
-    var itemId = api.getDataSet(e,'id');
-    var title = api.getDataSet(e,'title')
-    console.log(title)
-    if(itemId&&title){
-      getApp().globalData.passage1 = itemId;
-      getApp().globalData.title = title;
-      self.getMainData(true);
-    };  
-    self.setData({
-      web_labelTitle:api.cloneForm(getApp().globalData.title),
-    });
-  },
-
-
-  getLabelData(){
-    const self = this;
-    const postData = {};
-    postData.searchItem = {
-      thirdapp_id:['=','59'],
-      type:
-        ['in','9']
-    };
-    const callback = (res)=>{
-      self.data.labelData = res;    
-      wx.hideLoading();
-      self.setData({
-        web_labelData:self.data.labelData,
-      });
-    };
-
-    api.labelGet(postData,callback);
-    
-  },
 
 
 
@@ -97,11 +59,7 @@ Page({
     postData.paginate = api.cloneForm(self.data.paginate);
     postData.searchItem = {
       keywords:'热门推荐',
-      thirdapp_id:'59',
-      passage1:getApp().globalData.passage1
-    };
-    postData.order = {
-      create_time:'desc'
+      thirdapp_id:getApp().globalData.thirdapp_id,
     };
     const callback = (res)=>{
       if(res.info.data.length>0){
@@ -117,7 +75,6 @@ Page({
         wx.hideNavigationBarLoading();
         wx.stopPullDownRefresh();
       },300);
-
       wx.hideLoading();
       wx.stopPullDownRefresh();
       wx.hideNavigationBarLoading(); 
@@ -130,16 +87,13 @@ Page({
 
 
 
-  getartData(isNew){
+  getartData(){
     const self = this;
-    if(isNew){
-      api.clearPageIndex(self);  
-    };
     const postData = {};
     postData.paginate = api.cloneForm(self.data.paginate);
     postData.searchItem = {
-      menu_id:'405',
-      thirdapp_id:'59'
+      id:'17',
+      thirdapp_id:getApp().globalData.thirdapp_id
     };
     const callback = (res)=>{
       self.data.artData = res.info.data[0];
@@ -157,13 +111,18 @@ Page({
     api.pathTo(api.getDataSet(e,'path'),'nav');
   },
 
+  intoPathTab(e){
+    const self = this;
+    api.pathTo(api.getDataSet(e,'path'),'tab');
+  },
+
 
   getSliderData(){
     const self = this;
     const postData = {};
     postData.searchItem = {
       menu_id:'381',
-      thirdapp_id:'59'
+      thirdapp_id:getApp().globalData.thirdapp_id
     };
     const callback = (res)=>{ 
      self.data.sliderData = res.info.data;
@@ -175,30 +134,53 @@ Page({
   },
 
 
+  thirdAppGet(){
+    const self = this;
+    const postData = {
+      searchItem:{
+        name: self.data.thirdAppName
+      }
+    };
+    const callback = (res)=>{ 
+      if(res.info.data!=''&&res.info.data[0].id){
+        getApp().globalData.thirdapp_id = res.info.data[0].id;
+        self.getMainData(true);
+        self.getartData();
+        self.getSliderData();
+      }else{
+        api.showToast('此分站暂未开通','fail');
+        self.setData({
+          web_region: self.data.region,
+        });
+        getApp().globalData.thirdapp_id = 59
+      }  
+      wx.hideLoading();
+      console.log(getApp().globalData.thirdapp_id)
+    }
+    api.thirdAppGet(postData,callback);
+  },
+
+
   onPullDownRefresh:function(){
     const self = this;
     wx.showNavigationBarLoading();
-    delete getApp().globalData.passage1;
+    delete self.data.thirdAppName
     self.setData({
-      web_labelTitle:'',
-
+      web_region: self.data.region
     })
     self.getMainData(true);
   },
 
 
-  tap_ch: function(e){
+  bindRegionChange: function (e) {
     const self = this;
-    if(!self.data.open){
-      self.setData({
-        open : true
-      });
-    }else{
-      self.setData({
-        open : false
-      });
-    }
-  }
+    self.data.thirdAppName = e.detail.value[0]+e.detail.value[1]+e.detail.value[2];
+    this.setData({
+      web_region: self.data.thirdAppName
+    })
+    console.log()
+    self.thirdAppGet()
+  },
 
   
 })

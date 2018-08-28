@@ -29,14 +29,15 @@ page {
 	padding:0rpx 40rpx 0rpx 50rpx;
 	border-bottom:solid 1px #e2e2e2;
 	height:105rpx;
-	line-height:105rpx;}
+	line-height:105rpx;
+	align-item:center
+		}
 .user_list image{
 	width:32rpx;
 	height:32rpx;
-	margin-right:20rpx;
-	margin-top:35rpx;}
+	}
 .user_list text{
-	width:590rpx;
+	
 	color:#4d4d4d;
 	font-size:26rpx;}
 .user_list .next_page{width:15rpx;height:29rpx;}

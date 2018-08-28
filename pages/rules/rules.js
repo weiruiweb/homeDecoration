@@ -29,7 +29,7 @@ Page({
     postData.paginate = api.cloneForm(self.data.paginate);
     postData.searchItem = {
       menu_id:'383',
-      thirdapp_id:'59'
+      thirdapp_id:getApp().globalData.thirdapp_id
     };
     const callback = (res)=>{
       self.data.mainData = res.info.data[0];

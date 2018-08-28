@@ -4,7 +4,7 @@ const api = new Api();
 
 Page({
   data: {
- 
+    userData:[],
 
     submitData:{
       name:'',
@@ -21,6 +21,7 @@ Page({
     self.setData({
       web_submitData:self.data.submitData,
     });
+    self.getUserData()
   },
 
 
@@ -40,6 +41,32 @@ Page({
       api.dealRes(res);
     };
     api.companyAuth(postData,callback);
+  },
+
+  getUserData(){
+    const self = this;
+    const postData = {};
+    postData.token = wx.getStorageSync('token');
+    postData.getAfter = {
+      threeInfo:{
+        tableName:'userInfo',
+        middleKey:'parent_no',
+        key:'user_no',
+        condition:'=',
+        searchItem:{
+          status:1
+        },
+        info:['id','name']
+      } 
+    }
+    const callback = (res)=>{
+      self.data.userData = res;
+      self.setData({
+        web_userData:self.data.userData,
+      });
+      wx.hideLoading();
+    };
+    api.userGet(postData,callback);
   },
 
 

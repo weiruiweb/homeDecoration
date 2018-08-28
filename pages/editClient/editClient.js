@@ -48,7 +48,7 @@ Page({
     postData.paginate = api.cloneForm(self.data.paginate);
     postData.token = wx.getStorageSync('token');
     postData.searchItem = {
-      thirdapp_id:'59',
+      thirdapp_id:getApp().globalData.thirdapp_id,
       passage1:self.data.searchItem.passage1
     }
     postData.order = {

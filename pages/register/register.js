@@ -18,7 +18,7 @@ Page({
     const self = this;
     const postData = {};
     postData.searchItem = {
-      thirdapp_id:'59'
+      thirdapp_id:getApp().globalData.thirdapp_id
     };
     postData.searchItem.id = self.data.id;
     const callback = (res)=>{ 

@@ -31,7 +31,7 @@ left:0;}
 	height:100%;
 	overflow:hidden;}
   .indexGreat{background: #fff;margin-top:8rpx;padding:0 1.5%;overflow:hidden;}
-  .great_title{padding:40rpx 12rpx 46rpx 12rpx;justify-content: space-between;flex-direction: row;}
+  .great_title{padding:30rpx 12rpx 30rpx 12rpx;justify-content: space-between;flex-direction: row;}
   .great_title text{font-size:28rpx;}
   .greatMore{float:right;color:#ec514f;}
   .great_item{width:48%;height:315rpx;float:left;padding:0 1%;margin:30rpx 1%rpx;overflow:hidden;}

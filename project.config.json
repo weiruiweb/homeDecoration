@@ -32,7 +32,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 10,
+			"current": 11,
 			"list": [
 				{
 					"id": 0,
@@ -101,6 +101,11 @@
 					"pathName": "pages/furnitureService/furnitureService",
 					"query": "scene=U730476820599258",
 					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "注册",
+					"pathName": "pages/coperRegister/coperRegister"
 				}
 			]
 		}

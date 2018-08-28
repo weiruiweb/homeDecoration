@@ -51,7 +51,7 @@ Page({
     postData.paginate = api.cloneForm(self.data.paginate);
     postData.token = wx.getStorageSync('threeToken');
     postData.searchItem = {
-      thirdapp_id:'59',
+      thirdapp_id:getApp().globalData.thirdapp_id,
       passage1:self.data.searchItem.passage1,
       product_no:wx.getStorageSync('threeInfo').user_no,
       user_type:0

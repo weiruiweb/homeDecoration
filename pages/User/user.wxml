@@ -13,40 +13,69 @@
 	</view>
 	<view class="userInfo">
 		<view class="user_list flexRowBetween" bindtap="intoPath" data-path="/pages/userComplete/userComplete">
+			<view class="" style="width:10%">
 			<image src="/images/user_icon1.png"></image>
-			<text>完善资料</text>
-			<image src="/images/next_icon1.jpg" class="next_page" ></image>
+			</view>
+			<view style="width:20%;font-size:26rpx;color:#666;">完善资料</view>
+			<view style="font-size:12px;color:red;width:50%">{{web_mainData.info.data[0].info.passage1=='1'?'(已审核)':(web_mainData.info.data[0].info.pasaage=='-1'?'(审核拒绝)':'(未审核)')}}</view>
+			<view style="width:20%;text-align:right">
+				<image src="/images/next_icon1.jpg" class="next_page" ></image>
+			</view>
 		</view>
 		<view class="user_list flexRowBetween" bindtap="intoPath" data-path="/pages/companyConfirm/companyConfirm">
-			<image src="/images/user_icon2.png"></image>
-			<text>公司认证</text>
-			<image src="/images/next_icon1.jpg" class="next_page" ></image>
+			<view class="" style="width:10%">
+				<image src="/images/user_icon2.png"></image>
+			</view>
+			<view style="width:75%;font-size:26rpx;color:#666;text-align:left">公司认证</view>
+			<view style="width:20%;text-align:right">
+				<image src="/images/next_icon1.jpg" class="next_page" ></image>
+			</view>
 		</view>
 		
 		<view class="user_list flexRowBetween next_item" bindtap="intoPath" data-path="/pages/editClient/editClient">
-			<image src="/images/user_icon3.png"></image>
-			<text>我的客户</text>
-			<image src="/images/next_icon1.jpg" class="next_page" ></image>
+			<view class="" style="width:10%">
+				<image src="/images/user_icon2.png"></image>
+			</view>
+			<view style="width:75%;font-size:26rpx;color:#666;text-align:left">我的客户</view>
+			<view style="width:20%;text-align:right">
+				<image src="/images/next_icon1.jpg" class="next_page" ></image>
+			</view>
 		</view>
 		<view class="user_list flexRowBetween" bindtap="intoPath" data-path="/pages/backMoney/backMoney">
-			<image src="/images/user_icon4.png"></image>
-			<text>我的佣金</text>
-			<image src="/images/next_icon1.jpg" class="next_page" ></image>
+			<view class="" style="width:10%">
+				<image src="/images/user_icon3.png"></image>
+			</view>
+			<view style="width:75%;font-size:26rpx;color:#666;text-align:left">我的佣金</view>
+			<view style="width:20%;text-align:right">
+				<image src="/images/next_icon1.jpg" class="next_page" ></image>
+			</view>
 		</view>
 		<view class="user_list flexRowBetween" bindtap="intoPath" data-path="/pages/credits/credits">
-			<image src="/images/user_icon5.png"></image>
-			<text>我的积分</text>
-			<image src="/images/next_icon1.jpg" class="next_page" ></image>
+			<view class="" style="width:10%">
+				<image src="/images/user_icon4.png"></image>
+			</view>
+			<view style="width:75%;font-size:26rpx;color:#666;text-align:left">我的积分</view>
+			<view style="width:20%;text-align:right">
+				<image src="/images/next_icon1.jpg" class="next_page" ></image>
+			</view>
 		</view>
 		<view class="user_list flexRowBetween" bindtap="intoPath" data-path="/pages/rules/rules">
-			<image src="/images/user_icon6.png"></image>
-			<text>累计佣金积分规则</text>
-			<image src="/images/next_icon1.jpg" class="next_page" ></image>
+			<view class="" style="width:10%">
+				<image src="/images/user_icon5.png"></image>
+			</view>
+			<view style="width:75%;font-size:26rpx;color:#666;text-align:left">累计佣金积分规则</view>
+			<view style="width:20%;text-align:right">
+				<image src="/images/next_icon1.jpg" class="next_page" ></image>
+			</view>
 		</view>
 		<view class="user_list flexRowBetween next_item" bindtap="intoPath" data-path="/pages/login/login">
-			<image src="/images/user_icon7.png"></image>
-			<text>第三方合作商登陆</text>
-			<image src="/images/next_icon1.jpg" class="next_page" ></image>
+			<view class="" style="width:10%">
+				<image src="/images/user_icon6.png"></image>
+			</view>
+			<view style="width:75%;font-size:26rpx;color:#666;text-align:left">第三方合作商登陆</view>
+			<view style="width:20%;text-align:right">
+				<image src="/images/next_icon1.jpg" class="next_page" ></image>
+			</view>
 		</view>
 	</view>
 </view>

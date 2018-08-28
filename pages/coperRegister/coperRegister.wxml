@@ -1,0 +1,43 @@
+<!--pages/teacher/data.wxml-->
+<view class="userInfo">
+	<view class="userdetail_list flexRowBetween">
+		<text>用户名:</text>
+		<input type="text" data-key="login_name" bindblur="changeBind"></input>
+	</view>
+	<view class="userdetail_list flexRowBetween">
+		<text>密码:</text>
+		<input type="text" data-key="password" bindblur="changeBind"></input>
+	</view>
+
+	<view class="userdetail_list flexRowBetween">
+		<text>公司名称:</text>
+		<input type="number"   data-key="name" bindblur="changeBind"></input>
+	</view>
+	
+	<view class="userdetail_list flexRowBetween">
+		<text>公司地址:</text>
+		<input type="text"   data-key="address" bindblur="changeBind"></input>
+	</view>
+
+	<view class="userdetail_list flexRowBetween">
+		<text>联系人:</text>
+		<input type="text"   data-key="passage1" bindblur="changeBind"></input>
+	</view>
+
+	<view class="userdetail_list flexRowBetween">
+		<text>联系方式:</text>
+		<input type="text"   data-key="phone" bindblur="changeBind"></input>
+	</view>
+
+	<picker class='user_input user_input1' mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+	    <view class="userdetail_list flexRowBetween" style="justify-content:left">
+	      <text>所属分站:</text>
+	      <text style="margin-left:20rpx">{{web_region}}</text>
+	    </view>
+	</picker>
+</view>
+
+
+<button type='submit'  open-type="getUserInfo" bindgetuserinfo="submit" style="font-size:15px;color:#fff;width:550rpx;margin:200rpx auto;background:#ef4f4f;border-radius:50rpx;height:90rpx;line-height:90rpx">提交审核</button>
+
+

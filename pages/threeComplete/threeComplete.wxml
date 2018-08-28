@@ -27,7 +27,7 @@
 		</view>
 		<view class="userdetail_list flexRowBetween" >
 			<text>联系人:</text>
-			<input type="text" value="{{web_submitData.passage1}}" ></input>
+			<input type="text" value="{{web_submitData.passage1}}" data-key="passage1" bindblur="changeBind"></input>
 		</view>
 		<view class="userdetail_list flexRowBetween">
 			<text>联系方式:</text>

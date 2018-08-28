@@ -1,11 +1,9 @@
 <!--index.wxml-->
-<view class="section cityPosition">
-    <view class="picker"   bindtap="tap_ch">
-      <image src="/images/map_icon.jpg"></image>
-      <text wx:if="{{web_labelTitle}}">{{web_labelTitle}}></text>
-      <text wx:else>请选择></text>
+<picker class='user_input user_input1' mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+    <view class="picker" style="font-size:15px;background:#f7f7f7">
+      分站切换：{{web_region}}
     </view>
-  </view>
+</picker>
 <view class="mainImage">
   <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" >
     <block wx:for="{{web_sliderData}}" wx:key="id">
@@ -76,7 +74,15 @@
     </view>
 </view>
 <view class="container">
-    <view class="indexGreat">
+    <view class="indexAbout">
+        <view class="aboutitle">
+            <text>关于我们</text>
+        </view>
+        <view class="about_intro" data-path="/pages/Join/join" bindtap="intoPathTab" style="margin-bottom:30rpx;height:160px">
+            <image src="{{web_artData.mainImg[0].url}}" style="height:160px"></image>
+        </view>
+    </view>
+    <view class="indexGreat" style="margin-bottom:20rpx">
         <view class="great_title">
             <text>热门推荐</text>
             <text class="greatMore" data-path="/pages/animite/animite" bindtap="intoPath">更多 ></text>
@@ -95,14 +101,7 @@
             </block>
         </view>
     </view>
-    <view class="indexAbout">
-        <view class="aboutitle">
-            <text>关于我们</text>
-        </view>
-        <view class="about_intro" data-path="/pages/aboutDetail/aboutDetail?id={{web_artData.id}}" bindtap="intoPath" style="margin-bottom:10rpx">
-            <image src="{{web_artData.mainImg[0].url}}" ></image>
-        </view>
-    </view>
+
 </view>
 
 <view  class="c-state1 {{open ? 'c-state2' : ''}}">

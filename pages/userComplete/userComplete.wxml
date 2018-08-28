@@ -13,18 +13,33 @@
 	</view>
 	<view class="userInfo">
 		<view class="userdetail_list flexRowBetween">
-			<text>公司名称:</text>
+			<text>姓名:</text>
 			<input type="text" value="{{web_sForm.name}}" data-key="name" bindblur="changeBind"></input>
 		</view>
-		<view class="userdetail_list flexRowBetween" >
-			<text>公司地址:</text>
-			<input type="text" value="{{web_sForm.address}}" data-key="address" bindblur="changeBind"></input>
-		</view>
+
 		<view class="userdetail_list flexRowBetween">
 			<text>联系方式:</text>
 			<input type="text"  value="{{web_sForm.phone}}" data-key="phone" bindblur="changeBind"></input>
 		</view>
 		
-	</view>
-	<button class="submit_input" bindtap="submit">提交</button>
+		<view class="userdetail_list flexRowBetween">
+			<text>公司:</text>
+			<input type="text"  value="{{web_sForm.email}}" data-key="email" bindblur="changeBind"></input>
+		</view>
 
+		<view class="userdetail_list flexRowBetween">
+			<text>职位:</text>
+			<input type="text"  value="{{web_sForm.level}}" data-key="level" bindblur="changeBind"></input>
+		</view>
+
+		<view class="userdetail_list flexRowBetween">
+			<text>地址:</text>
+			<input type="text"  value="{{web_sForm.address}}" data-key="address" bindblur="changeBind"></input>
+		</view>
+
+
+
+	</view>
+	<button style="width:380rpx" class="submit_input" bindtap="submit">{{web_mainData.info.data[0].info.passage1=='1'?'已通过审核':(web_mainData.info.data[0].info.pasaage=='-1'?'审核拒绝':'提交审核')}}</button>
+
+	

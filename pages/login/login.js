@@ -11,25 +11,37 @@ Page({
 
     sForm:{
       login_name:'',
-      password:''
+      password:'',
+
     }
     
   },
 
-
+  onShow(){
+    const self = this;
+    if(wx.getStorageSync('threeToken')){
+        wx.redirectTo({
+          url: '/pages/threeUser/threeUser'
+        })
+    }
+  },
 
   submit(){
     const self = this;
-    wx.setStorageSync('login',self.data.sForm);
-    const callback = (res)=>{  
-    wx.setStorageSync('threeInfo',res.data.info);  
+    const callback = (res)=>{
       if(res){
-        wx.navigateTo({
-          url: '/pages/threeUser/threeUser'
-        })
-        api.showToast('登陆成功','success')
+        if(res.data.info.scope==1){
+          wx.setStorageSync('threeInfo',res.data.info); 
+          wx.setStorageSync('login',self.data.sForm); 
+          wx.navigateTo({
+            url: '/pages/threeUser/threeUser'
+          })
+          api.showToast('登陆成功','success')  
+        }else{
+          api.showToast('用户未审核','fail')
+        };
       }else{
-        api.showToast('用户不存在','fail')
+         api.showToast('用户不存在','fail')
       }
     }
     token.getToken(callback);
@@ -58,7 +70,7 @@ Page({
 
   intoPath(e){
     const self = this;
-    api.pathTo(api.getDataSet(e,'path'),'tab');
+    api.pathTo(api.getDataSet(e,'path'),'nav');
   },
   
 })

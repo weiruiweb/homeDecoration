@@ -20,6 +20,7 @@
     "pages/rules/rules",
     "pages/login/login",
     "pages/register/register",
+    "pages/coperRegister/coperRegister",
     "pages/threeUser/threeUser",
     "pages/threeComplete/threeComplete",
     "pages/threeTeam/threeTeam",
@@ -50,7 +51,7 @@
       "selectedIconPath":"/images/navbar1-a.jpg"
     }, {
       "pagePath": "pages/Join/join",
-      "text": "招商加盟",
+      "text": "关于我们",
       "iconPath":"/images/navbar2.jpg",
       "selectedIconPath":"/images/navbar2-a.jpg"
     }, {
