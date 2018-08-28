@@ -12,7 +12,8 @@ Page({
     mainData:[],
     searchItem:{
       thirdapp_id:getApp().globalData.thirdapp_id,
-      user_type:0
+      user_type:0,
+      user_no:wx.getStorageSync('info').user_no
     }
 
   },
