@@ -1,38 +1,38 @@
 <!--pages/teacher/data.wxml-->
 <view class="userInfo">
 	<view class="userdetail_list flexRowBetween">
-		<text>用户名:</text>
-		<input type="text" data-key="login_name" bindblur="changeBind"></input>
+		<text style="width:18%;">用户名:</text>
+		<input type="text" data-key="login_name" bindblur="changeBind" style="width:82%"></input>
 	</view>
 	<view class="userdetail_list flexRowBetween">
-		<text>密码:</text>
-		<input type="text" data-key="password" bindblur="changeBind"></input>
+		<text  style="width:14%;">密码:</text>
+		<input  style="width:86%;" type="text" data-key="password" bindblur="changeBind"></input>
 	</view>
 
 	<view class="userdetail_list flexRowBetween">
-		<text>公司名称:</text>
-		<input type="number"   data-key="name" bindblur="changeBind"></input>
+		<text  style="width:22%;">公司名称:</text>
+		<input  style="width:78%;" type="number"   data-key="name" bindblur="changeBind"></input>
 	</view>
 	
 	<view class="userdetail_list flexRowBetween">
-		<text>公司地址:</text>
-		<input type="text"   data-key="address" bindblur="changeBind"></input>
+		<text  style="width:22%;">公司地址:</text>
+		<input  style="width:78%;" type="text"   data-key="address" bindblur="changeBind"></input>
 	</view>
 
 	<view class="userdetail_list flexRowBetween">
-		<text>联系人:</text>
-		<input type="text"   data-key="email" bindblur="changeBind"></input>
+		<text  style="width:18%;">联系人:</text>
+		<input  style="width:82%;" type="text"   data-key="email" bindblur="changeBind"></input>
 	</view>
 
 	<view class="userdetail_list flexRowBetween">
-		<text>联系方式:</text>
-		<input type="text"   data-key="phone" bindblur="changeBind"></input>
+		<text  style="width:22%;">联系方式:</text>
+		<input  style="width:78%;" type="text"   data-key="phone" bindblur="changeBind"></input>
 	</view>
 
 	<picker class='user_input user_input1' mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
 	    <view class="userdetail_list flexRowBetween" style="justify-content:left">
-	      <text>所属分站:</text>
-	      <text style="margin-left:20rpx">{{web_region}}</text>
+	      <text  style="width:22%;">所属分站:</text>
+	      <text style=" style="width:78%;"">{{web_region}}</text>
 	    </view>
 	</picker>
 </view>
