@@ -32,7 +32,7 @@
 	<picker class='user_input user_input1' mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
 	    <view class="userdetail_list flexRowBetween" style="justify-content:left">
 	      <text  style="width:22%;">所属分站:</text>
-	      <text style=" style="width:78%;"">{{web_region}}</text>
+	      <text style="width:78%;">{{web_region}}</text>
 	    </view>
 	</picker>
 </view>
