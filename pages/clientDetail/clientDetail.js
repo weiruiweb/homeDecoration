@@ -151,7 +151,7 @@ Page({
     const postData = {
       searchItem:{
         title:['LIKE',['%'+Name+'%']],
-        thirdapp_id:getApp().globalData.thirdapp_id,,
+        thirdapp_id:getApp().globalData.thirdapp_id,
         type:9
       }
     };

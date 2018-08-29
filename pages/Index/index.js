@@ -127,7 +127,8 @@ Page({
       slider:{
         tableName:'label',
         searchItem:{
-          title:'首页轮播图'
+          title:['=',['首页轮播图']],
+          thirdapp_id:['=',[getApp().globalData.thirdapp_id]],
         },
         middleKey:'menu_id',
         key:'id',
