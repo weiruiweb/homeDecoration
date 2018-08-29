@@ -179,7 +179,7 @@ Page({
     const self = this;
     const postData = {
       searchItem:{
-        thirdapp_id:getApp().globalData.thirdapp_id,,
+        thirdapp_id:getApp().globalData.thirdapp_id,
         parentid:352
       }
     };

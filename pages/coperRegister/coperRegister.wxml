@@ -10,13 +10,8 @@
 	</view>
 
 	<view class="userdetail_list flexRowBetween">
-<<<<<<< HEAD
-		<text>公司名称:</text>
-		<input type="text"   data-key="name" bindblur="changeBind"></input>
-=======
 		<text  style="width:22%;">公司名称:</text>
-		<input  style="width:78%;" type="number"   data-key="name" bindblur="changeBind"></input>
->>>>>>> 4f430a143115bd266a346ce920ad19798c5f67d0
+		<input  style="width:78%;" type="number"  data-key="name" bindblur="changeBind"></input>
 	</view>
 	
 	<view class="userdetail_list flexRowBetween">
