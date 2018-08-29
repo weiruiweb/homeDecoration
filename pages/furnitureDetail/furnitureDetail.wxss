@@ -1,4 +1,6 @@
 /* pages/leftSwiperDel/index.wxss */ 
+
+@import "../../wxParse/wxParse.wxss"; 
 view{ 
   box-sizing: border-box; 
 } 

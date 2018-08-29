@@ -13,25 +13,25 @@
 	</view>
 	<view class="userInfo">
 		<view class="userdetail_list flexRowBetween">
-			<text>公司ID:</text>
-			<input type="text" value="{{web_submitData.id}}" disabled="true"></input>
+			<text style="width:14%">公司ID:</text>
+			<input type="text" value="{{web_submitData.id}}" disabled="true" style="width:86%;"></input>
 		</view>
 		<view class="userdetail_list flexRowBetween">
-			<text>公司名称:</text>
-			<input type="text" value="{{web_submitData.name}}" disabled="true"></input>
+			<text style="width:18%;">公司名称:</text>
+			<input type="text" value="{{web_submitData.name}}" disabled="true"  style="width:82%;"></input>
 		</view>
 
 		<view class="userdetail_list flexRowBetween" bindtap="company_adrress">
-			<text>公司地址:</text>
-			<input type="text" value="{{web_submitData.address}}" disabled="true"></input>
+			<text style="width:18%;">公司地址:</text>
+			<input type="text" value="{{web_submitData.address}}" disabled="true" style="width:82%;"></input>
 		</view>
 		<view class="userdetail_list flexRowBetween" >
-			<text>联系人:</text>
-			<input type="text" value="{{web_submitData.passage1}}" data-key="passage1" bindblur="changeBind"></input>
+			<text style="width:14%;">联系人:</text>
+			<input type="text" value="{{web_submitData.email}}" data-key="email" bindblur="changeBind" style="width:86%;"></input>
 		</view>
 		<view class="userdetail_list flexRowBetween">
-			<text>联系方式:</text>
-			<input type="text" value="{{web_submitData.phone}}" data-key="phone" bindblur="changeBind"></input>
+			<text style="width:18%;">联系方式:</text>
+			<input type="text" value="{{web_submitData.phone}}" data-key="phone" bindblur="changeBind" style="width:82%;"></input>
 		</view>
 
 	</view>

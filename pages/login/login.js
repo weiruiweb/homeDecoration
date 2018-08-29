@@ -13,13 +13,16 @@ Page({
       login_name:'',
       password:''
 
-    }
-    
+    },
+    web_show:true
   },
 
   onShow(){
     const self = this;
     if(wx.getStorageSync('threeInfo')){
+        self.setData({
+          web_show:false
+        });
         wx.redirectTo({
           url: '/pages/threeUser/threeUser'
         })
@@ -28,7 +31,13 @@ Page({
 
   submit(){
     const self = this;
-    wx.setStorageSync('login',self.data.sForm);
+    wx.showLoading(); 
+    if(api.checkComplete(self.data.sForm)){
+         
+      wx.setStorageSync('login',self.data.sForm);
+    }else{
+      api.showToast('请输入账号密码','fail')
+    }
     const callback = (res)=>{
       if(res){
         if(res.data.info.scope==1){
@@ -38,9 +47,11 @@ Page({
           })
           api.showToast('登陆成功','success')  
         }else{
+          wx.hideLoading();
           api.showToast('用户未审核','fail')
         };
       }else{
+          wx.hideLoading();
          api.showToast('用户不存在','fail')
       }
     }
@@ -58,16 +69,6 @@ Page({
 
 
 
-  check(e){
-    const self = this;  
-    wx.showLoading(); 
-    if(api.checkComplete(self.data.sForm)){
-      wx.hideLoading();  
-      self.submit();
-    }else{
-      api.showToast('请填写账号密码','fail')
-    };
-  },
 
 
   intoPath(e){

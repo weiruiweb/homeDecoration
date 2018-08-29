@@ -1,4 +1,6 @@
 /**index.wxss**/
+
+@import "../../wxParse/wxParse.wxss"; 
 .nav-item{
   border-bottom:solid 1px #f7f7f7;
 }

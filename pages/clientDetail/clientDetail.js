@@ -151,7 +151,7 @@ Page({
     const postData = {
       searchItem:{
         title:['LIKE',['%'+Name+'%']],
-        thirdapp_id:59,
+        thirdapp_id:getApp().globalData.thirdapp_id,,
         type:9
       }
     };
@@ -179,7 +179,7 @@ Page({
     const self = this;
     const postData = {
       searchItem:{
-        thirdapp_id:59,
+        thirdapp_id:getApp().globalData.thirdapp_id,,
         parentid:352
       }
     };

@@ -1,4 +1,6 @@
 <!--index.wxml-->
+
+
 <scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
 	<block wx:for="{{web_labelData}}" wx:key="id">
 		<view data-num="{{item.id}}" class="nav-item {{num==item.id?'active':''}}" bindtap="menuClick" style="width:{{web_viewWidth}}">{{item.title}}</view>

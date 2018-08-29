@@ -165,6 +165,17 @@ class Base extends Token{
         return result;
     };
 
+    findKeyFromArray(Array,key,value) { 
+        const self = this; 
+        var new_array = []; 
+        for (var i = 0; i < Array.length; i++) {
+            if(Array[i][key]&&Array[i][key] == value){
+                new_array.push(Array[i])
+            };
+        };
+        return new_array; 
+    };
+
     footOne(res,name,limit,objName){
         const self = this;
         if(wx.getStorageSync(objName)){

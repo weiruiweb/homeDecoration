@@ -121,8 +121,18 @@ Page({
     const self = this;
     const postData = {};
     postData.searchItem = {
-      menu_id:'381',
       thirdapp_id:getApp().globalData.thirdapp_id
+    };
+    postData.getBefore = {
+      slider:{
+        tableName:'label',
+        searchItem:{
+          title:'首页轮播图'
+        },
+        middleKey:'menu_id',
+        key:'id',
+        condition:'in',
+      },
     };
     const callback = (res)=>{ 
      self.data.sliderData = res.info.data;
@@ -164,9 +174,10 @@ Page({
   onPullDownRefresh:function(){
     const self = this;
     wx.showNavigationBarLoading();
-    delete self.data.thirdAppName
+    delete self.data.thirdAppName;
+    getApp().globalData.thirdapp_id = 59;
     self.setData({
-      web_region: self.data.region
+      web_region: self.data.region,
     })
     self.getMainData(true);
   },

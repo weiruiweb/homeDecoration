@@ -10,7 +10,7 @@ Page({
       name:'',
       phone:'',
       address:'',
-      passage1:'',
+      email:'',
       id:''
     },
 
@@ -36,7 +36,7 @@ Page({
       self.data.submitData.phone = res.info.data[0].info.phone;
       self.data.submitData.name = res.info.data[0].info.name;
       self.data.submitData.address = res.info.data[0].info.address;
-      self.data.submitData.passage1 = res.info.data[0].info.passage1;
+      self.data.submitData.email = res.info.data[0].info.email;
       self.data.submitData.id = res.info.data[0].info.id;
       self.setData({
         web_submitData:self.data.submitData,

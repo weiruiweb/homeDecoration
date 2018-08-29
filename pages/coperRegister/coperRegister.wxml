@@ -11,7 +11,7 @@
 
 	<view class="userdetail_list flexRowBetween">
 		<text>公司名称:</text>
-		<input type="number"   data-key="name" bindblur="changeBind"></input>
+		<input type="text"   data-key="name" bindblur="changeBind"></input>
 	</view>
 	
 	<view class="userdetail_list flexRowBetween">
