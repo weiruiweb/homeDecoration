@@ -8,10 +8,9 @@
 		<text  style="width:14%;">密码:</text>
 		<input  style="width:86%;" type="text" data-key="password" bindblur="changeBind"></input>
 	</view>
-
 	<view class="userdetail_list flexRowBetween">
 		<text  style="width:22%;">公司名称:</text>
-		<input  style="width:78%;" type="number"  data-key="name" bindblur="changeBind"></input>
+		<input  style="width:78%;" type="text"  data-key="name" bindblur="changeBind"></input>
 	</view>
 	
 	<view class="userdetail_list flexRowBetween">

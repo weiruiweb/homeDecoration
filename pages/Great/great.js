@@ -21,7 +21,9 @@ Page({
       passage3:'',
       passage5:'', 
     },
+    start:0,
     buttonClicked: false,
+    timeFunc:false,
 
     sexItem:[
       {
@@ -125,8 +127,22 @@ Page({
           type:3,
           thirdapp_id:getApp().globalData.thirdapp_id
         }
-      }
-    ]
+      },
+      
+    ];
+    if(wx.getStorageSync('info').parent_no){
+      postData.saveAfter.push({
+        tableName:'flowLog',
+        FuncName:'add',
+        data:{
+          count:wx.getStorageSync('info').thirdApp.custom_rule.send,
+          trade_info:'推荐积分奖励',
+          user_no:wx.getStorageSync('info').parent_no,
+          type:3,
+          thirdapp_id:getApp().globalData.thirdapp_id
+        }
+      });
+    };
     const callback = (data)=>{
       wx.hideLoading();
       if(data.solely_code==100000){
@@ -174,6 +190,7 @@ Page({
 
   changeBind(e){
     const self = this;
+    
     if(api.getDataSet(e,'value')){
       self.data.submitData[api.getDataSet(e,'key')] = api.getDataSet(e,'value');
     }else{
@@ -184,10 +201,13 @@ Page({
     }); 
 
     if(api.getDataSet(e,'key')=='keywords'&&self.data.submitData.keywords){
+      self.data.start++;
       if(self.data.timeFunc){
         return;
       };
-      self.data.timeFunc = setTimeout(function(){
+      console.log('changeBind',self.data.timeFunc)
+      self.data.timeFunc = true;
+      setTimeout(function(){
         self.articleGet(self.data.submitData.keywords);
         self.data.timeFunc = false;
       },1000);
@@ -197,7 +217,7 @@ Page({
         self.messageGet()
     };
 
-    if(!self.data.submitData.keywords){
+    if(!self.data.submitData.keywords&&self.data.start>0){
       self.data.lock = true;
     };
     console.log(self.data.submitData)
@@ -215,19 +235,32 @@ Page({
       }
     };
     const callback = (res)=>{
-      if(!self.data.lock){
+        console.log(self.data.lock) 
         if(res.info.data.length>0){
-          self.data.submitData.keywords = res.info.data[0].title;
-          self.data.submitData.relation_id = res.info.data[0].id;
+          if(self.data.lock){
+            self.data.submitData.keywords = '';
+            self.data.submitData.relation_id = '';
+            self.data.lock = false;
+          }else{
+            self.data.submitData.keywords = res.info.data[0].title;
+            self.data.submitData.relation_id = res.info.data[0].id;
+          };
+          
         }else{
+          
+          self.data.submitData.keywords = '';
+          self.data.submitData.relation_id = '';
+          if(self.data.lock){
+            self.data.lock = false;
+          };
           api.showToast('公司不存在','fail');
         };
+
+        console.log('articleGet',self.data.submitData)
         self.setData({
           web_submitData:self.data.submitData,
         });
-      }else{
-        self.data.lock = false;
-      }
+      
       
     };
     api.articleGet(postData,callback);

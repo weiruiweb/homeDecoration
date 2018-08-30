@@ -7,7 +7,7 @@
 	</view>
 	<view class="login_item flexRowBetween">
 		<text class="nameInput"  style="width:20%;">密码:</text>
-		<input class="login_input" data-key="password" bindinput="bindInputChange" ></input>
+		<input type="password" class="login_input" data-key="password" bindinput="bindInputChange" ></input>
 	</view>
 
 	<button class="submit_input" bindtap="submit">登录</button>

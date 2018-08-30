@@ -71,6 +71,21 @@ Page({
     postData.data = api.cloneForm(self.data.sForm);
     postData.data.passage1 = 0;
     postData.data.behavior = 0;
+    postData.saveAfter = 
+    [
+      {
+        tableName:'user',
+        FuncName:'update',
+        data:{
+          scope:0
+        },
+        searchItem:{
+          res:{
+            user_no:'user_no'
+          }
+        }
+      }
+    ];
     const callback = (data)=>{
       wx.hideLoading();
       api.dealRes(data);

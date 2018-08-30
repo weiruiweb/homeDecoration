@@ -106,7 +106,11 @@ Page({
       },
     };
     const callback = (res)=>{
-      self.data.artData = res.info.data[0];
+      self.data.artData = {};
+      if(res.info.data.length>0){
+        self.data.artData = res.info.data[0];
+      };
+      console.log(self.data.artData);
       wx.hideLoading();
       self.setData({
         web_artData:self.data.artData,
@@ -146,7 +150,9 @@ Page({
       },
     };
     const callback = (res)=>{ 
-     self.data.sliderData = res.info.data;
+      self.data.sliderData = [];
+      
+      self.data.sliderData = res.info.data;
       self.setData({
         web_sliderData:self.data.sliderData,
       });
@@ -174,7 +180,8 @@ Page({
           web_region: self.data.region,
         });
         getApp().globalData.thirdapp_id = 59
-      }  
+      };
+      token.getUserInfo();  
       wx.hideLoading();
       console.log(getApp().globalData.thirdapp_id)
     }
