@@ -90,10 +90,20 @@ Page({
   getartData(){
     const self = this;
     const postData = {};
-    postData.paginate = api.cloneForm(self.data.paginate);
     postData.searchItem = {
-      id:'17',
       thirdapp_id:getApp().globalData.thirdapp_id
+    };
+    postData.getBefore = {
+      article:{
+        tableName:'label',
+        searchItem:{
+          title:['=',['关于我们']],
+          thirdapp_id:['=',[getApp().globalData.thirdapp_id]],
+        },
+        middleKey:'menu_id',
+        key:'id',
+        condition:'in',
+      },
     };
     const callback = (res)=>{
       self.data.artData = res.info.data[0];
@@ -124,7 +134,7 @@ Page({
       thirdapp_id:getApp().globalData.thirdapp_id
     };
     postData.getBefore = {
-      slider:{
+      article:{
         tableName:'label',
         searchItem:{
           title:['=',['首页轮播图']],
@@ -181,6 +191,8 @@ Page({
       web_region: self.data.region,
     })
     self.getMainData(true);
+    self.getartData();
+    self.getSliderData();
   },
 
 

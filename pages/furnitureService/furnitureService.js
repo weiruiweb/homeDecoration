@@ -5,10 +5,10 @@ var api = new Api();
 
 Page({
   data: {
-    num:'355',
+    num:'',
     mainData:[],
     searchItem:{
-      menu_id:'355'
+      menu_id:''
     }
   },
   //事件处理函数
@@ -24,7 +24,7 @@ Page({
   changeSearch(num){
     const self = this;
     this.setData({
-      num: num
+      web_num: num
     });
     self.data.searchItem.menu_id = num;
     self.getMainData(true);
@@ -33,7 +33,6 @@ Page({
   onLoad(){
     const self = this;
     self.data.paginate = api.cloneForm(getApp().globalData.paginate);
-    self.getMainData();
     self.getLabelData()
   },
 
@@ -42,7 +41,18 @@ Page({
     const postData = {};
     postData.searchItem = {
       thirdapp_id:getApp().globalData.thirdapp_id,
-      parentid:['=','354']
+    };
+    postData.getBefore = {
+      label:{
+        tableName:'label',
+        searchItem:{
+          title:['=',['家具']],
+          thirdapp_id:['=',[getApp().globalData.thirdapp_id]],
+        },
+        middleKey:'parentid',
+        key:'id',
+        condition:'in',
+      },
     };
     const callback = (res)=>{
       console.log(res.info.data.length)
@@ -51,13 +61,16 @@ Page({
       }else{
         self.data.viewWidth = '20'+'%'
       };
-  
-      self.data.labelData = res.info.data;    
+      self.data.labelData = res.info.data;
+      self.data.searchItem.menu_id = res.info.data[0].id;
+      self.data.num = res.info.data[0].id;
       wx.hideLoading();
       self.setData({
         web_labelData:self.data.labelData,
-        web_viewWidth:self.data.viewWidth
+        web_viewWidth:self.data.viewWidth,
+        web_num:self.data.num,
       });
+      self.getMainData()
     };
     api.labelGet(postData,callback);   
   },

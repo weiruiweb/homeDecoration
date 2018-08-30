@@ -9,19 +9,19 @@ Page({
    * 页面的初始数据
    */
   data: {
-    num:'409',
+    num:'',
     mainData:[],
+    labelData:[],
     searchItem:{
-      menu_id:'409'
+      menu_id:''
     }
 
   },
     
-
   onLoad(){
     const self = this;
     self.data.paginate = api.cloneForm(getApp().globalData.paginate);
-    self.getMainData()
+    self.getLabelData()
   },
 
   getMainData(isNew){
@@ -54,27 +54,41 @@ Page({
     api.articleGet(postData,callback);
   },
 
+
   getLabelData(){
     const self = this;
     const postData = {};
     postData.searchItem = {
       thirdapp_id:getApp().globalData.thirdapp_id,
-      parentid:['=','359']
+    };
+    postData.getBefore = {
+      label:{
+        tableName:'label',
+        searchItem:{
+          title:['=',['家装']],
+          thirdapp_id:['=',[getApp().globalData.thirdapp_id]],
+        },
+        middleKey:'parentid',
+        key:'id',
+        condition:'in',
+      },
     };
     const callback = (res)=>{
-      console.log(res.info.data.length)
       if(res.info.data.length<5){  
         self.data.viewWidth = (100/(res.info.data.length)).toString()+'%';
       }else{
         self.data.viewWidth = '20'+'%'
       };
-  
-      self.data.labelData = res.info.data;    
+      self.data.labelData = res.info.data;
+      self.data.searchItem.menu_id = res.info.data[0].id;
+      self.data.num = res.info.data[0].id;
       wx.hideLoading();
       self.setData({
         web_labelData:self.data.labelData,
-        web_viewWidth:self.data.viewWidth
+        web_viewWidth:self.data.viewWidth,
+        web_num:self.data.num,
       });
+      self.getMainData()
     };
     api.labelGet(postData,callback);   
   },
@@ -89,18 +103,13 @@ Page({
   changeSearch(num){
     const self = this;
     this.setData({
-      num: num
+      web_num: num
     });
     self.data.searchItem.menu_id = num;
     self.getMainData(true);
   },
 
-  onLoad(){
-    const self = this;
-    self.data.paginate = api.cloneForm(getApp().globalData.paginate);
-    self.getMainData();
-    self.getLabelData()
-  },
+ 
 
   
 

@@ -5,15 +5,13 @@ var api = new Api();
 
 Page({
   data: {
-    num:'361',
-    labelData:[],
+    num:'',
     mainData:[],
     searchItem:{
-      menu_id:'361'
-    },
-    viewWidth:''
+      menu_id:''
+    }
   },
-
+  //事件处理函数
 
 
   menuClick: function (e) {
@@ -26,10 +24,16 @@ Page({
   changeSearch(num){
     const self = this;
     this.setData({
-      num: num
+      web_num: num
     });
     self.data.searchItem.menu_id = num;
     self.getMainData(true);
+  },
+
+  onLoad(){
+    const self = this;
+    self.data.paginate = api.cloneForm(getApp().globalData.paginate);
+    self.getLabelData()
   },
 
   getLabelData(){
@@ -37,35 +41,38 @@ Page({
     const postData = {};
     postData.searchItem = {
       thirdapp_id:getApp().globalData.thirdapp_id,
-      parentid:['=','360']
+    };
+    postData.getBefore = {
+      label:{
+        tableName:'label',
+        searchItem:{
+          title:['=',['建材']],
+          thirdapp_id:['=',[getApp().globalData.thirdapp_id]],
+        },
+        middleKey:'parentid',
+        key:'id',
+        condition:'in',
+      },
     };
     const callback = (res)=>{
       console.log(res.info.data.length)
-      if(res.info.data.length<5){
-        
-        function toPercent(num, total) { 
-          return (Math.round(res.info.data.length / 100 * 10000) / 100.00 + "%");
-        };
-
+      if(res.info.data.length<5){  
+        self.data.viewWidth = (100/(res.info.data.length)).toString()+'%';
       }else{
         self.data.viewWidth = '20'+'%'
       };
-      self.data.labelData = res.info.data;    
+      self.data.labelData = res.info.data;
+      self.data.searchItem.menu_id = res.info.data[0].id;
+      self.data.num = res.info.data[0].id;
       wx.hideLoading();
       self.setData({
         web_labelData:self.data.labelData,
+        web_viewWidth:self.data.viewWidth,
+        web_num:self.data.num,
       });
+      self.getMainData()
     };
-
-    api.labelGet(postData,callback);
-    
-  },
-
-  onLoad(){
-    const self = this;
-    self.data.paginate = api.cloneForm(getApp().globalData.paginate);
-    self.getMainData();
-    self.getLabelData()
+    api.labelGet(postData,callback);   
   },
 
   getMainData(isNew){
@@ -80,7 +87,6 @@ Page({
       menu_id:self.data.searchItem.menu_id,
       passage1:getApp().globalData.passage1
     };
-
     postData.order = {
       create_time:'desc'
     };

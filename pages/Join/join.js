@@ -5,11 +5,11 @@ var api = new Api();
 
 Page({
   data: {
-    num:'371',
+    num:'',
     mainData:[],
     labelData:[],
     searchItem:{
-      menu_id:'371'
+      menu_id:''
     }
   },
 
@@ -24,7 +24,7 @@ Page({
   changeSearch(num){
     const self = this;
     this.setData({
-      num: num
+      web_num: num
     });
     self.data.searchItem.menu_id = num;
     self.getMainData(true);
@@ -57,12 +57,23 @@ Page({
 
 
 
-  getLabelData(){
+   getLabelData(){
     const self = this;
     const postData = {};
     postData.searchItem = {
       thirdapp_id:getApp().globalData.thirdapp_id,
-      parentid:['=','353']
+    };
+    postData.getBefore = {
+      label:{
+        tableName:'label',
+        searchItem:{
+          title:['=',['关于我们一级']],
+          thirdapp_id:['=',[getApp().globalData.thirdapp_id]],
+        },
+        middleKey:'parentid',
+        key:'id',
+        condition:'in',
+      },
     };
     const callback = (res)=>{
       console.log(res.info.data.length)
@@ -71,17 +82,18 @@ Page({
       }else{
         self.data.viewWidth = '20'+'%'
       };
- 
-      self.data.labelData = res.info.data;    
+      self.data.labelData = res.info.data;
+      self.data.searchItem.menu_id = res.info.data[0].id;
+      self.data.num = res.info.data[0].id;
       wx.hideLoading();
       self.setData({
         web_labelData:self.data.labelData,
-        web_viewWidth:self.data.viewWidth
+        web_viewWidth:self.data.viewWidth,
+        web_num:self.data.num,
       });
+      self.getMainData()
     };
-
-    api.labelGet(postData,callback);
-    
+    api.labelGet(postData,callback);   
   },
 
 
