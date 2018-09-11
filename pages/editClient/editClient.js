@@ -10,12 +10,7 @@ Page({
   data: {
     key:'',
     mainData:[],
-    searchItem:{
-      thirdapp_id:getApp().globalData.thirdapp_id,
-      user_type:0,
-      user_no:wx.getStorageSync('info').user_no
-    }
-
+    passage1:''
   },
     
 
@@ -37,7 +32,7 @@ Page({
     this.setData({
       key: key
     });
-    self.data.searchItem.passage1 = key;
+    self.data.passage1 = key;
     self.getMainData(true);
   },
 
@@ -49,7 +44,12 @@ Page({
     const postData = {};
     postData.paginate = api.cloneForm(self.data.paginate);
     postData.token = wx.getStorageSync('token');
-    postData.searchItem = api.cloneForm(self.data.searchItem);
+    postData.searchItem = {
+      thirdapp_id:getApp().globalData.thirdapp_id,
+      user_type:0,
+      user_no:wx.getStorageSync('info').user_no
+    };
+    postData.searchItem.passage1 = self.data.passage1
     postData.order = {
       create_time:'desc'
     }

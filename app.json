@@ -61,7 +61,7 @@
       "selectedIconPath":"/images/navbar3-a.jpg"
     }, {
       "pagePath":"pages/User/user",
-      "text": "我的",
+      "text": "会员中心",
       "iconPath":"/images/navbar4.jpg",
       "selectedIconPath":"/images/navbar4-a.jpg"
     }],

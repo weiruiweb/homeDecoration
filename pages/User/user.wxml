@@ -16,7 +16,7 @@
 			<view class="" style="width:10%">
 			<image src="/images/user_icon1.png"></image>
 			</view>
-			<view style="width:20%;font-size:26rpx;color:#666;">完善资料</view>
+			<view style="width:20%;font-size:26rpx;color:#666;">个人认证</view>
 			<view style="font-size:12px;color:red;width:50%">{{web_mainData.info.data[0].info.passage1=='1'?'(已审核)':(web_mainData.info.data[0].info.pasaage=='-1'?'(审核拒绝)':'(未审核)')}}</view>
 			<view style="width:20%;text-align:right">
 				<image src="/images/next_icon1.jpg" class="next_page" ></image>
@@ -26,7 +26,7 @@
 			<view class="" style="width:10%">
 				<image src="/images/user_icon2.png"></image>
 			</view>
-			<view style="width:75%;font-size:26rpx;color:#666;text-align:left">公司认证</view>
+			<view style="width:75%;font-size:26rpx;color:#666;text-align:left">所属公司认证</view>
 			<view style="width:20%;text-align:right">
 				<image src="/images/next_icon1.jpg" class="next_page" ></image>
 			</view>
@@ -72,7 +72,7 @@
 			<view class="" style="width:10%">
 				<image src="/images/user_icon6.png"></image>
 			</view>
-			<view style="width:75%;font-size:26rpx;color:#666;text-align:left">第三方合作商登录</view>
+			<view style="width:75%;font-size:26rpx;color:#666;text-align:left">公司认证及登录</view>
 			<view style="width:20%;text-align:right">
 				<image src="/images/next_icon1.jpg" class="next_page" ></image>
 			</view>

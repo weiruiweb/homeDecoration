@@ -28,11 +28,25 @@ Page({
     const postData = {};
     postData.paginate = api.cloneForm(self.data.paginate);
     postData.searchItem = {
-      menu_id:'383',
       thirdapp_id:getApp().globalData.thirdapp_id
     };
+    postData.getBefore = {
+      article:{
+        tableName:'label',
+        searchItem:{
+          title:['=',['积分佣金规则']],
+          thirdapp_id:['=',[getApp().globalData.thirdapp_id]],
+        },
+        middleKey:'menu_id',
+        key:'id',
+        condition:'in',
+      },
+    };
     const callback = (res)=>{
-      self.data.mainData = res.info.data[0];
+      self.data.artData = {};
+      if(res.info.data.length>0){
+        self.data.mainData = res.info.data[0];
+      }; 
       wx.hideLoading();
       self.data.mainData.content = api.wxParseReturn(res.info.data[0].content).nodes;
       self.setData({

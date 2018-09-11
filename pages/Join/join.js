@@ -9,7 +9,7 @@ Page({
     mainData:[],
     labelData:[],
     searchItem:{
-      menu_id:''
+
     }
   },
 
@@ -33,6 +33,10 @@ Page({
   onLoad(){
     const self = this;
     self.data.paginate = api.cloneForm(getApp().globalData.paginate);
+    
+  },
+  onShow(){
+    const self = this;
     self.getMainData();
     self.getLabelData()
   },
@@ -45,9 +49,12 @@ Page({
       menu_id:self.data.searchItem.menu_id
     };
     const callback = (res)=>{
-      self.data.mainData = res
+      self.data.mainData = {};
+      self.data.mainData = res;
       wx.hideLoading();
-      self.data.mainData.content = api.wxParseReturn(res.info.data[0].content).nodes;
+      if(res.info.data[0]){
+        self.data.mainData.content = api.wxParseReturn(res.info.data[0].content).nodes;
+      }   
       self.setData({
         web_mainData:self.data.mainData,
       });  
@@ -57,7 +64,7 @@ Page({
 
 
 
-   getLabelData(){
+  getLabelData(){
     const self = this;
     const postData = {};
     postData.searchItem = {
@@ -76,15 +83,16 @@ Page({
       },
     };
     const callback = (res)=>{
-      console.log(res.info.data.length)
       if(res.info.data.length<5){  
         self.data.viewWidth = (100/(res.info.data.length)).toString()+'%';
       }else{
         self.data.viewWidth = '20'+'%'
       };
       self.data.labelData = res.info.data;
-      self.data.searchItem.menu_id = res.info.data[0].id;
-      self.data.num = res.info.data[0].id;
+      if(res.info.data[0]){
+        self.data.searchItem.menu_id = res.info.data[0].id;
+        self.data.num = res.info.data[0].id;
+      }  
       wx.hideLoading();
       self.setData({
         web_labelData:self.data.labelData,

@@ -16,7 +16,7 @@
 				<view class="clientType">{{item.content}}</view>
 			</view>
 			<view class="clientList_right" style="flex-direction:column;align-items:flex-end;">
-				<view class="edit_icon flexRowBetween" style="position:absolute;top:10rpx;right:10rpx">
+				<view class="edit_icon flexRowBetween" style="position:absolute;top:20rpx;right:10rpx;width:60rpx;height:60rpx">
 					<image src="/images/delete_icon1.jpg" bindtap="messageDelete" data-id="{{item.id}}" ></image>
 				</view>
 				<view class="clientPen weak" style="align-self:flex-end" wx:if="{{item.score == '1'}}">弱</view>

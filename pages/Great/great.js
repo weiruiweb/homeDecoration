@@ -146,7 +146,25 @@ Page({
     const callback = (data)=>{
       wx.hideLoading();
       if(data.solely_code==100000){
-        api.showToast('推荐成功','fail')
+        api.showToast('推荐成功','fail'),
+        
+        self.data.submitData={
+            title:'',
+            keywords:'',
+             phone:'',
+            gender:1,
+            type:4,
+            content:'',
+            score:1,
+            relation_id:'',
+            passage2:'',
+            passage3:'',
+            passage5:'', 
+          },
+        self.setData({
+          web_submitData:self.data.submitData,
+        });
+      
       }else{
         api.showToast('推荐失败','fail')
       }
@@ -274,8 +292,19 @@ Page({
     const postData = {
       searchItem:{
         thirdapp_id:getApp().globalData.thirdapp_id,
-        parentid:352
       }
+    };
+    postData.getBefore = {
+      label:{
+        tableName:'label',
+        searchItem:{
+          title:['=',['服务类目']],
+          thirdapp_id:['=',[getApp().globalData.thirdapp_id]],
+        },
+        middleKey:'parentid',
+        key:'id',
+        condition:'in',
+      },
     };
     const callback = (res)=>{
       self.setData({
@@ -284,7 +313,6 @@ Page({
     };
     api.labelGet(postData,callback);
   }
-
 
 
 })

@@ -18,7 +18,7 @@ Page({
   },
 
 
-  onLoad(){
+  onShow(){
     const self = this;
     self.userGet();
   },
@@ -103,8 +103,10 @@ Page({
     postData.data.passage1 = 0;
     postData.data.behavior = 0;
     const callback = (data)=>{
+      if(data.solely_code==100000){
+        api.showToast('提交成功','none')
+      }
       wx.hideLoading();
-      api.dealRes(data);
     };
     api.userInfoAdd(postData,callback);
   },
@@ -112,8 +114,12 @@ Page({
 
   submit(){
     const self = this;
-    var phone = self.data.sForm.phone;
-    const pass = api.checkComplete(self.data.sForm);
+    console.log(self.data.mainData)
+    if(self.data.mainData.info.data[0]&&self.data.mainData.info.data[0].scope==1&&self.data.mainData.info.data[0].info.passage1==1){
+      api.showToast('已通过审核，勿重复提交','none')
+    }else{
+      var phone = self.data.sForm.phone;
+      const pass = api.checkComplete(self.data.sForm);
     if(pass){
       if(phone.trim().length != 11 || !/^1[3|4|5|6|7|8|9]\d{9}$/.test(phone)){
         api.showToast('手机格式不正确','fail')
@@ -130,8 +136,10 @@ Page({
           },1000);  
       }
     }else{
-      api.showToast('请补全信息','fail');
-    };
+      api.showToast('请补全信息','none');
+    };  
+    }
+
   },
  
 })

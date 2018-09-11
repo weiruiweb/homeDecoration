@@ -32,7 +32,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 11,
+			"current": 12,
 			"list": [
 				{
 					"id": 0,
@@ -105,7 +105,13 @@
 				{
 					"id": -1,
 					"name": "注册",
-					"pathName": "pages/coperRegister/coperRegister"
+					"pathName": "pages/coperRegister/coperRegister",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "关于我们",
+					"pathName": "pages/Join/join"
 				}
 			]
 		}

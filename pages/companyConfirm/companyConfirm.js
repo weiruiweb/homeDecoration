@@ -2,6 +2,7 @@
 import {Api} from '../../utils/api.js';
 const api = new Api();
 
+
 Page({
   data: {
     userData:[],
@@ -21,7 +22,7 @@ Page({
     self.setData({
       web_submitData:self.data.submitData,
     });
-    self.getUserData()
+    self.getUserData();
   },
 
 
@@ -92,7 +93,7 @@ Page({
     const self = this;
     const pass = api.checkComplete(self.data.submitData);
     if(pass){
-      if(JSON.stringify(wx.getStorageSync('info').info) != '[]'){
+      if(JSON.stringify(self.data.userData.info) != '[]'){
         wx.showLoading();
         self.getMainData();
       }else{
